@@ -1,3 +1,9 @@
+# Connect
+
+The final group project for the Trilogy boot camp program
+
+
+
 # Create React Express App
 
 ## About This Boilerplate
@@ -27,3 +33,4 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 ## Deployment (Heroku)
 
 To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+
