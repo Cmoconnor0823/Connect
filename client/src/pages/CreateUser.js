@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import Container from "../components/Container";
-import Row from "../components/Row";
-//import Col from "../components/Col";
-import Navbar from "../components/Navbar";
+import Row from "../components/Row/";
+import Col from "../components/Col/";
+import Wrapper from "../components/Wrapper/";
 // import Footer from "../components/Footer";
 import { Input, FormBtn } from "../components/Form";
 // include TextArea above if a large input field is needed
@@ -17,12 +17,12 @@ class CreateUser extends Component {
 		userName: "",
 		password: "",
 		realName: ""
-	  };
+	};
 
 	// // When the component mounts, load all profiles and save them to this.state.profile
-  	// 	componentDidMount() {
-    // 	this.loadProfile();
-  	// }
+	// 	componentDidMount() {
+	// 	this.loadProfile();
+	// }
 	// Handles updating component state when the user
 	// types into the input field
 	handleInputChange = event => {
@@ -51,17 +51,17 @@ class CreateUser extends Component {
 	render() {
 		return (
 			<div>
-				<Header>
+				<Wrapper>
+					<Header>
 
-				</Header>
-				<Container fluid>
-					<Row>
-						{/* <Col size="md-6 sm-12">
-							<h1> This will be the create a profile page</h1>
-						</Col> */}
-					</Row>
-					<Row>
-						
+					</Header>
+					<Container fluid>
+						<Row>
+							<Col size="md-6">
+								<h1> This will be the create a profile page</h1>
+							</Col>
+						</Row>
+						<Row>
 							<form>
 								<Input
 									value={this.state.userName}
@@ -92,7 +92,7 @@ class CreateUser extends Component {
                 					onChange={this.handleInputChange}
                 					name="synopsis"
                 					placeholder="Synopsis (Optional)"
-              						/> */}
+								/> */}
 
 								<FormBtn
 									disabled={!(this.state.author && this.state.title)}
@@ -101,10 +101,11 @@ class CreateUser extends Component {
 									Submit profile
               </FormBtn>
 							</form>
-						
-					</Row>
-				</Container>
 
+						</Row>
+					</Container>
+
+				</Wrapper>
 			</div>
 		);
 	}

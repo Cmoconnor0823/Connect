@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Container from "../components/Container";
+import Wrapper from "../components/Wrapper/";
 import Card from "../components/Card";
 
 class Login extends Component {
@@ -17,11 +18,13 @@ class Login extends Component {
   render() {
       return (
           <div>
+              <Wrapper>
               <Container>
               <Card>
 
               </Card>
               </Container>
+              </Wrapper>
           </div>
 
       );
