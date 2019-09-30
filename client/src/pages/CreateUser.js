@@ -52,9 +52,7 @@ class CreateUser extends Component {
 		return (
 			<div>
 				<Wrapper>
-					<Header>
-
-					</Header>
+					<Header></Header>
 					<Container fluid>
 						<Row>
 							<Col size="md-6">
@@ -95,7 +93,7 @@ class CreateUser extends Component {
 								/> */}
 
 								<FormBtn
-									disabled={!(this.state.author && this.state.title)}
+									disabled={!(this.state.userName && this.state.password)}
 									onClick={this.handleFormSubmit}
 								>
 									Submit profile
