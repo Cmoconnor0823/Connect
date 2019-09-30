@@ -6,6 +6,17 @@ function Nav() {
 			<a className="navbar-brand" href="/">
         Home
 			</a>
+			<br></br>
+			<a className="navbar-brand" href="/createuser">
+        Create a Profile
+			</a>
+			<br></br>
+			<a className="navbar-brand" href="/login">
+        Log In
+			</a>
+			{/* <a className="navbar-brand" href="/">
+        Home
+			</a> */}
 		</nav>
 	);
 }

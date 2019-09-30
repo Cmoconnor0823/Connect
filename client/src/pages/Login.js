@@ -7,9 +7,9 @@ class Login extends Component {
       
     };
     // When the component mounts, load the "thing" to be displayed
-  componentDidMount() {
-    this.loadThisThing();
-  }
+  // componentDidMount() {
+  //   this.loadThisThing();
+  // }
 
   handleBtnClick = event => {
   }
