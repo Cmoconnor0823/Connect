@@ -6,6 +6,7 @@ import Col from "../components/Col/";
 import Wrapper from "../components/Wrapper/";
 // import Footer from "../components/Footer";
 import { Input, FormBtn } from "../components/Form";
+import Footer from "../components/Footer/Footer";
 // include TextArea above if a large input field is needed
 
 
@@ -104,6 +105,7 @@ class CreateUser extends Component {
 					</Container>
 
 				</Wrapper>
+				<Footer></Footer>
 			</div>
 		);
 	}
