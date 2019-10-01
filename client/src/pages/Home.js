@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Container from "../components/Container";
+import Wrapper from "../components/Wrapper/";
 import Card from "../components/Card";
+import Footer from "../components/Footer/Footer";
 
 class Home extends Component {
     state = {
@@ -17,11 +19,14 @@ class Home extends Component {
   render() {
       return (
           <div>
+              <Wrapper>
               <Container>
               <Card>
 
               </Card>
               </Container>
+              </Wrapper>
+              <Footer></Footer>
           </div>
 
       );
