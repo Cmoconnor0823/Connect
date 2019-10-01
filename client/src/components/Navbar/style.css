@@ -1,0 +1,19 @@
+.mainNav {
+    display:inline;
+    background-color:rgb(24, 15, 15);
+}
+.pages{
+    color:white;
+}
+.navbar {
+    border-bottom: 1px solid #ccc;
+    background-color: grey;
+    margin-top: 10px;
+  }
+  .navbar-brand{
+      margin-left: 10%;
+      text-align:left;
+  }
+  ul > li {
+      display:inline;
+  }

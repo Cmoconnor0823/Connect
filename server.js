@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+var db = require("./models");
+var seqPORT = process.env.PORT || 8080;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -21,4 +23,10 @@ app.get("*", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
+});
+
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(seqPORT, function() {
+    console.log("App listening for mysql database on PORT " + seqPORT);
+  });
 });
