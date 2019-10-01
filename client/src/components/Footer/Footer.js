@@ -1,9 +1,13 @@
 import React from "react";
+import { Container } from "reactstrap";
+//import Container from "../components/Container";
+import "./style.css";
 
-function Nav() {
-	return (
-		<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-			<ul>
+function Footer() {
+  return (
+    <footer className="footer" data-background-color="black">
+      <Container>
+      <ul>
 				<li>
 
 
@@ -27,8 +31,11 @@ function Nav() {
 	</a> 
 				</li>*/}
 			</ul>
-		</nav >
-	);
+
+      <div className="copyright" id="copyright">© KonnectD 2019</div>
+      </Container>
+    </footer>
+  );
 }
 
-export default Nav;
+export default Footer;

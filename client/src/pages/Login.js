@@ -6,6 +6,7 @@ import Col from "../components/Col/";
 import Wrapper from "../components/Wrapper/";
 //import Card from "../components/Card";
 import { Input, FormBtn } from "../components/Form";
+import Footer from "../components/Footer/Footer";
 
 class Login extends Component {
   state = {
@@ -61,6 +62,7 @@ class Login extends Component {
 
               </Container>
               </Wrapper>
+			  <Footer></Footer>
           </div>
 
       );
