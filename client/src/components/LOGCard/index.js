@@ -12,6 +12,14 @@ class LOGCard extends Component {
 	};
 	handleBtnClick = event => {
 	}
+	// Handles updating component state when the user
+	// types into the input field
+	handleInputChange = event => {
+		const { name, value } = event.target;
+		this.setState({
+			[name]: value
+		});
+	};
 	render() {
 		return (
 			<Container>
