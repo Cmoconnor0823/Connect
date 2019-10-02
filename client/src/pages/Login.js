@@ -4,7 +4,6 @@ import { Container, Col, Row } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 import LOGCard from "../components/LOGCard";
 
-import Footer from "../components/Footer/Footer";
 
 class Login extends Component {
 

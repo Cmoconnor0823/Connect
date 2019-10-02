@@ -8,7 +8,7 @@ function Jumbotron({ children }) {
 		<Container>
 
 		<div className="jumbotron">
-				<img className ="jumbo-pic" src={image}></img>
+				<img className ="jumbo-pic" src={image} alt="Logo"></img>
 			 Welcome To KonnectD, a Bussiness Management Tool for Scheduling and employee records.
 			{children}
 		</div>

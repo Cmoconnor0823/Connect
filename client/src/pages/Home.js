@@ -21,12 +21,14 @@ class Home extends Component {
             <div>
                 <Wrapper>
                     <Container>
-                        <Col><Row>
+                        <Col>
+                            <Row>
 
-                            <Card>
-                                
-                            </Card>
-                        </Row></Col>
+                                <Card>
+
+                                </Card>
+                            </Row>
+                        </Col>
                         <Col>
                             <Row>
 
