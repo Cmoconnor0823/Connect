@@ -5,8 +5,9 @@ import "./style.css";
 
 function Footer() {
   return (
-    <footer className="footer" data-background-color="black">
-      <Container>
+    <div className="mainfooter row col-lg-12">
+    <Container>
+      <footer className="footer" data-background-color="black">
       <ul>
 				<li>
 
@@ -33,8 +34,9 @@ function Footer() {
 			</ul>
 
       <div className="copyright" id="copyright">© KonnectD 2019</div>
-      </Container>
     </footer>
+      </Container>
+    </div>
   );
 }
 

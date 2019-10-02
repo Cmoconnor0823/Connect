@@ -1,10 +1,11 @@
 import React from "react";
 import './style.css';
+import { Container } from "reactstrap";
 
 function Nav() {
 	return (
-
 		<div className="mainNav row col-lg-12">
+			<Container>
 		<nav className="navbar navbar-expand-lg navbar-dark">
 		  <div className="navbar-brand col-lg-3"><h2>KonnectD</h2></div>
 		  <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,6 +29,7 @@ function Nav() {
 			
 		  </div>
 		</nav>
+		</Container>
 	  </div>
 
 	);
