@@ -2,19 +2,14 @@ import React, { Component } from "react";
 import { Container, Col, Row } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 import Card from "../components/Card";
+import ToDoCard from "../components/ToDoCard";
+import SchedCard from "../components/SchedCard";
 
 
 class Home extends Component {
     state = {
 
     };
-    // When the component mounts, load the "thing" to be displayed
-    //   componentDidMount() {
-    //     this.loadThisThing();
-    //   }
-
-    //   handleBtnClick = event => {
-    //   }
 
     render() {
         return (
@@ -24,9 +19,17 @@ class Home extends Component {
                         <Col>
                             <Row>
 
-                                <Card>
+                                <SchedCard>
 
-                                </Card>
+                                </SchedCard>
+                            </Row>
+                        </Col>
+                        <Col>
+                            <Row>
+
+                                <ToDoCard>
+
+                                </ToDoCard>
                             </Row>
                         </Col>
                         <Col>
