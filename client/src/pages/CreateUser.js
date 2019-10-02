@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
-import Container from "../components/Container";
-import Row from "../components/Row/";
-import Col from "../components/Col/";
+import { Container, Col, Row } from "reactstrap";
+// import Container from "../components/Container";
+// import Row from "../components/Row/";
+// import Col from "../components/Col/";
 import Wrapper from "../components/Wrapper/";
-// import Footer from "../components/Footer";
 import { Input, FormBtn } from "../components/Form";
-import Footer from "../components/Footer/Footer";
 // include TextArea above if a large input field is needed
 
 
@@ -105,7 +104,6 @@ class CreateUser extends Component {
 					</Container>
 
 				</Wrapper>
-				<Footer></Footer>
 			</div>
 		);
 	}

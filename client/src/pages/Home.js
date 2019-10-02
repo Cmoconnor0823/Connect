@@ -1,36 +1,46 @@
 import React, { Component } from "react";
-import Container from "../components/Container";
+import { Container, Col, Row } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 import Card from "../components/Card";
-import Footer from "../components/Footer/Footer";
+
 
 class Home extends Component {
     state = {
-      
+
     };
     // When the component mounts, load the "thing" to be displayed
-//   componentDidMount() {
-//     this.loadThisThing();
-//   }
+    //   componentDidMount() {
+    //     this.loadThisThing();
+    //   }
 
-//   handleBtnClick = event => {
-//   }
+    //   handleBtnClick = event => {
+    //   }
 
-  render() {
-      return (
-          <div>
-              <Wrapper>
-              <Container>
-              <Card>
+    render() {
+        return (
+            <div>
+                <Wrapper>
+                    <Container>
+                        <Col><Row>
 
-              </Card>
-              </Container>
-              </Wrapper>
-              <Footer></Footer>
-          </div>
+                            <Card>
+                                
+                            </Card>
+                        </Row></Col>
+                        <Col>
+                            <Row>
 
-      );
-  }
+                                <Card>
+
+                                </Card>
+                            </Row>
+                        </Col>
+                    </Container>
+                </Wrapper>
+            </div>
+
+        );
+    }
 }
-  
-    export default Home;
+
+export default Home;

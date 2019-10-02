@@ -1,8 +1,10 @@
 .mainfooter {
     display:inline;
-    background-color:rgb(24, 15, 15);
-    min-height: 100px;
-    position: relative;
+    min-width: 100%;
+    position: -webkit-sticky; /* Safari */
+    bottom: 0;
+    position: fixed;
+    
   }
   .pages{
     color:white;
