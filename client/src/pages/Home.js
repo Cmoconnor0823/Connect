@@ -1,36 +1,51 @@
 import React, { Component } from "react";
-import Container from "../components/Container";
+import { Container, Col, Row } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 import Card from "../components/Card";
-import Footer from "../components/Footer/Footer";
+import ToDoCard from "../components/ToDoCard";
+import SchedCard from "../components/SchedCard";
+
 
 class Home extends Component {
     state = {
-      
+
     };
-    // When the component mounts, load the "thing" to be displayed
-//   componentDidMount() {
-//     this.loadThisThing();
-//   }
 
-//   handleBtnClick = event => {
-//   }
+    render() {
+        return (
+            <div>
+                <Wrapper>
+                    <Container>
+                        <Col>
+                            <Row>
 
-  render() {
-      return (
-          <div>
-              <Wrapper>
-              <Container>
-              <Card>
+                                <SchedCard>
 
-              </Card>
-              </Container>
-              </Wrapper>
-              <Footer></Footer>
-          </div>
+                                </SchedCard>
+                            </Row>
+                        </Col>
+                        <Col>
+                            <Row>
 
-      );
-  }
+                                <ToDoCard>
+
+                                </ToDoCard>
+                            </Row>
+                        </Col>
+                        <Col>
+                            <Row>
+
+                                <Card>
+
+                                </Card>
+                            </Row>
+                        </Col>
+                    </Container>
+                </Wrapper>
+            </div>
+
+        );
+    }
 }
-  
-    export default Home;
+
+export default Home;
