@@ -7,31 +7,45 @@ import Wrapper from "../components/Wrapper/";
 //import Card from "../components/Card";
 import { Input, FormBtn } from "../components/Form";
 import Footer from "../components/Footer/Footer";
+import axios from 'axios';
 
 class Login extends Component {
   state = {
     profile: [],
 		userName: "",
 		password: "",  
-    };
+	};
+	
+	handleInputChange = (event) => {
+		this.setState({
+			[event.target.name]:event.target.value
 
-	handleFormSubmit(event) {
+		})
+	}
+
+	handleFormSubmit = (event) => {
 		//alert('A list was submitted: ' + this.state.formvalue);
 		event.preventDefault();
-		fetch('api/users', {
-			method: 'GET',
-			headers: {
-			  'Accept': 'application/json',
-			  'Content-Type': 'application/json'
-			},
-		   body: JSON.stringify( {
-	   userName : this.state.userName,
-	   Password:this.state.password,
-	//    itemType: this.state.itemType
-   })
-	   }).then(res => res.json())
-	   .then(data => console.log(data))
-	//    .catch(err => console.log(err);
+		axios.post("/api/users",
+		{
+			username:this.state.userName,
+			password:this.state.password
+		})
+
+// 		fetch('api/users', {
+// 			method: 'GET',
+// 			headers: {
+// 			  'Accept': 'application/json',
+// 			  'Content-Type': 'application/json'
+// 			},
+// 		   body: JSON.stringify( {
+// 	   userName : this.state.userName,
+// 	   Password:this.state.password,
+// 	//    itemType: this.state.itemType
+//    })
+	//    }).then(res => res.json())
+	//    .then(data => console.log(data))
+	// //    .catch(err => console.log(err);
 	   }
 
   render() {
