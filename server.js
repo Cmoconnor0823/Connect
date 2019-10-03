@@ -14,6 +14,24 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(seqPORT, function() {
+    console.log("App listening for mysql database on PORT " + seqPORT);
+  });
+});
+// Get username and password from database to check against login form
+module.exports = function(app){
+app.get("/api/users", function(req, res) {
+  db.Users.findOne({
+    where:{
+      userName: userName,
+      password: password
+    }}).then(function(dbusers) {
+    res.render("Home");
+  });
+});
+};
+
 
 // Send every other request to the React app
 // Define any API routes before this runs
@@ -25,8 +43,4 @@ app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
 
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(seqPORT, function() {
-    console.log("App listening for mysql database on PORT " + seqPORT);
-  });
-});
+
