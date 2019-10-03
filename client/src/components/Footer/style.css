@@ -9,6 +9,10 @@
   .pages{
     color:white;
 }
+.navbar-brand{
+  margin-left: 10%;
+  text-align:left;
+}
 .footer {
   border-bottom: 1px solid #ccc;
   background-color: grey;
@@ -17,11 +21,5 @@
 ul > li {
     display:inline;
 }
-  .footer span {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1px;
-  }
+ 
   

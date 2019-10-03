@@ -4,7 +4,6 @@ import { Container } from "reactstrap";
 
 function Nav() {
 	return (
-		<div className="mainNav row col-lg-12">
 			<Container>
 		<nav className="navbar navbar-expand-lg navbar-dark">
 		  <div className="navbar-brand col-lg-3"><h2>KonnectD</h2></div>
@@ -12,13 +11,13 @@ function Nav() {
 			
 			<ul className="navbar-nav mr-auto pages float-left">
 			  <li className="nav-item active">
-				<a className="nav-link" href="/">  HOME <span className="sr-only"></span></a>
+				<a className="nav-link" href="/">  Home <span className="sr-only"></span></a>
 			  </li>
 			  <li className="nav-item">
 				<a className="nav-link" href="/Login"> Log In  </a>
 			  </li>
 			  <li className="nav-item">
-				<a className="nav-link" href="/CreateUser"> Create User  </a>
+				<a className="nav-link" href="/CreateUser"> Create a Profile  </a>
 			  </li>
 			</ul>
     {/* <li className="nav-item">
@@ -30,7 +29,7 @@ function Nav() {
 		  </div>
 		</nav>
 		</Container>
-	  </div>
+	
 
 	);
 }
