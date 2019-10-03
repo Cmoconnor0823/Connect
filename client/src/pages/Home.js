@@ -9,27 +9,19 @@ class Home extends Component {
     state = {
 
     };
-
     render() {
         return (
-            <div>
-                <Wrapper>
-                        <CardColumns>
-                                <SchedCard></SchedCard>
-                                <ToDoCard></ToDoCard>
-
-                        
-
-                                <Card>
-                                    <CardTitle>
-                                        <h4>This is an example of a card that is not a called in component</h4>
-                                    </CardTitle>
-
-                                </Card>
-                        </CardColumns>
+            <Wrapper>
+                <CardColumns>
+                    <SchedCard></SchedCard>
+                    <ToDoCard></ToDoCard>
+                    <Card>
+                        <CardTitle>
+                            <h4>This is an example of a card that is not a called in component</h4>
+                        </CardTitle>
+                    </Card>
+                </CardColumns>
                 </Wrapper>
-            </div>
-
         );
     }
 }

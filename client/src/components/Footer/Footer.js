@@ -9,7 +9,7 @@ function Footer() {
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav mr-auto pages float-left">
 						<li className="nav-item active">
-							<a className="navbar-brand" href="/">
+							<a className="navbar-brand" href="/home">
 								Home
 			</a>
 						</li>
