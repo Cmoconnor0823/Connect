@@ -107,12 +107,19 @@ class CreatePCard extends Component {
 							placeholder="Email address (required)"
 						/>
 						<div className="card-footer">
-							Check the box below if your account needs admin status
+							Check the box below if you want to create a new project. This will make you admin of the project.
+							If you already have a project enter your project key below
 						<Input
 								type="checkbox"
 								id="admin"
 								name="Admin"
 								value="false"
+							/>
+							<Input
+								value={this.state.password}
+								onChange={this.handleInputChange}
+								name="projectKey"
+								placeholder="Project key (required)"
 							/>
 						</div>
 						{/* <TextArea
