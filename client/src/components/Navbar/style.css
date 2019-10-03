@@ -1,6 +1,7 @@
 .mainNav {
     display:inline;
     background-color:rgb(24, 15, 15);
+    min-height: 100px;
 }
 .pages{
     color:white;
@@ -9,6 +10,7 @@
     border-bottom: 1px solid #ccc;
     background-color: grey;
     margin-top: 10px;
+    /* position: fixed; */
   }
   .navbar-brand{
       margin-left: 10%;
