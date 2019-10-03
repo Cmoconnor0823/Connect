@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { Container, Col, Row } from "reactstrap";
+import {  Card, CardTitle } from "reactstrap";
 import "./style.css";
 
 class ToDoCard extends Component {
 
 	state = {
-		
+
 	};
-	
+
 
 	// When the form is submitted, use the API.saveProfile?? method to save the proile data
 	// Then reload profiles from the database
@@ -26,17 +26,12 @@ class ToDoCard extends Component {
 	// };
 	render() {
 		return (
-			<Container>
-				<div className="card m-2 p-3">
-					<div className="card-header">
-						<Row>
-							<Col size="md-6">
-								<h1> This will be the card that holds our to do</h1>
-							</Col>
-						</Row>
-					</div>
-				</div>
-			</Container>
+			<Card> 
+					
+				<CardTitle>
+					<h4> This will be the card that holds our to do </h4>
+				</CardTitle>
+			</Card>
 		);
 	}
 }

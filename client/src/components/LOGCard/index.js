@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, FormBtn } from "../Form";
-import { Container, Col, Row } from "reactstrap";
+import { Card, CardBody, CardTitle, Col, Row } from "reactstrap";
 import "./style.css";
 
 class LOGCard extends Component {
@@ -22,46 +22,45 @@ class LOGCard extends Component {
 	};
 	render() {
 		return (
-			<Container>
-
-			<div className="card m-2 p-3">
-				<div className="card-header">
-					<Row>
-						<Col size="md-6">
-							<h1> This will be the Log In page</h1>
-						</Col>
-					</Row>
-				</div>
-				<form>
-					<Input
-						value={this.state.userName}
-						onChange={this.handleInputChange}
-						name="userName"
-						placeholder="User Name (required)"
-					/>
-					<Input
-						value={this.state.password}
-						onChange={this.handleInputChange}
-						name="password"
-						placeholder="Password (required)"
-					/>
-					{/* <TextArea
+			<Card id="logCard">
+				<CardBody>
+					<CardTitle>
+						<Row>
+							<Col size="md-6">
+								<h1> This will be the Log In page</h1>
+							</Col>
+						</Row>
+					</CardTitle>
+					<form>
+						<Input
+							value={this.state.userName}
+							onChange={this.handleInputChange}
+							name="userName"
+							placeholder="User Name (required)"
+						/>
+						<Input
+							value={this.state.password}
+							onChange={this.handleInputChange}
+							name="password"
+							placeholder="Password (required)"
+						/>
+						{/* <TextArea
                 					value={this.state.synopsis}
                 					onChange={this.handleInputChange}
                 					name="synopsis"
                 					placeholder="Synopsis (Optional)"
 								/> */}
 
-					<FormBtn
-						disabled={!(this.state.userName && this.state.password)}
-						onClick={this.handleFormSubmit}
-					>
-						Log-In
+						<FormBtn
+							disabled={!(this.state.userName && this.state.password)}
+							onClick={this.handleFormSubmit}
+						>
+							Log-In
               					</FormBtn>
-				</form>
+					</form>
 
-			</div>
-			</Container>
+				</CardBody>
+			</Card>
 		);
 	}
 }

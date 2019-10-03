@@ -1,40 +1,38 @@
 import React from "react";
-import { Container } from "reactstrap";
-//import Container from "../components/Container";
 import "./style.css";
+import { Container } from "reactstrap";
 
 function Footer() {
 	return (
-		<div className="mainfooter row col-lg-12">
 			<Container>
-				<footer className="footer" data-background-color="black">
-					<ul>
-						<li>
-							<a className="navbar-brand" href="/">
+				<footer className="footer navbar-expand-lg navbar-dark">
+				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul className="navbar-nav mr-auto pages float-left">
+						<li className="nav-item active">
+							<a className="navbar-brand" href="/home">
 								Home
 			</a>
 						</li>
-						<li>
-							<a className="navbar-brand" href="/createuser">
-								Create a Profile
-			</a>
-						</li>
-						<li>
+						<li className="nav-item">
 							<a className="navbar-brand" href="/login">
 								Log In
 			</a>
 						</li>
+						<li className="nav-item">
+							<a className="navbar-brand" href="/createuser">
+								Create a Profile
+			</a>
+						</li>
 						{/* <li>
 				<a className="navbar-brand" href="/">
-        Home
-	</a> 
-				</li>*/}
+				Home
+				</a> 
+			</li>*/}
+				<div className="navbar-brand copyright col-lg-3" id="copyright"><h4>© KonnectD 2019</h4></div>
 					</ul>
-
-					<div className="copyright" id="copyright">© KonnectD 2019</div>
+					</div>
 				</footer>
 			</Container>
-		</div>
 	);
 }
 

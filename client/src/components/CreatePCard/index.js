@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, FormBtn } from "../Form";
-import { Container, Col, Row } from "reactstrap";
+import { Card, CardBody, CardTitle, Col, Row } from "reactstrap";
 import "./style.css";
 
 class CreatePCard extends Component {
@@ -54,15 +54,15 @@ class CreatePCard extends Component {
 	// };
 	render() {
 		return (
-			<Container>
-				<div className="card m-2 p-3">
-					<div className="card-header">
+			<Card id="cardLg">
+				<CardBody>
+					<CardTitle>
 						<Row>
 							<Col size="md-6">
-								<h1> This will be the Log In page</h1>
+								<h1> Enter your information below to create an account</h1>
 							</Col>
 						</Row>
-					</div>
+					</CardTitle>
 					<form>
 						<Input
 							value={this.state.userName}
@@ -80,13 +80,31 @@ class CreatePCard extends Component {
 							value={this.state.password}
 							onChange={this.handleInputChange}
 							name="firstName"
-							placeholder="firstName (required)"
+							placeholder="First Name (required)"
 						/>
 						<Input
 							value={this.state.password}
 							onChange={this.handleInputChange}
 							name="lastName"
 							placeholder="Last Name (required)"
+						/>
+						<Input
+							value={this.state.password}
+							onChange={this.handleInputChange}
+							name="posistion"
+							placeholder="Job Posistion (required)"
+						/>
+						<Input
+							value={this.state.password}
+							onChange={this.handleInputChange}
+							name="phoneNumber"
+							placeholder="Phone Number (required)"
+						/>
+						<Input
+							value={this.state.password}
+							onChange={this.handleInputChange}
+							name="email"
+							placeholder="Email address (required)"
 						/>
 						<div className="card-footer">
 							Check the box below if your account needs admin status
@@ -111,8 +129,8 @@ class CreatePCard extends Component {
 							Log-In
               					</FormBtn>
 					</form>
-				</div>
-			</Container>
+				</CardBody>
+			</Card>
 		);
 	}
 }

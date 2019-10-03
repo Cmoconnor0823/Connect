@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Container, Col, Row } from "reactstrap";
+import { Card, CardTitle, CardColumns } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
-import Card from "../components/Card";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
 
@@ -10,40 +9,19 @@ class Home extends Component {
     state = {
 
     };
-
     render() {
         return (
-            <div>
-                <Wrapper>
-                    <Container>
-                        <Col>
-                            <Row>
-
-                                <SchedCard>
-
-                                </SchedCard>
-                            </Row>
-                        </Col>
-                        <Col>
-                            <Row>
-
-                                <ToDoCard>
-
-                                </ToDoCard>
-                            </Row>
-                        </Col>
-                        <Col>
-                            <Row>
-
-                                <Card>
-
-                                </Card>
-                            </Row>
-                        </Col>
-                    </Container>
+            <Wrapper>
+                <CardColumns>
+                    <SchedCard></SchedCard>
+                    <ToDoCard></ToDoCard>
+                    <Card>
+                        <CardTitle>
+                            <h4>This is an example of a card that is not a called in component</h4>
+                        </CardTitle>
+                    </Card>
+                </CardColumns>
                 </Wrapper>
-            </div>
-
         );
     }
 }

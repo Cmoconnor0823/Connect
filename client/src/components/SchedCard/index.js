@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-import { Container, Col, Row } from "reactstrap";
+import { Card, CardTitle } from "reactstrap";
 import "./style.css";
 
 class SchedCard extends Component {
@@ -27,17 +26,11 @@ class SchedCard extends Component {
 	// };
 	render() {
 		return (
-			<Container>
-				<div className="card m-2 p-3">
-					<div className="card-header">
-						<Row>
-							<Col size="md-6">
-								<h1> This will be the card that holds our scheduler</h1>
-							</Col>
-						</Row>
-					</div>
-				</div>
-			</Container>
+			<Card body>
+				<CardTitle>
+					<h4> This will be the card that holds our Scheduler </h4>
+				</CardTitle>
+			</Card>
 		);
 	}
 }
