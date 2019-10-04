@@ -77,31 +77,31 @@ class CreatePCard extends Component {
 							placeholder="Password (required)"
 						/>
 						<Input
-							value={this.state.password}
+							value={this.state.firstName}
 							onChange={this.handleInputChange}
 							name="firstName"
 							placeholder="First Name (required)"
 						/>
 						<Input
-							value={this.state.password}
+							value={this.state.lastName}
 							onChange={this.handleInputChange}
 							name="lastName"
 							placeholder="Last Name (required)"
 						/>
 						<Input
-							value={this.state.password}
+							value={this.state.posistion}
 							onChange={this.handleInputChange}
 							name="posistion"
 							placeholder="Job Posistion (required)"
 						/>
 						<Input
-							value={this.state.password}
+							value={this.state.phoneNumber}
 							onChange={this.handleInputChange}
 							name="phoneNumber"
 							placeholder="Phone Number (required)"
 						/>
 						<Input
-							value={this.state.password}
+							value={this.state.email}
 							onChange={this.handleInputChange}
 							name="email"
 							placeholder="Email address (required)"
