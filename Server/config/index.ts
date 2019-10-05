@@ -1,7 +1,7 @@
 const sequelize = require('sequelize');
 
 
-module.exports = new sequelize('konnected_db', 'root', 'Th3Riddl3r?', {
+module.exports = new sequelize('konnectd_db', 'root', 'Th3Riddl3r?', {
       host: 'localhost',
       dialect: 'mysql',
       operatorsAliases: false,
