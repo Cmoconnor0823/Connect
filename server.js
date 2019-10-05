@@ -18,10 +18,11 @@ app.post("/api/users", function(req, res) {
   console.log(req.body)
   db.User.findOne({
     where:{
-      userName: req.body.username,
+      userName: req.body.userName,
       password: req.body.password
     }}).then(function(dbusers) {
       console.log(dbusers)
+      res.send(dbusers)
     // res.render("Home");
   });
 });

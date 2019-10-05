@@ -86,13 +86,6 @@ class CreateUser extends Component {
 									name="position"
 									placeholder="Job Position (required)"
 								/>
-								{/* <TextArea
-                					value={this.state.synopsis}
-                					onChange={this.handleInputChange}
-                					name="synopsis"
-                					placeholder="Synopsis (Optional)"
-								/> */}
-
 								<FormBtn
 									disabled={!(this.state.userName && this.state.password)}
 									onClick={this.handleFormSubmit}

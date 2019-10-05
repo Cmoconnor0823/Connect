@@ -8,12 +8,14 @@ import Wrapper from "../components/Wrapper/";
 import { Input, FormBtn } from "../components/Form";
 import Footer from "../components/Footer/Footer";
 import axios from 'axios';
+import {Redirect} from 'react-router-dom';
 
 class Login extends Component {
   state = {
     profile: [],
 		userName: "",
-		password: "",  
+		password: "",
+		loggedin:false  
 	};
 	
 	handleInputChange = (event) => {
@@ -26,12 +28,30 @@ class Login extends Component {
 	handleFormSubmit = (event) => {
 		//alert('A list was submitted: ' + this.state.formvalue);
 		event.preventDefault();
+		// const { history } = this.props;
+
+	  
 		axios.post("/api/users",
 		{
-			username:this.state.userName,
+			userName:this.state.userName,
 			password:this.state.password
 		})
+		.then((res) => {
+			console.log('res is ', typeof res.data)
+			if (res.data !== ""){
+				console.log('success!')
+				
+				// <Redirect to="/Home" />
+				// this.props.history.push('/home');
+				// this.setState({ loggedin:true })
+			}
+			else {
+				alert("please enter a correct username/password")
+			}
+			});
+		}
 
+	
 // 		fetch('api/users', {
 // 			method: 'GET',
 // 			headers: {
@@ -46,8 +66,6 @@ class Login extends Component {
 	//    }).then(res => res.json())
 	//    .then(data => console.log(data))
 	// //    .catch(err => console.log(err);
-	   }
-
   render() {
       return (
           <div>
@@ -81,7 +99,6 @@ class Login extends Component {
 							</FormBtn>
 						</form>
 					</Row>
-
               </Container>
               </Wrapper>
 			  <Footer></Footer>

@@ -6,7 +6,6 @@ import Footer from "../components/Footer/Footer";
 
 class Home extends Component {
     state = {
-      
     };
     // When the component mounts, load the "thing" to be displayed
 //   componentDidMount() {
@@ -21,9 +20,6 @@ class Home extends Component {
           <div>
               <Wrapper>
               <Container>
-              <Card>
-
-              </Card>
               </Container>
               </Wrapper>
               <Footer></Footer>
