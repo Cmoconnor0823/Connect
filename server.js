@@ -1,9 +1,11 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
 const app = express();
 var db = require("./models");
 var seqPORT = process.env.PORT || 8080;
+const Sequelize = require("sequelize");
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -26,6 +28,37 @@ app.post("/api/users", function(req, res) {
   });
 });
 
+////////////////////////////////////////////////////////////////////
+//const models = require("./models")
+//const routes = require("./routes");
+
+
+
+
+//KonnectD Database
+
+const dbKonnectD = require("./config/index.ts");
+
+
+//Testind KonnectD Databse Connection
+
+dbKonnectD.authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
+
+//test rout
+
+app.get("/",(req,res)=>{
+
+  res.send("INDEX");
+})
+
+//=================================================================
 
 // Send every other request to the React app
 // Define any API routes before this runs
