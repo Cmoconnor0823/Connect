@@ -14,6 +14,12 @@ module.exports = function(sequelize, DataTypes) {
                 len:[1]
             }
         },
+        userName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+              len: [1]
+          }},
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -34,7 +40,14 @@ module.exports = function(sequelize, DataTypes) {
             validate:{
                 len:[1]
             }
+        }, positions: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate:{
+                len:[1]
+            }
         }
+
 
     });
 

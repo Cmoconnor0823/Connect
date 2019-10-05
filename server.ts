@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3005;
 const app = express();
-const db = require("../models");
+const db = require("./models");
 var seqPORT = process.env.PORT || 8080;
 const Sequelize = require("sequelize");
 
@@ -21,7 +21,7 @@ const dbKonnectD = require("./config/index.ts");
 
 dbKonnectD.authenticate()
   .then(() => {
-    console.log('Connection has been established successfully.');
+    console.log('Connection to Konnectd_db has been established successfully.');
   })
   .catch(err => {
     console.error('Unable to connect to the database:', err);

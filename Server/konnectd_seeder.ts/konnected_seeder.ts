@@ -9,7 +9,6 @@ module.exports = {
         phoneNumber:"5678309",
         username: "John",
         password:"password",
-        positions:"Web Developer",
         createdAt: new Date(),
         updatedAt: new Date()
       }], {});
