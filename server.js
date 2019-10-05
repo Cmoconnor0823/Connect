@@ -6,6 +6,43 @@ var db = require("./models");
 var seqPORT = process.env.PORT || 8080;
 const Sequelize = require("sequelize");
 
+//===============================================
+const express = require("express");
+const path = require("path");
+const Sequelize = require("sequelize");
+//const models = require("./models")
+//const routes = require("./routes");
+
+const PORT = process.env.PORT || 3005;
+const app = express();
+
+
+
+//KonnectD Database
+
+const konnectddb = require("./config/index.ts");
+
+
+//Testind KonnectD Databse Connection
+
+konnectddb.then(() => {
+    console.log('Connection to Konnectd_db has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
+
+//test rout
+
+app.get("/",(req,res)=>{
+
+  res.send("INDEX");
+})
+
+
+//==============================================================
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
