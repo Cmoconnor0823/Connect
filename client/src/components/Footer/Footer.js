@@ -4,7 +4,6 @@ import { Container } from "reactstrap";
 
 function Footer() {
 	return (
-			<Container>
 				<footer className="footer navbar-expand-lg navbar-dark">
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav mr-auto pages float-left">
@@ -32,7 +31,6 @@ function Footer() {
 					</ul>
 					</div>
 				</footer>
-			</Container>
 	);
 }
 

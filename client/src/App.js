@@ -10,7 +10,6 @@ import Wrapper from "./components/Wrapper";
 function App() {
 	return (
 		<Router>
-			<div>
 				<NavBar />
 				<Wrapper>
 					<Route exact path="/" component={Login} />
@@ -19,7 +18,6 @@ function App() {
 					<Route exact path="/login" component={Login} />
 				</Wrapper>
 				<Footer />
-			</div>
 		</Router>
 	);
 }

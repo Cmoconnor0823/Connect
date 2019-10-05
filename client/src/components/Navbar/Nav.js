@@ -20,7 +20,6 @@ class NavBar extends React.Component {
 	}
 	render() {
 		return (
-			<Container>
 				<Navbar color="faded" dark>
 					<NavbarBrand href="/" className="mr-auto">KonnectD</NavbarBrand>
 					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
@@ -41,9 +40,6 @@ class NavBar extends React.Component {
 						</Nav>
 					</Collapse>
 				</Navbar>
-			</Container>
-
-
 		);
 	}
 }
