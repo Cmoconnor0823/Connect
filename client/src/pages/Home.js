@@ -3,6 +3,7 @@ import { Container, Col, Row, Card, CardTitle, CardColumns } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
+import MessageCard from "../components/MessageCard";
 
 
 class Home extends Component {
@@ -11,7 +12,7 @@ class Home extends Component {
     };
     render() {
         return (
-            <Wrapper>
+            <Wrapper>  
                 <Container>
                     <Col>
 
@@ -20,6 +21,7 @@ class Home extends Component {
                                 <CardColumns>
                                     <SchedCard></SchedCard>
                                     <ToDoCard></ToDoCard>
+                                    <MessageCard></MessageCard>
                                     <Card>
                                         <CardTitle>
                                             <h4>This is an example of a card that is not a called in component</h4>
