@@ -4,27 +4,42 @@ import { Container, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, 
 
 class NavBar extends React.Component {
 	constructor(props) {
-	  super(props);
-  
-	  this.toggleNavbar = this.toggleNavbar.bind(this);
-	  this.state = {
-		collapsed: true
-	  };
-	}
-  
-	toggleNavbar() {
-	  this.setState({
-		collapsed: !this.state.collapsed
-	  });
-	}
-	render(){
-	return (
-		<Container>
-			<nav className="navbar navbar-expand-lg navbar-dark">
-				<div className="navbar-brand col-lg-3"><h2>KonnectD</h2></div>
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+		super(props);
 
-					<ul className="navbar-nav mr-auto pages float-left">
+		this.toggleNavbar = this.toggleNavbar.bind(this);
+		this.state = {
+			collapsed: true
+		};
+	}
+
+	toggleNavbar() {
+		this.setState({
+			collapsed: !this.state.collapsed
+		});
+	}
+	render() {
+		return (
+			<Container>
+				<Navbar color="faded" dark>
+					<NavbarBrand href="/" className="mr-auto">KonnectD</NavbarBrand>
+					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+					<Collapse isOpen={!this.state.collapsed} navbar>
+						<Nav navbar>
+							<NavItem>
+								<NavLink href="/home">Home</NavLink>
+							</NavItem>
+							<NavItem>
+								<NavLink href="/login">Log In</NavLink>
+							</NavItem>
+							<NavItem>
+								<NavLink href="/createUser">Create a Profile</NavLink>
+							</NavItem>
+							<NavItem>
+								<NavLink href="https://github.com/Cmoconnor0823/Connect">GitHub</NavLink>
+							</NavItem>
+						</Nav>
+					</Collapse>
+					{/* <ul className="navbar-nav mr-auto pages float-left">
 						<li className="nav-item active">
 							<a className="nav-link" href="/home">  Home <span className="sr-only"></span></a>
 						</li>
@@ -34,17 +49,15 @@ class NavBar extends React.Component {
 						<li className="nav-item">
 							<a className="nav-link" href="/createUser"> Create a Profile  </a>
 						</li>
-					</ul>
+					</ul> */}
 					{/* <li className="nav-item">
 						<a className="nav-link" href="/"> Home </a> </li>*/}
-
-				</div>
-			</nav>
-		</Container>
+				</Navbar>
+			</Container>
 
 
-	);
-}
+		);
+	}
 }
 
 export default NavBar;
