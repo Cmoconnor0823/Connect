@@ -1,8 +1,23 @@
 import React from "react";
 import './style.css';
-import { Container } from "reactstrap";
+import { Container, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-function Nav() {
+class NavBar extends React.Component {
+	constructor(props) {
+	  super(props);
+  
+	  this.toggleNavbar = this.toggleNavbar.bind(this);
+	  this.state = {
+		collapsed: true
+	  };
+	}
+  
+	toggleNavbar() {
+	  this.setState({
+		collapsed: !this.state.collapsed
+	  });
+	}
+	render(){
 	return (
 		<Container>
 			<nav className="navbar navbar-expand-lg navbar-dark">
@@ -30,5 +45,6 @@ function Nav() {
 
 	);
 }
+}
 
-export default Nav;
+export default NavBar;
