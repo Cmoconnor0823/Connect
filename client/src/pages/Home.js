@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Col, Row, Card, CardTitle, CardColumns } from "reactstrap";
+import { Container, Col, Row, CardColumns } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
@@ -12,27 +12,26 @@ class Home extends Component {
     };
     render() {
         return (
-            <Wrapper>  
-                <Container>
+            <Wrapper>
+                <Row>
                     <Col>
-
-                        <Col>
-                            <Row>
-                                <CardColumns>
-                                    <SchedCard></SchedCard>
-                                    <ToDoCard></ToDoCard>
-                                    <MessageCard></MessageCard>
-                                    <Card>
+                        <CardColumns>
+                            <SchedCard></SchedCard>
+                            <ToDoCard></ToDoCard>
+                            <MessageCard></MessageCard>
+                            {/* This is a template to make a new card
+                                     <Card>
+                                     <CardBody>
                                         <CardTitle>
-                                            <h4>This is an example of a card that is not a called in component</h4>
+                                        <h4>This is an example of a card that is not a called in component</h4>
                                         </CardTitle>
-                                    </Card>
-                                </CardColumns>
-                            </Row>
-                        </Col>
+                                        </CardBody>
+                                    </Card> */}
+                        </CardColumns>
                     </Col>
-                </Container>
+                </Row>
             </Wrapper>
+
         );
     }
 }

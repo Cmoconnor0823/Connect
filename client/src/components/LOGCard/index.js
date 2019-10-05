@@ -25,11 +25,7 @@ class LOGCard extends Component {
 			<Card id="logCard">
 				<CardBody>
 					<CardTitle>
-						<Row>
-							<Col size="md-6">
-								<h1> This will be the Log In page</h1>
-							</Col>
-						</Row>
+						<h1> This will be the Log In page</h1>
 					</CardTitle>
 					<form>
 						<Input

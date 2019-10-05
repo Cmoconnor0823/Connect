@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {  Card, CardTitle } from "reactstrap";
+import {  Card, CardTitle, CardBody } from "reactstrap";
 import "./style.css";
 
 class ToDoCard extends Component {
@@ -26,11 +26,11 @@ class ToDoCard extends Component {
 	// };
 	render() {
 		return (
-			<Card> 
-					
+			<Card id="toDoCard"> 		
 				<CardTitle>
 					<h4> This will be the card that holds our to do </h4>
 				</CardTitle>
+				<CardBody></CardBody>
 			</Card>
 		);
 	}

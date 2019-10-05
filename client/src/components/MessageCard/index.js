@@ -27,7 +27,6 @@ class MessageCard extends Component {
 	// };
 	render() {
 		return (
-			<Col>
 				<Card id="messCard">
 					<CardTitle>
 						<h4> This will be the card that holds Message Post Board </h4>
@@ -64,7 +63,6 @@ class MessageCard extends Component {
 						</form>
 					</CardBody>
 				</Card>
-			</Col>
 		);
 	}
 }
