@@ -133,7 +133,7 @@ class CreatePCard extends Component {
 							disabled={!(this.state.userName && this.state.password)}
 							onClick={this.handleFormSubmit}
 						>
-							Log-In
+							Create Account
               					</FormBtn>
 					</form>
 				</CardBody>
