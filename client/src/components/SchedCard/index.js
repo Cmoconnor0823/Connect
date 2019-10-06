@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, FormBtn, TextArea } from "../Form";
-import { Card, CardBody, CardTitle, CardFooter, Col } from "reactstrap";
+import { Card, CardBody, CardTitle, CardFooter } from "reactstrap";
 import "./style.css";
 
 class SchedCard extends Component {

@@ -116,7 +116,7 @@ class CreatePCard extends Component {
 								value="false"
 							/>
 							<Input
-								value={this.state.password}
+								value={this.state.projectKey}
 								onChange={this.handleInputChange}
 								name="projectKey"
 								placeholder="Project key (required)"
