@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, FormBtn } from "../Form";
-import { Card, CardBody, CardTitle, Col, Row } from "reactstrap";
+import { Card, CardBody, CardTitle } from "reactstrap";
 import "./style.css";
 
 class LOGCard extends Component {
