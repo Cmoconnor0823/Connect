@@ -1,9 +1,10 @@
 .jumbotron {
-
     height: 300;
     clear: "both"; 
-    padding-top: 120;
-    text-align: "center";
+    text-align: "right";
     position: static; 
     border: 2px solid #444444;
 }
+img {
+    max-width:800px;
+  }
