@@ -5,7 +5,7 @@ import CreateUser from "./pages/CreateUser";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 
 function App() {
@@ -18,12 +18,13 @@ function App() {
 					<Switch>
 						<Route exact path="/" component={Login} />	
 						<Route exact path="/login" component={Login} />
-					</Switch>
+					</Switcsh>
 					<Route exact path="/home" component={Home} />
 					<Route exact path="/createuser" component={CreateUser} />
 				</Router>
 					{/* <Route exact path="/login" component={Login} /> */}
 				</Wrapper>
+				<Footer />
 			</div>
 		</Router>
 	);

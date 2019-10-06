@@ -1,58 +1,19 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
-import Container from "../components/Container";
-import Row from "../components/Row/";
-import Col from "../components/Col/";
+import { Container, Col, Row } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
-// import Footer from "../components/Footer";
-import { Input, FormBtn } from "../components/Form";
-import Footer from "../components/Footer/Footer";
+import CreatePCard from "../components/CreatePCard";
 // include TextArea above if a large input field is needed
 
 
 class CreateUser extends Component {
 
-	// Setting our component's initial state
-	state = {
-		profile: [],
-		userName: "",
-		password: "",
-		realName: ""
-	};
-
-	// // When the component mounts, load all profiles and save them to this.state.profile
-	// 	componentDidMount() {
-	// 	this.loadProfile();
-	// }
-	// Handles updating component state when the user
-	// types into the input field
-	handleInputChange = event => {
-		const { name, value } = event.target;
-		this.setState({
-			[name]: value
-		});
-	};
-
-
-	// When the form is submitted, use the API.saveProfile?? method to save the proile data
-	// Then reload profiles from the database
-	// handleFormSubmit = event => {
-	// 	event.preventDefault();
-	// 	if (this.state.userName && this.state.password) {
-	// 		API.saveProfile({
-	// 			userName: this.state.userName,
-	// 			password: this.state.password,
-	// 			realName: this.state.realName,
-	// 			position: this.state.position
-	// 		})
-	// 			.then(res => this.loadProfile())
-	// 			.catch(err => console.log(err));
-	// 	}
-	// };
 	render() {
 		return (
 			<div>
+				<Header></Header>
 				<Wrapper>
+<<<<<<< HEAD
 					<Header></Header>
 					<Container fluid>
 						<Row>
@@ -93,12 +54,20 @@ class CreateUser extends Component {
 									Submit profile
               </FormBtn>
 							</form>
+=======
+				<Container>
+					<Col>
+					<Row>
+						<CreatePCard>
+							
+						</CreatePCard>
 
-						</Row>
+					</Row>
+					</Col>	
+>>>>>>> 8e1aa6285aa15c62b2c99d2af399500a7f84b2cb
+
 					</Container>
-
 				</Wrapper>
-				<Footer></Footer>
 			</div>
 		);
 	}

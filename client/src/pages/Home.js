@@ -1,32 +1,29 @@
 import React, { Component } from "react";
-import Container from "../components/Container";
+import { Card, CardTitle, CardColumns } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
-import Card from "../components/Card";
-import Footer from "../components/Footer/Footer";
+import ToDoCard from "../components/ToDoCard";
+import SchedCard from "../components/SchedCard";
+
 
 class Home extends Component {
     state = {
+
     };
-    // When the component mounts, load the "thing" to be displayed
-//   componentDidMount() {
-//     this.loadThisThing();
-//   }
-
-//   handleBtnClick = event => {
-//   }
-
-  render() {
-      return (
-          <div>
-              <Wrapper>
-              <Container>
-              </Container>
-              </Wrapper>
-              <Footer></Footer>
-          </div>
-
-      );
-  }
+    render() {
+        return (
+            <Wrapper>
+                <CardColumns>
+                    <SchedCard></SchedCard>
+                    <ToDoCard></ToDoCard>
+                    <Card>
+                        <CardTitle>
+                            <h4>This is an example of a card that is not a called in component</h4>
+                        </CardTitle>
+                    </Card>
+                </CardColumns>
+                </Wrapper>
+        );
+    }
 }
-  
-    export default Home;
+
+export default Home;

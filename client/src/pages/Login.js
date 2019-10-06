@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
-import Container from "../components/Container";
-import Row from "../components/Row/";
-import Col from "../components/Col/";
+import { Container, Col, Row } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
+<<<<<<< HEAD
 //import Card from "../components/Card";
 import { Input, FormBtn } from "../components/Form";
 import Footer from "../components/Footer/Footer";
@@ -17,13 +16,32 @@ class Login extends Component {
 		password: "",
 		loggedin:false  
 	};
-	
-	handleInputChange = (event) => {
-		this.setState({
-			[event.target.name]:event.target.value
+=======
+// all of the code below for the log in verification needs to be contained in the LOGCard file
+// the LOGCard is then called in on this page to render the image
+// While having the logic on this page will make it work it is poor design and not how React is ment to work
+// if it is possible to move the logic to it's own component it will follow coding standards
 
-		})
-	}
+// <<<<<<< authentication
+// //import Card from "../components/Card";
+// import { Input, FormBtn } from "../components/Form";
+// import Footer from "../components/Footer/Footer";
+// import axios from 'axios';
+
+// class Login extends Component {
+//   state = {
+//     profile: [],
+// 		userName: "",
+// 		password: "",  
+// 	};
+>>>>>>> 8e1aa6285aa15c62b2c99d2af399500a7f84b2cb
+	
+// 	handleInputChange = (event) => {
+// 		this.setState({
+// 			[event.target.name]:event.target.value
+
+// 		})
+// 	}
 
 	handleFormSubmit = (event) => {
 		//alert('A list was submitted: ' + this.state.formvalue);
@@ -104,8 +122,8 @@ class Login extends Component {
 			  <Footer></Footer>
           </div>
 
-      );
-  }
+		);
+	}
 }
-  
-    export default Login;
+
+export default Login;s
