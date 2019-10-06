@@ -1,14 +1,9 @@
-.mainNav {
-    display:inline;
-    background-color:rgb(24, 15, 15);
-    min-height: 100px;
-}
 .pages{
     color:white;
 }
 .navbar {
-    border-bottom: 1px solid #ccc;
-    background-color: grey;
+    border-bottom: 1px solid #025E73;
+    background-color: #024059;
     margin-top: 10px;
     /* position: fixed; */
   }

@@ -4,7 +4,8 @@
     clear: "both"; 
     text-align: "right";
     position: static; 
-    border: 2px solid #444444;
+    border: 2px solid #74888C;
+    text-indent: 50px;
 }
 img {
     max-width:800px;
