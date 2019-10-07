@@ -1,7 +1,6 @@
 .jumbotron {
     padding: 0px;
-    margin: 0px;
-    clear: "both"; 
+    margin: 10px;
     text-align: "right";
     position: static; 
     border: 2px solid #74888C;
