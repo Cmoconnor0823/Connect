@@ -55,8 +55,8 @@ class TableCard extends Component {
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td>5 pm.</td>
             <td>10/16/19</td>
+            <td>5 pm.</td>
             <td>SimpleView</td>
           </tr>
         </tbody>
