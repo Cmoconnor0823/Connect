@@ -4,6 +4,7 @@ import Wrapper from "../components/Wrapper/";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
 import MessageCard from "../components/MessageCard";
+import SchedTable from "../components/SchedTable";
 
 
 class Home extends Component {
@@ -13,6 +14,11 @@ class Home extends Component {
     render() {
         return (
             <Wrapper>
+                <Row>
+                    <Col>
+                    <SchedTable></SchedTable>
+                    </Col>
+                </Row>
                     <Row>
                         <Col>
                             <CardColumns>
