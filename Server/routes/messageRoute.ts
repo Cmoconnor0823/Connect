@@ -1,7 +1,7 @@
-const express = require("express")
-const router = express.Router();
+//const express = require("express")
+//const router = express.Router();
 const Messages = require("../models/Messages");
-const db = require('../config/index')
+//const db = require('../config/index')
 
 // Routes
 // =============================================================
