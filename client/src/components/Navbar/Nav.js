@@ -20,11 +20,11 @@ class NavBar extends React.Component {
 	}
 	render() {
 		return (
-				<Navbar color="faded" dark>
+				<Navbar color="faded" dark expand="md">
 					<NavbarBrand href="/" className="mr-auto">KonnectD</NavbarBrand>
 					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
 					<Collapse isOpen={!this.state.collapsed} navbar>
-						<Nav navbar>
+						<Nav className="ml-auto" navbar>
 							<NavItem>
 								<NavLink href="/home">Home</NavLink>
 							</NavItem>
