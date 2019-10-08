@@ -7,6 +7,9 @@ import CreatePCard from "../components/CreatePCard";
 
 
 class CreateUser extends Component {
+	routeLogin = () => {
+		this.props.history.push("/login")
+	}
 
 	render() {
 		return (
@@ -16,7 +19,7 @@ class CreateUser extends Component {
 				<Container>
 					<Col>
 					<Row>
-						<CreatePCard>
+						<CreatePCard routeLogin={this.routeLogin}>
 							
 						</CreatePCard>
 
