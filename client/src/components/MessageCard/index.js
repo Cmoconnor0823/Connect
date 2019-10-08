@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, FormBtn, TextArea } from "../Form";
-import { Card, CardBody, CardTitle, Col } from "reactstrap";
+import { Card, CardBody, CardTitle } from "reactstrap";
 import "./style.css";
 
 class MessageCard extends Component {
@@ -27,10 +27,9 @@ class MessageCard extends Component {
 	// };
 	render() {
 		return (
-			<Col>
 				<Card id="messCard">
 					<CardTitle>
-						<h4> This will be the card that holds our Schedule </h4>
+						<h4> This will be the card that holds Message Post Board </h4>
 					</CardTitle>
 					<CardBody>
 						<h5>Do we want this to appear always or have it set to a trigger on off function? Also do we want to display all current messages found in this box or should it appear elsewhere?</h5>
@@ -64,7 +63,6 @@ class MessageCard extends Component {
 						</form>
 					</CardBody>
 				</Card>
-			</Col>
 		);
 	}
 }

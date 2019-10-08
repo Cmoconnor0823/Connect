@@ -3,23 +3,19 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import CreateUser from "./pages/CreateUser";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Navbar from "./components/Navbar";
+import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Wrapper from "./components/Wrapper";
+//import Wrapper from "./components/Wrapper";
 
 function App() {
 	return (
 		<Router>
-			<div>
-				<Navbar />
-				<Wrapper>
+				<NavBar />
 					<Route exact path="/" component={Login} />
 					<Route exact path="/home" component={Home} />
 					<Route exact path="/createuser" component={CreateUser} />
 					<Route exact path="/login" component={Login} />
-				</Wrapper>
 				<Footer />
-			</div>
 		</Router>
 	);
 }

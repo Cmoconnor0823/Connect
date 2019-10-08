@@ -1,34 +1,58 @@
 import React from "react";
 import './style.css';
-import { Container } from "reactstrap";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import PropTypes from 'prop-types';
 
-function Nav() {
-	return (
-		<Container>
-			<nav className="navbar navbar-expand-lg navbar-dark">
-				<div className="navbar-brand col-lg-3"><h2>KonnectD</h2></div>
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+class NavBar extends React.Component {
+	constructor(props) {
+		super(props);
 
-					<ul className="navbar-nav mr-auto pages float-left">
-						<li className="nav-item active">
-							<a className="nav-link" href="/home">  Home <span className="sr-only"></span></a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="/login"> Log In  </a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="/createUser"> Create a Profile  </a>
-						</li>
-					</ul>
-					{/* <li className="nav-item">
-						<a className="nav-link" href="/"> Home </a> </li>*/}
+		this.toggleNavbar = this.toggleNavbar.bind(this);
+		this.state = {
+			collapsed: true
+		};
+	}
 
-				</div>
-			</nav>
-		</Container>
-
-
-	);
+	toggleNavbar() {
+		this.setState({
+			collapsed: !this.state.collapsed
+		});
+	}
+	render() {
+		return (
+				<Navbar color="faded" dark expand="md">
+					<NavbarBrand href="/" className="mr-auto">KonnectD</NavbarBrand>
+					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+					<Collapse isOpen={!this.state.collapsed} navbar>
+						<Nav className="ml-auto" navbar>
+							<NavItem>
+								<NavLink href="/home">Home</NavLink>
+							</NavItem>
+							<NavItem>
+								<NavLink href="/login">Log In</NavLink>
+							</NavItem>
+							<NavItem>
+								<NavLink href="/createUser">Create a Profile</NavLink>
+							</NavItem>
+							<NavItem>
+								<NavLink href="https://github.com/Cmoconnor0823/Connect">GitHub</NavLink>
+							</NavItem>
+						</Nav>
+					</Collapse>
+				</Navbar>
+		);
+	}
 }
 
-export default Nav;
+Navbar.propTypes = {
+	light: PropTypes.bool,
+	dark: PropTypes.bool,
+	fixed: PropTypes.string,
+	color: PropTypes.string,
+	role: PropTypes.string,
+	expand: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+	tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
+	// pass in custom element to use
+  }
+
+export default NavBar;

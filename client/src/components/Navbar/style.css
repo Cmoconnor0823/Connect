@@ -1,14 +1,9 @@
-.mainNav {
-    display:inline;
-    background-color:rgb(24, 15, 15);
-    min-height: 100px;
-}
 .pages{
-    color:white;
+    color:#74888C;
 }
 .navbar {
-    border-bottom: 1px solid #ccc;
-    background-color: grey;
+    border-bottom: 1px solid #025E73;
+    background-color: #024059;
     margin-top: 10px;
     /* position: fixed; */
   }
@@ -19,3 +14,22 @@
   ul > li {
       display:inline;
   }
+  /* unvisited link */
+a:link {
+  color: #F2F2F2;
+}
+
+/* visited link */
+a:visited {
+  color:#74888C;
+}
+
+/* mouse over link */
+a:hover {
+  color: #F2F2F2;
+}
+
+/* selected link */
+a:active {
+  color: #025E73;
+}

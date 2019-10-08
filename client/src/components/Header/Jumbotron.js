@@ -1,19 +1,25 @@
 import React from "react";
-import image from "./jumbo-pic.jpg";
-import { Container } from "reactstrap";
+import image from "../../assets/img/logoclearbackground.png";
+
+import { Jumbotron, Container, Col, Row } from "reactstrap";
 import './style.css';
 
-function Jumbotron({ children }) {
+const Jumbo = (props) => {
 	return (
-		<Container>
+		<Jumbotron>
+				<Row>
+					<Col size="4">
 
-		<div className="jumbotron">
-				<img className ="jumbo-pic" src={image} alt="Logo"></img>
-			 Welcome To KonnectD, a Bussiness Management Tool for Scheduling and employee records.
-			{children}
-		</div>
-		</Container>
+			<img className="logo-pic" src={image} alt="Logo"></img>
+					</Col>
+			<Col size="6">
+				<Container>
+				 <h3>Welcome To KonnectD, a Bussiness Management Tool for Scheduling and employee records.</h3>
+				 </Container>
+			</Col>
+				</Row>
+		</Jumbotron>
 	);
-}
+};
 
-export default Jumbotron;
+export default Jumbo;

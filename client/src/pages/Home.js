@@ -6,32 +6,35 @@ import SchedCard from "../components/SchedCard";
 import MessageCard from "../components/MessageCard";
 
 
+
 class Home extends Component {
     state = {
 
     };
     render() {
         return (
-            <Wrapper>  
-                <Container>
+            <Wrapper>
+                <Row>
                     <Col>
-
+                    <SchedCard></SchedCard>
+                    </Col>
+                </Row>
+                    <Row>
                         <Col>
-                            <Row>
-                                <CardColumns>
-                                    <SchedCard></SchedCard>
-                                    <ToDoCard></ToDoCard>
-                                    <MessageCard></MessageCard>
-                                    <Card>
+                            <CardColumns>
+                                <ToDoCard></ToDoCard>
+                                <MessageCard></MessageCard>
+                                {/* This is a template to make a new card
+                                     <Card>
+                                     <CardBody>
                                         <CardTitle>
                                             <h4>This is an example of a card that is not a called in component</h4>
                                         </CardTitle>
-                                    </Card>
-                                </CardColumns>
-                            </Row>
+                                        </CardBody>
+                                    </Card> */}
+                            </CardColumns>
                         </Col>
-                    </Col>
-                </Container>
+                    </Row>
             </Wrapper>
         );
     }

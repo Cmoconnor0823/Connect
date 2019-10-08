@@ -1,25 +1,43 @@
 .mainfooter {
     display:inline;
     min-width: 100%;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-fixed; /* Safari */
     bottom: 0;
     position: fixed;
-    
+    color: #F2F2F2
   }
   .pages{
-    color:white;
+    color:#74888C;
 }
 .navbar-brand{
   margin-left: 10%;
   text-align:left;
 }
 .footer {
-  border-bottom: 1px solid #ccc;
-  background-color: grey;
-  margin-top: 10px;
+  border-bottom: 1px solid #025E73;
+  background-color: #024059;
+  margin-top: 15px;
 }
 ul > li {
     display:inline;
 }
  
-  
+* unvisited link */
+a:link {
+  color: #F2F2F2;
+}
+
+/* visited link */
+a:visited {
+  color:#74888C;
+}
+
+/* mouse over link */
+a:hover {
+  color: #F2F2F2;
+}
+
+/* selected link */
+a:active {
+  color: #025E73;
+}
