@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import { Card, CardBody, CardTitle, Col, Row } from "reactstrap";
+import { Card, CardBody, CardTitle} from "reactstrap";
 import { Input, FormBtn } from "../Form";
 
 class LOGCard extends Component {

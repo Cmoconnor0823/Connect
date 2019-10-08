@@ -6,13 +6,13 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
-//import Wrapper from "./components/Wrapper";
+import Wrapper from "./components/Wrapper";
 
 function App() {
 	return (
 		<Router>
-			
-				<Navbar />
+				<div>
+				<NavBar/>
 				<Wrapper>
 				<Router>
 					<Switch>
@@ -25,6 +25,7 @@ function App() {
 					{/* <Route exact path="/login" component={Login} /> */}
 				</Wrapper>
 				<Footer />
+				</div>
 		</Router>
 	
 	);
