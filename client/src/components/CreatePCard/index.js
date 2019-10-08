@@ -3,10 +3,10 @@ import { Input, FormBtn } from "../Form";
 import { Card, CardBody, CardTitle, Col, Row } from "reactstrap";
 import "./style.css";
 import axios from 'axios';
+
 // import { timingSafeEqual } from "crypto";
 
 class CreatePCard extends Component {
-
 	state = {
 		profile: [],
 		userName: "",
@@ -30,6 +30,8 @@ class CreatePCard extends Component {
 		})
 		.then((res) => {
 			console.log("user data sent!")
+			alert("Account Succesfully Created")
+			this.props.routeLogin();
 			
 			});
 		}
