@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Get username and password from database to check against login form
-app.post("/api/users", function(req, res) {
+app.post("/api/login", function(req, res) {
   console.log(req.body)
   db.Profile.findOne({
     where:{
@@ -26,7 +26,12 @@ app.post("/api/users", function(req, res) {
     // res.render("Home");
   });
 });
-
+// Add new User to Database
+  app.post("/api/createUser",function(req,res){
+  db.Profile.create(req.body).then(function(newUser){
+    res.send(newUser)
+  })
+})
 
 // Send every other request to the React app
 // Define any API routes before this runs

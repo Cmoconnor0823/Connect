@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Input, FormBtn } from "../Form";
 import { Card, CardBody, CardTitle, Col, Row } from "reactstrap";
 import "./style.css";
+import axios from 'axios';
+// import { timingSafeEqual } from "crypto";
 
 class CreatePCard extends Component {
 
@@ -13,14 +15,27 @@ class CreatePCard extends Component {
 		lastName: "",
 		admin: "",
 	};
-	handleBtnClick = event => {
-	}
-	// // When the component mounts, load all profiles and save them to this.state.profile
-	// 	componentDidMount() {
-	// 	this.loadProfile();
-	// }
-	// Handles updating component state when the user
-	// types into the input field
+	handleNewUser = event => {
+		event.preventDefault();
+		// const { history } = this.props;
+		axios.post("/api/createUser",
+		{
+			userName:this.state.userName,
+			password:this.state.password,
+			firstName:this.state.firstName,
+			lastName:this.state.lastName,
+			email:this.state.email,
+			phoneNumber:this.state.phoneNumber,
+			position:this.state.position
+		})
+		.then((res) => {
+			console.log("user data sent!")
+			
+			});
+		}
+	
+	
+
 	handleInputChange = event => {
 		const { name, value } = event.target;
 		this.setState({
@@ -106,6 +121,12 @@ class CreatePCard extends Component {
 							name="email"
 							placeholder="Email address (required)"
 						/>
+						<Input
+							value={this.state.position}
+							onChange={this.handleInputChange}
+							name="position"
+							placeholder="Job title/position (required)"
+						/>
 						<div className="card-footer">
 							Check the box below if you want to create a new project. This will make you admin of the project.
 							If you already have a project enter your project key below
@@ -113,7 +134,7 @@ class CreatePCard extends Component {
 								type="checkbox"
 								id="admin"
 								name="Admin"
-								value="false"
+								value={this.state.admin}
 							/>
 							<Input
 								value={this.state.projectKey}
@@ -131,7 +152,7 @@ class CreatePCard extends Component {
 
 						<FormBtn
 							disabled={!(this.state.userName && this.state.password)}
-							onClick={this.handleFormSubmit}
+							onClick={this.handleNewUser}
 						>
 							Create Account
               					</FormBtn>

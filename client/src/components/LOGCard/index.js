@@ -25,7 +25,7 @@ class LOGCard extends Component {
 		// const { history } = this.props;
 
 	  
-		axios.post("/api/users",
+		axios.post("/api/login",
 		{
 			userName:this.state.userName,
 			password:this.state.password
@@ -34,8 +34,6 @@ class LOGCard extends Component {
 			console.log('res is ', typeof res.data)
 			if (res.data !== ""){
 				console.log('success!')
-				
-				// <Redirect to="/Home" />
 				this.props.routeHome();
                 this.setState({ loggedin:true });
 			}
