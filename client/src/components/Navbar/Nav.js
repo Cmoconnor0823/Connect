@@ -1,6 +1,6 @@
 import React from "react";
 import './style.css';
-import { Container, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 class NavBar extends React.Component {
@@ -20,12 +20,11 @@ class NavBar extends React.Component {
 	}
 	render() {
 		return (
-			<Container>
-				<Navbar color="faded" dark>
+				<Navbar color="faded" dark expand="md">
 					<NavbarBrand href="/" className="mr-auto">KonnectD</NavbarBrand>
 					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
 					<Collapse isOpen={!this.state.collapsed} navbar>
-						<Nav navbar>
+						<Nav className="ml-auto" navbar>
 							<NavItem>
 								<NavLink href="/home">Home</NavLink>
 							</NavItem>
@@ -41,9 +40,6 @@ class NavBar extends React.Component {
 						</Nav>
 					</Collapse>
 				</Navbar>
-			</Container>
-
-
 		);
 	}
 }

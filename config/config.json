@@ -1,8 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "Th3Riddl3r?",
-    "database": "konnectd_db",
+    "password": "rootroot",
+    "database": "user",
+
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

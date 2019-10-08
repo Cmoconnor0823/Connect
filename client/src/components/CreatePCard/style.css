@@ -4,8 +4,8 @@
     background-clip: content-box;
     border: 6px solid white;
     min-height: 800px;
-    min-width: 600px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    min-width: 400px;
+    box-shadow: 0 3px 6px #74888C, 0 3px 6px #74888C;
     position: relative;
     margin: 0 auto;
     margin-top: 30px;
