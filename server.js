@@ -7,14 +7,9 @@ var seqPORT = process.env.PORT || 8080;
 const Sequelize = require("sequelize");
 
 //===============================================
-const express = require("express");
-const path = require("path");
-const Sequelize = require("sequelize");
 //const models = require("./models")
 //const routes = require("./routes");
 
-const PORT = process.env.PORT || 3005;
-const app = express();
 
 
 

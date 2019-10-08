@@ -53,33 +53,14 @@ module.exports = function(sequelize, DataTypes) {
 
     Profile.associate = function(models) {
         Profile.belongsToMany(models.Project, {
-<<<<<<< HEAD
-          through:models.Project,as:"profile_id"
+          through:"project_users",as:"profile_id"
         });
     Profile.associate = function(models) {
-        Profile.hasMany(models.Message, {through:models.Message, as:"message"});
+        Profile.hasMany(models.Message);
     };
     Profile.associate = function(models) {
         Profile.hasMany(models.Project_Meta, {
           through:models.Project_Meta,as:'profile_id'
-=======
-          through: models.CurrentGame,
-          foreignKey: "ProfileID",
-          otherKey: "ProjectID"
-        });
-    Profile.associate = function(models) {
-        Profile.hasMany(models.Message, {
-          through: models.CurrentGame,
-          foreignKey: "ProfileID",
-          otherKey: "MessageID"
-        });
-    };
-    Profile.associate = function(models) {
-        Profile.hasMany(models.Project_Meta, {
-          through: models.CurrentGame,
-          foreignKey: "ProfileID",
-          otherKey: "Project_MetaID"
->>>>>>> 643a92d18adcda9b68a9f7e70032ed3f5ac02e55
         });
     };
 

@@ -9,8 +9,12 @@ module.exports = {
             validate: {
               len: [1]
             }
-          }
-        });
+          },
+        adminaccess:{
+          type:Sequelize.INTEGER,
+          allowNull:false
+        }
+      });
         
   },
   down: (queryInterface, Sequelize) => {
