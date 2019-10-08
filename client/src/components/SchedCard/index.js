@@ -3,11 +3,88 @@ import { Input, FormBtn, TextArea } from "../Form";
 import { Card, CardBody, CardTitle, CardFooter, Table } from "reactstrap";
 import "./style.css";
 
+import ApiCalendar from "react-google-calendar-api";
+
+
 class SchedCard extends Component {
+	constructor() {
+		super();
+		this.state = {
+			events: [],
+			clicked: false,
+			sign: false
+		}
 
-	state = {
+		ApiCalendar.onLoad(() => {
+			ApiCalendar.listenSign(this.signUpdate);
+		});
+	}
 
+	componentDidMount(){
+		this.listEvents();
+	}
+
+	signUpdate = (sign) => {
+		this.setState({ sign })
+	}
+	
+  handleItemClick = (event, name) => {
+    if (name === "sign-in") {
+	  ApiCalendar.handleAuthClick()
+	console.log("tell user they are signed in!")
+    } else if (name === "sign-out") {
+	  ApiCalendar.handleSignoutClick();
+	  this.setState({clicked: true})
+	}
+  };
+
+  listEvents = (event, name) => {
+	console.log('HEEEINEIN')
+	console.log(this.state)
+	if (ApiCalendar.sign) {
+
+		ApiCalendar.listUpcomingEvents(10).then((result) => {
+			// console.log(result.items);
+			this.setState({events:result.result.items})
+		});
+	}
+
+	// console.log(stuff);
+	
+  }
+
+act = () => {
+	const eventFromNow: object = {
+		summary: "Poc Dev From Now",
+		time: 480,
 	};
+	
+	ApiCalendar.createEventFromNow(eventFromNow)
+	  .then((result) => {
+		console.log(result);
+		  })
+	   .catch((error) => {
+		 console.log(error);
+		  });
+}
+
+componentDidUpdate() {
+	if(ApiCalendar.sign !== this.state.sign) {
+		this.setState({sign: ApiCalendar.sign}, () => {
+		  console.log(this.state)
+			  if(ApiCalendar.sign) {
+				  this.listEvents();
+			  }
+		})
+		return false;
+	} else {
+		return false;
+	}
+}
+
+	
+
+	
 
 
 	// When the form is submitted, use the API.saveProfile?? method to save the proile data
@@ -29,13 +106,79 @@ class SchedCard extends Component {
 		return (
 			<Card id="schedCard">
 				<CardTitle>
-					<h4> This will be the card that holds our Schedule </h4>
+				<button onClick={e => this.handleItemClick(e, "sign-in")}>
+          sign-in
+        </button>
+        <button onClick={e => this.handleItemClick(e, "sign-out")}>
+          sign-out
+        </button>
+		<button onClick={e => this.listEvents(e, "sign-out")}>My schedule!</button>
+					<h4> This will be the card that holds our Schedule
+					 </h4>
 				</CardTitle>
 				<CardBody>
 					<h5>Do we want this to appear always or have it set to a trigger on off function? Also do we want to display the events found in this box or should it appear elsewhere?</h5>
 					<h6>Enter the information below to create an event on google callender</h6>
-					<Table hover>
+
+					<Table>
+	
+		<div>
         <thead>
+          <tr>
+            <th>#</th>
+			<th>Event Name</th>
+            <th>Event Date</th>
+          </tr>
+        </thead>
+		
+        <tbody>
+          <tr>
+		  {/* {
+			this.state.events.map(stuff =>
+			(<div> 
+			<td>{stuff.start.dateTime}</td>
+			</div>)
+			)
+		} */}
+            <th scope="row">{this.state.events.map(stuff =>
+				<div>
+					<th>
+						{stuff.index}
+					</th>
+				</div>
+			)}</th>
+			{
+				this.state.events.map(stuff=>
+				<div>
+				<td>{stuff.summary}</td>
+				<td>{stuff.start.dateTime}</td>
+				
+				</div>
+				)	
+			}
+          </tr>
+          {/* <tr>
+            <th scope="row">2</th>
+            <td>10/14/19</td>
+            <td>7 pm.</td>
+            <td>Demo-Day</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>10/16/19</td>
+            <td>5 pm.</td>
+            <td>SimpleView</td>
+          </tr> */}
+        </tbody>
+		</div>
+		</Table>
+
+
+					
+		{/* <Table hover>
+		<div>
+        <thead>
+		
           <tr>
             <th>#</th>
             <th>Event Date</th>
@@ -43,6 +186,7 @@ class SchedCard extends Component {
             <th>Event Name</th>
           </tr>
         </thead>
+		
         <tbody>
           <tr>
             <th scope="row">1</th>
@@ -63,7 +207,9 @@ class SchedCard extends Component {
             <td>SimpleView</td>
           </tr>
         </tbody>
-      </Table>
+		</div>
+		
+      </Table> */}
 					<form>
 						<Input
 							value={this.state.ueventName}
