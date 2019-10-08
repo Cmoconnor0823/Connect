@@ -77,42 +77,49 @@ class CreatePCard extends Component {
 							placeholder="Password (required)"
 						/>
 						<Input
-							value={this.state.password}
+							value={this.state.firstName}
 							onChange={this.handleInputChange}
 							name="firstName"
 							placeholder="First Name (required)"
 						/>
 						<Input
-							value={this.state.password}
+							value={this.state.lastName}
 							onChange={this.handleInputChange}
 							name="lastName"
 							placeholder="Last Name (required)"
 						/>
 						<Input
-							value={this.state.password}
+							value={this.state.posistion}
 							onChange={this.handleInputChange}
 							name="posistion"
 							placeholder="Job Posistion (required)"
 						/>
 						<Input
-							value={this.state.password}
+							value={this.state.phoneNumber}
 							onChange={this.handleInputChange}
 							name="phoneNumber"
 							placeholder="Phone Number (required)"
 						/>
 						<Input
-							value={this.state.password}
+							value={this.state.email}
 							onChange={this.handleInputChange}
 							name="email"
 							placeholder="Email address (required)"
 						/>
 						<div className="card-footer">
-							Check the box below if your account needs admin status
+							Check the box below if you want to create a new project. This will make you admin of the project.
+							If you already have a project enter your project key below
 						<Input
 								type="checkbox"
 								id="admin"
 								name="Admin"
 								value="false"
+							/>
+							<Input
+								value={this.state.projectKey}
+								onChange={this.handleInputChange}
+								name="projectKey"
+								placeholder="Project key (required)"
 							/>
 						</div>
 						{/* <TextArea
@@ -126,7 +133,7 @@ class CreatePCard extends Component {
 							disabled={!(this.state.userName && this.state.password)}
 							onClick={this.handleFormSubmit}
 						>
-							Log-In
+							Create Account
               					</FormBtn>
 					</form>
 				</CardBody>

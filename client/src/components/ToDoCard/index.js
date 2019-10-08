@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {  Card, CardTitle } from "reactstrap";
+import {  Card, CardTitle, CardBody } from "reactstrap";
 import "./style.css";
 
 class ToDoCard extends Component {
@@ -26,11 +26,18 @@ class ToDoCard extends Component {
 	// };
 	render() {
 		return (
-			<Card> 
-					
+			<Card id="toDoCard"> 		
 				<CardTitle>
 					<h4> This will be the card that holds our to do </h4>
 				</CardTitle>
+				<CardBody> 
+					
+					This is the body of the card  
+					(it appears like we loose 3 columns if the cards are not big enough to justify 3 rows)
+					 Integer pellentesque, diam vitae blandit congue, 
+					mi lacus rutrum lacus, sed convallis ante enim vitae magna. Nulla finibus erat nisi, eget accumsan ex congue vitae.
+					 Duis vel molestie odio, vitae laoreet magna. Ut finibus mauris non dui feugiat volutpat. 
+					 In consectetur ipsum sed ultricies porttitor. Ut feugiat feugiat nulla, vehicula pulvinar mi finibus at. </CardBody>
 			</Card>
 		);
 	}

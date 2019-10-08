@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Card, CardTitle, CardColumns } from "reactstrap";
+import { Container, Col, Row, Card, CardTitle, CardColumns } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
+import MessageCard from "../components/MessageCard";
+
 
 
 class Home extends Component {
@@ -12,16 +14,28 @@ class Home extends Component {
     render() {
         return (
             <Wrapper>
-                <CardColumns>
+                <Row>
+                    <Col>
                     <SchedCard></SchedCard>
-                    <ToDoCard></ToDoCard>
-                    <Card>
-                        <CardTitle>
-                            <h4>This is an example of a card that is not a called in component</h4>
-                        </CardTitle>
-                    </Card>
-                </CardColumns>
-                </Wrapper>
+                    </Col>
+                </Row>
+                    <Row>
+                        <Col>
+                            <CardColumns>
+                                <ToDoCard></ToDoCard>
+                                <MessageCard></MessageCard>
+                                {/* This is a template to make a new card
+                                     <Card>
+                                     <CardBody>
+                                        <CardTitle>
+                                            <h4>This is an example of a card that is not a called in component</h4>
+                                        </CardTitle>
+                                        </CardBody>
+                                    </Card> */}
+                            </CardColumns>
+                        </Col>
+                    </Row>
+            </Wrapper>
         );
     }
 }

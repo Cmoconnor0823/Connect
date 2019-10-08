@@ -2,30 +2,25 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3005;
 const app = express();
-var db = require("./models");
+const db = require("./models");
 var seqPORT = process.env.PORT || 8080;
 const Sequelize = require("sequelize");
 
 //===============================================
-const express = require("express");
-const path = require("path");
-const Sequelize = require("sequelize");
+
 //const models = require("./models")
 //const routes = require("./routes");
-
-const PORT = process.env.PORT || 3005;
-const app = express();
-
 
 
 //KonnectD Database
 
-const konnectddb = require("./config/index.ts");
+const dbKonnectD = require("./config/index.ts");
 
 
 //Testind KonnectD Databse Connection
 
-konnectddb.then(() => {
+dbKonnectD.authenticate()
+  .then(() => {
     console.log('Connection to Konnectd_db has been established successfully.');
   })
   .catch(err => {
@@ -40,8 +35,7 @@ app.get("/",(req,res)=>{
   res.send("INDEX");
 })
 
-
-//==============================================================
+//=================================================================
 
 
 // Define middleware here
@@ -57,11 +51,10 @@ app.post("/api/users", function(req, res) {
   console.log(req.body)
   db.User.findOne({
     where:{
-      userName: req.body.userName,
+      userName: req.body.username,
       password: req.body.password
     }}).then(function(dbusers) {
       console.log(dbusers)
-      res.send(dbusers)
     // res.render("Home");
   });
 });
@@ -73,30 +66,6 @@ app.post("/api/users", function(req, res) {
 
 
 
-//KonnectD Database
-
-const dbKonnectD = require("./config/index.ts");
-
-
-//Testind KonnectD Databse Connection
-
-dbKonnectD.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
-
-
-//test rout
-
-app.get("/",(req,res)=>{
-
-  res.send("INDEX");
-})
-
-//=================================================================
 
 // Send every other request to the React app
 // Define any API routes before this runs
