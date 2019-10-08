@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, FormBtn } from "../Form";
-import { Card, CardBody, CardTitle, Col, Row } from "reactstrap";
+import { Card, CardBody, CardTitle } from "reactstrap";
 import "./style.css";
 
 class LOGCard extends Component {
@@ -9,6 +9,7 @@ class LOGCard extends Component {
 		profile: [],
 		userName: "",
 		password: "",
+		projectKey: ""
 	};
 	handleBtnClick = event => {
 	}
@@ -24,12 +25,8 @@ class LOGCard extends Component {
 		return (
 			<Card id="logCard">
 				<CardBody>
-					<CardTitle>
-						<Row>
-							<Col size="md-6">
-								<h1> This will be the Log In page</h1>
-							</Col>
-						</Row>
+					<CardTitle size="md-6">
+						<h1> This will be the Log In page</h1>
 					</CardTitle>
 					<form>
 						<Input
@@ -44,6 +41,12 @@ class LOGCard extends Component {
 							name="password"
 							placeholder="Password (required)"
 						/>
+						<Input
+								value={this.state.projectKey}
+								onChange={this.handleInputChange}
+								name="projectKey"
+								placeholder="Project key (required)"
+							/>
 						{/* <TextArea
                 					value={this.state.synopsis}
                 					onChange={this.handleInputChange}
