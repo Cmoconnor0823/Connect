@@ -57,7 +57,8 @@ class LOGCard extends Component {
 						<FormBtn
 							disabled={!(this.state.userName && this.state.password)}
 							onClick={this.handleFormSubmit}
-						>
+						> 
+						{/* Above needs to also handle the project key on submit*/}
 							Log-In
               					</FormBtn>
 					</form>
