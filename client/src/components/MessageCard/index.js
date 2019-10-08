@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, FormBtn, TextArea } from "../Form";
-import { Card, CardBody, CardTitle } from "reactstrap";
+import { Card, CardBody, CardTitle, Table, } from "reactstrap";
 import "./style.css";
 
 class MessageCard extends Component {
@@ -10,21 +10,20 @@ class MessageCard extends Component {
 	};
 
 
-	// When the form is submitted, use the API.saveProfile?? method to save the proile data
-	// Then reload profiles from the database
-	// handleFormSubmit = event => {
-	// 	event.preventDefault();
-	// 	if (this.state.userName && this.state.password) {
-	// 		API.saveProfile({
-	// 			userName: this.state.userName,
-	// 			password: this.state.password,
-	// 			realName: this.state.realName,
-	// 			position: this.state.position
-	// 		})
-	// 			.then(res => this.loadProfile())
-	// 			.catch(err => console.log(err));
-	// 	}
-	// };
+	// state = {
+	// 	books: []
+	//   };
+	
+	//   componentDidMount() {
+	// 	this.loadBooks();
+	//   }
+	
+	//   loadBooks = () => {
+	// 	API.getBooks()
+	// 	  .then(res => this.setState({ books: res.data }))
+	// 	  .catch(err => console.log(err));
+	//   };
+
 	render() {
 		return (
 				<Card id="messCard">
@@ -32,8 +31,32 @@ class MessageCard extends Component {
 						<h4> This will be the card that holds Message Post Board </h4>
 					</CardTitle>
 					<CardBody>
-						<h5>Do we want this to appear always or have it set to a trigger on off function? Also do we want to display all current messages found in this box or should it appear elsewhere?</h5>
-						<h6>Enter the information below to post a message to your project</h6>
+					<Table hover>
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Messages</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>10/7/19</td>
+								
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>10/14/19</td>
+								
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>10/16/19</td>
+								
+							</tr>
+						</tbody>
+					</Table>
 						<form>
 							<Input
 								value={this.state.title}

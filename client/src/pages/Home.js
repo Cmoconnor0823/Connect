@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Col, Row, Card, CardTitle, CardColumns } from "reactstrap";
+import { Col, Row, CardColumns } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";

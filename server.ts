@@ -1,4 +1,4 @@
-const express = require("express");
+//const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3005;
 const app = express();
@@ -11,11 +11,9 @@ const Sequelize = require("sequelize");
 //const models = require("./models")
 //const routes = require("./routes");
 
-
 //KonnectD Database
 
 const dbKonnectD = require("./config/index.ts");
-
 
 //Testind KonnectD Databse Connection
 

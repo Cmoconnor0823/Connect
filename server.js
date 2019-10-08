@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3005;
-const app = express();
 var db = require("./models");
 var seqPORT = process.env.PORT || 8080;
 const Sequelize = require("sequelize");
