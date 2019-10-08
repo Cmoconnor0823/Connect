@@ -18,7 +18,7 @@ function App() {
 					<Switch>
 						<Route exact path="/" component={Login} />	
 						<Route exact path="/login" component={Login} />
-					</Switcsh>
+					</Switch>
 					<Route exact path="/home" component={Home} />
 					<Route exact path="/createuser" component={CreateUser} />
 				</Router>
