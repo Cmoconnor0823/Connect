@@ -63,6 +63,7 @@ class ToDoCard extends Component {
 						name="toDo"
 						placeholder="Add a item to your ToDo list (Optional)"
 					/>
+					<FormBtn> Add to your To Do's</FormBtn>
 				</CardBody>
 			</Card>
 		);
