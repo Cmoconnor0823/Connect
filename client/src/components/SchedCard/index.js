@@ -35,35 +35,35 @@ class SchedCard extends Component {
 					<h5>Do we want this to appear always or have it set to a trigger on off function? Also do we want to display the events found in this box or should it appear elsewhere?</h5>
 					<h6>Enter the information below to create an event on google callender</h6>
 					<Table hover>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Event Date</th>
-            <th>Event Time</th>
-            <th>Event Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>10/7/19</td>
-            <td>6 pm.</td>
-            <td>Check Point</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>10/14/19</td>
-            <td>7 pm.</td>
-            <td>Demo-Day</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>10/16/19</td>
-            <td>5 pm.</td>
-            <td>SimpleView</td>
-          </tr>
-        </tbody>
-      </Table>
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Event Date</th>
+								<th>Event Time</th>
+								<th>Event Name</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>10/7/19</td>
+								<td>6 pm.</td>
+								<td>Check Point</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>10/14/19</td>
+								<td>7 pm.</td>
+								<td>Demo-Day</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>10/16/19</td>
+								<td>5 pm.</td>
+								<td>SimpleView</td>
+							</tr>
+						</tbody>
+					</Table>
 					<form>
 						<Input
 							value={this.state.ueventName}
@@ -75,13 +75,13 @@ class SchedCard extends Component {
 							value={this.state.location}
 							onChange={this.handleInputChange}
 							name="location"
-							placeholder="location (required)"
+							placeholder="Location (required)"
 						/>
 						<TextArea
 							value={this.state.description}
 							onChange={this.handleInputChange}
 							name="description"
-							placeholder="description (Optional)"
+							placeholder="Event Description (Optional)"
 						/>
 						<Input
 							value={this.state.start}
