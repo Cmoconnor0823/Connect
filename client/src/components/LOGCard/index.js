@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import { Card, CardBody, CardTitle} from "reactstrap";
 import { Input, FormBtn } from "../Form";
-
+import "./style.css";
 class LOGCard extends Component {
   state = {
     profile: [],
