@@ -34,7 +34,7 @@ class SchedCard extends Component {
 				<CardBody>
 					<h5>Do we want this to appear always or have it set to a trigger on off function? Also do we want to display the events found in this box or should it appear elsewhere?</h5>
 					<h6>Enter the information below to create an event on google callender</h6>
-					<Table hover>
+					<Table hover responsive="sm">
 						<thead>
 							<tr>
 								<th>#</th>
@@ -133,7 +133,7 @@ class SchedCard extends Component {
 								/> */}
 
 						<FormBtn
-							disabled={!(this.state.userName && this.state.password)}
+							enabled={!(this.state.userName && this.state.password)}
 							onClick={this.handleFormSubmit}
 						>
 							Create Event

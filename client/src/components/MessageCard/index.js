@@ -43,7 +43,7 @@ class MessageCard extends Component {
                     </a>
                     <DeleteBtn />
                   </ListItem> */}
-					<Table hover>
+					<Table hover responsive="sm">
 						<thead>
 							<tr>
 								<th>#</th>
@@ -90,7 +90,7 @@ class MessageCard extends Component {
 								/> */}
 
 						<FormBtn
-							disabled={!(this.state.title && this.state.message)}
+							enabled={!(this.state.title && this.state.message)}
 							onClick={this.handleFormSubmit}
 						>
 							Post Message

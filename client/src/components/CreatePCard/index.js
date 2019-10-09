@@ -156,7 +156,7 @@ class CreatePCard extends Component {
 
 							{/* The below button needs to check for any altered state in the form not just the userName and Password */}
 						<FormBtn
-							disabled={!(this.state.userName && this.state.password)}
+							enabled={!(this.state.userName && this.state.password)}
 							onClick={this.handleNewUser}
 						>
 							Create Account
