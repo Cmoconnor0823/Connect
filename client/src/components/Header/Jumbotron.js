@@ -7,17 +7,16 @@ import './style.css';
 const Jumbo = (props) => {
 	return (
 		<Jumbotron>
-				<Row>
-					<Col size="4">
-
-			<img className="logo-pic" src={image} alt="Logo"></img>
-					</Col>
-			<Col size="6">
-				<Container>
-				 <h3>Welcome To KonnectD, a Bussiness Management Tool for Scheduling and employee records.</h3>
-				 </Container>
-			</Col>
-				</Row>
+			<Row>
+				<Col size="6">
+					<img src={image} alt="Logo"></img>
+				</Col>
+				<Col size="6">
+					<Container>
+						<h3 className="text-center p-5">Welcome To KonnectD, a Bussiness Management Tool for Scheduling and employee records.</h3>
+					</Container>
+				</Col>
+			</Row>
 		</Jumbotron>
 	);
 };
