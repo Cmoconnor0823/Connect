@@ -1,9 +1,12 @@
+h4 {
+  color:#74888C;
+}
 .mainfooter {
     display:inline;
     min-width: 100%;
     position: -webkit-fixed; /* Safari */
     bottom: 0;
-    position: fixed;
+    position: absolute;
     color: #F2F2F2
   }
   .pages{
@@ -21,7 +24,7 @@
 ul > li {
     display:inline;
 }
- 
+
 * unvisited link */
 a:link {
   color: #F2F2F2;
