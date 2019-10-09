@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import {  Card, CardTitle, CardBody } from "reactstrap";
+import { Card, CardTitle, CardBody, Table } from "reactstrap";
+import { FormBtn, DeleteBtn, TextArea } from "../Form";
 import "./style.css";
 
 class ToDoCard extends Component {
@@ -8,36 +9,62 @@ class ToDoCard extends Component {
 
 	};
 
+	//   componentDidMount() {
+	// 	this.loadBooks();
+	//   }
 
-	// When the form is submitted, use the API.saveProfile?? method to save the proile data
-	// Then reload profiles from the database
-	// handleFormSubmit = event => {
-	// 	event.preventDefault();
-	// 	if (this.state.userName && this.state.password) {
-	// 		API.saveProfile({
-	// 			userName: this.state.userName,
-	// 			password: this.state.password,
-	// 			realName: this.state.realName,
-	// 			position: this.state.position
-	// 		})
-	// 			.then(res => this.loadProfile())
-	// 			.catch(err => console.log(err));
-	// 	}
-	// };
+	//   loadBooks = () => {
+	// 	API.getBooks()
+	// 	  .then(res => this.setState({ books: res.data }))
+	// 	  .catch(err => console.log(err));
+	//   };
 	render() {
 		return (
-			<Card id="toDoCard"> 		
+			<Card id="toDoCard">
 				<CardTitle>
 					<h4> This will be the card that holds our to do </h4>
 				</CardTitle>
-				<CardBody> 
-					
-					This is the body of the card  
+				<CardBody>
+
+					This is the body of the card
 					(it appears like we loose 3 columns if the cards are not big enough to justify 3 rows)
-					 Integer pellentesque, diam vitae blandit congue, 
-					mi lacus rutrum lacus, sed convallis ante enim vitae magna. Nulla finibus erat nisi, eget accumsan ex congue vitae.
-					 Duis vel molestie odio, vitae laoreet magna. Ut finibus mauris non dui feugiat volutpat. 
-					 In consectetur ipsum sed ultricies porttitor. Ut feugiat feugiat nulla, vehicula pulvinar mi finibus at. </CardBody>
+					<Table hover>
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Messages</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>10/7/19</td>
+								<DeleteBtn></DeleteBtn>
+
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>10/14/19</td>
+								<DeleteBtn></DeleteBtn>
+
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>10/16/19</td>
+								<DeleteBtn></DeleteBtn>
+
+							</tr>
+						</tbody>
+					</Table>
+					 <TextArea
+						value={this.state.synopsis}
+						onChange={this.handleInputChange}
+						name="toDo"
+						placeholder="Add a item to your ToDo list (Optional)"
+					/>
+					<FormBtn> Add to your To Do's</FormBtn>
+				</CardBody>
 			</Card>
 		);
 	}
