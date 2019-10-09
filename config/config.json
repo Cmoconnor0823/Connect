@@ -1,9 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Bobvilla1",
-    "database": "konnectd_db",
-
+    "password": "rootroot",
+    "database": "user",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
@@ -21,6 +20,7 @@
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
+    "use_env_variable":"JAWSDB_URL",
     "dialect": "mysql",
     "operatorsAliases": false
   }
