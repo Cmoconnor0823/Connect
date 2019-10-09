@@ -4,6 +4,7 @@ import Wrapper from "../components/Wrapper/";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
 import MessageCard from "../components/MessageCard";
+import WelcomeCard from "../components/WelcomeCard";
 
 
 
@@ -16,12 +17,13 @@ class Home extends Component {
             <Wrapper>
                 <Row>
                     <Col>
-                    <SchedCard></SchedCard>
+                    <WelcomeCard></WelcomeCard>
                     </Col>
                 </Row>
                     <Row>
                         <Col>
                             <CardColumns>
+                                <SchedCard></SchedCard>
                                 <ToDoCard></ToDoCard>
                                 <MessageCard></MessageCard>
                                 {/* This is a template to make a new card

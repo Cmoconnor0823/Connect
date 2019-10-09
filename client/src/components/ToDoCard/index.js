@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardTitle, CardBody, Table } from "reactstrap";
-import { Input, FormBtn, DeleteBtn, TextArea } from "../Form";
+import { FormBtn, DeleteBtn, TextArea } from "../Form";
 import "./style.css";
 
 class ToDoCard extends Component {
