@@ -4,12 +4,12 @@
 .navbar {
     border-bottom: 1px solid #025E73;
     background-color: #024059;
-    margin-top: 10px;
     /* position: fixed; */
   }
   .navbar-brand{
       margin-left: 10%;
       text-align:left;
+      font-size: 20px;
   }
   ul > li {
       display:inline;
