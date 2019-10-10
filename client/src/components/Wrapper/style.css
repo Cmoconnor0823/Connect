@@ -1,6 +1,6 @@
 .wrapper {
     min-height: 100%;
-    overflow: hidden;
+    overflow: visible;
     display: block;
     position: relative;
     padding-bottom: 100px;

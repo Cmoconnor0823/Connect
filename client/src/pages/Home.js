@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Col, Row, CardColumns, Container } from "reactstrap";
-//import Wrapper from "../components/Wrapper/";
+import { Col, Row, CardColumns } from "reactstrap";
+import Wrapper from "../components/Wrapper/";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
 import MessageCard from "../components/MessageCard";
@@ -14,7 +14,7 @@ class Home extends Component {
     };
     render() {
         return (
-            <Container>
+            <Wrapper>
                 <Row>
                     <Col>
                     <WelcomeCard></WelcomeCard>
@@ -37,7 +37,7 @@ class Home extends Component {
                             </CardColumns>
                         </Col>
                     </Row>
-            </Container>
+            </Wrapper>
         );
     }
 }
