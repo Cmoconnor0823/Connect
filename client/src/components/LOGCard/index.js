@@ -1,26 +1,47 @@
 import React, { Component } from "react";
+import axios from 'axios';
+import { Card, CardBody, CardTitle} from "reactstrap";
 import { Input, FormBtn } from "../Form";
-import { Card, CardBody, CardTitle } from "reactstrap";
-import "./style.css";
 
 class LOGCard extends Component {
-
-	state = {
-		profile: [],
+  state = {
+    profile: [],
 		userName: "",
 		password: "",
+		loggedin:false,
 		projectKey: ""
 	};
-	handleBtnClick = event => {
-	}
-	// Handles updating component state when the user
-	// types into the input field
-	handleInputChange = event => {
-		const { name, value } = event.target;
+
+	handleInputChange = (event) => {
 		this.setState({
-			[name]: value
-		});
-	};
+			[event.target.name]:event.target.value
+
+		})
+	}
+
+	handleFormSubmit = (event) => {
+		//alert('A list was submitted: ' + this.state.formvalue);
+		event.preventDefault();
+		// const { history } = this.props;
+
+	  
+		axios.post("/api/login",
+		{
+			userName:this.state.userName,
+			password:this.state.password
+		})
+		.then((res) => {
+			console.log('res is ', typeof res.data)
+			if (res.data !== ""){
+				console.log('success!')
+				this.props.routeHome();
+                this.setState({ loggedin:true });
+			}
+			else {
+				alert("please enter a correct username/password")
+			}
+			});
+		}
 	render() {
 		return (
 			<Card id="logCard">
@@ -57,7 +78,8 @@ class LOGCard extends Component {
 						<FormBtn
 							disabled={!(this.state.userName && this.state.password)}
 							onClick={this.handleFormSubmit}
-						>
+						> 
+						{/* Above needs to also handle the project key on submit*/}
 							Log-In
               					</FormBtn>
 					</form>
@@ -67,5 +89,5 @@ class LOGCard extends Component {
 		);
 	}
 }
-
+    
 export default LOGCard;
