@@ -79,23 +79,6 @@ class SchedCard extends Component {
       return false;
     }
   }
-
-  // When the form is submitted, use the API.saveProfile?? method to save the proile data
-  // Then reload profiles from the database
-  // handleFormSubmit = event => {
-  // 	event.preventDefault();
-  // 	if (this.state.userName && this.state.password) {
-  // 		API.saveProfile({
-  // 			userName: this.state.userName,
-  // 			password: this.state.password,
-  // 			realName: this.state.realName,
-  // 			position: this.state.position
-  // 		})
-  // 			.then(res => this.loadProfile())
-  // 			.catch(err => console.log(err));
-  // 	}
-  // };
-
   //----------------code for form to send to api -------------------
   handleSubmit = event => {
     event.preventDefault();
@@ -111,7 +94,7 @@ class SchedCard extends Component {
       //----------------code for form to send to api -------------
 
       <Card id="schedCard">
-        <div>
+        <CardTitle>
           <h1> Forms and inputs</h1>
 		  <p>full Name is {fullName}</p>
           <form onSubmit={this.handleSubmit}>
@@ -126,7 +109,7 @@ class SchedCard extends Component {
               <button>send Message</button>
             </p>
           </form>
-        </div>
+		  </CardTitle>
         {/* //----------------code for form to send to api ------------------- */}
 
         <CardTitle>
@@ -287,23 +270,6 @@ class SchedCard extends Component {
 	state = {
 
 	};
-
-
-	// When the form is submitted, use the API.saveProfile?? method to save the proile data
-	// Then reload profiles from the database
-	// handleFormSubmit = event => {
-	// 	event.preventDefault();
-	// 	if (this.state.userName && this.state.password) {
-	// 		API.saveProfile({
-	// 			userName: this.state.userName,
-	// 			password: this.state.password,
-	// 			realName: this.state.realName,
-	// 			position: this.state.position
-	// 		})
-	// 			.then(res => this.loadProfile())
-	// 			.catch(err => console.log(err));
-	// 	}
-	// };
 	render() {
 		return (
 			<Card id="schedCard">
