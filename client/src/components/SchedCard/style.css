@@ -7,3 +7,8 @@
     margin: 2 auto;
     margin-top: 30px;
   }
+  * Matches any checked/selected radio, checkbox, or option */
+:checked {
+  margin-left: 25px;
+  border: 1px solid blue;
+}

@@ -34,7 +34,7 @@ class SchedCard extends Component {
 				<CardBody>
 					<h5>Do we want this to appear always or have it set to a trigger on off function? Also do we want to display the events found in this box or should it appear elsewhere?</h5>
 					<h6>Enter the information below to create an event on google callender</h6>
-					<Table hover responsive="sm">
+					<Table hover responsive="md">
 						<thead>
 							<tr>
 								<th>#</th>
@@ -108,7 +108,7 @@ class SchedCard extends Component {
 							placeholder="Email address (required)"
 						/>
 						<CardFooter>
-							Check the box below if you want to create a reminder using your default prefereces below.
+							<h6 className="m-3">Check the box below if you want to create a reminder using your default preferences below.</h6>
 						<Input
 								type="checkbox"
 								id="remind"
