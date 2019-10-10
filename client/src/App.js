@@ -4,6 +4,7 @@ import { Switch} from 'react-router-dom';
 import CreateUser from "./pages/CreateUser";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import About from "./pages/About";
 import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
@@ -20,6 +21,7 @@ function App() {
 					</Switch>
 					<Route exact path="/home" component={Home} />
 					<Route exact path="/createuser" component={CreateUser} />
+					<Route exact path="/about" component={About} />
 				</Router>
 					{/* <Route exact path="/login" component={Login} /> */}
 				</Wrapper>

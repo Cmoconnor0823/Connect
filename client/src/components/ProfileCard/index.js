@@ -22,7 +22,7 @@ class ProfileCard extends Component {
 	//   };
 	render() {
 		return (
-			<Card id="ProfileCard">
+			<Card id="profileCard">
 				<CardTitle>
 					<h4> This will be the card that holds List of profiles </h4>
 				</CardTitle>
@@ -42,20 +42,15 @@ class ProfileCard extends Component {
 							<tr>
 								<th scope="row">1</th>
 								<td>John</td>
-								<DeleteBtn></DeleteBtn>
 
 							</tr>
 							<tr>
 								<th scope="row">2</th>
 								<td>Rod</td>
-								<DeleteBtn></DeleteBtn>
-
 							</tr>
 							<tr>
 								<th scope="row">3</th>
 								<td>Sean</td>
-								<DeleteBtn></DeleteBtn>
-
 							</tr>
 						</tbody>
 					</Table>
