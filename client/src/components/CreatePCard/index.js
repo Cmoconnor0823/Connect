@@ -130,8 +130,8 @@ class CreatePCard extends Component {
 							placeholder="Job title/position (required)"
 						/>
 						<div className="card-footer">
-							Check the box below if you want to create a new project. This will make you admin of the project.
-							If you already have a project enter your project key below
+							<h6 className="m-3">Check the box below if you want to create a new project. This will make you admin of the project.
+							If you already have a project enter your project key below</h6>
 						<Input
 								type="checkbox"
 								id="admin"
