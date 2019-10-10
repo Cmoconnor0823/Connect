@@ -8,8 +8,10 @@ const Jumbo = (props) => {
 	return (
 		<Jumbotron>
 			<Row>
+			{/*  Try applying this to the image
+			"backgroundSize:'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' */}
 				<Col size="3">
-					<img src={image} alt="Logo"></img>
+					<img src={image} alt="Logo" ></img>
 				</Col>
 				<Col size="9">
 					<Container>
