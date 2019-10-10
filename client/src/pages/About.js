@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { Col, Row, CardColumns } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
-import ToDoCard from "../components/ToDoCard";
-import SchedCard from "../components/SchedCard";
-import MessageCard from "../components/MessageCard";
-import WelcomeCard from "../components/WelcomeCard";
 import ProfileCard from "../components/ProfileCard";
+import WelcomeCard from "../components/WelcomeCard";
 
 
 
-class Home extends Component {
+class About extends Component {
     state = {
 
     };
@@ -24,9 +21,6 @@ class Home extends Component {
                     <Row>
                         <Col>
                             <CardColumns>
-                                <SchedCard></SchedCard>
-                                <ToDoCard></ToDoCard>
-                                <MessageCard></MessageCard>
                                 <ProfileCard></ProfileCard>
                                 {/* This is a template to make a new card
                                      <Card>
@@ -44,4 +38,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default About;

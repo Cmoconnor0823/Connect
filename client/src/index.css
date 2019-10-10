@@ -3,9 +3,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Lato';
+  font-size: 16px;
+  min-height: 100%;
 }
-
-@media (min-width: 34em) {
+@media (min-width: 544px) {
   .card-columns {
       -webkit-column-count: 1;
       -moz-column-count: 1;
@@ -13,7 +14,7 @@ body {
   }
 }
 
-@media (min-width: 48em) {
+@media (min-width: 760px) {
   .card-columns {
       -webkit-column-count: 2;
       -moz-column-count: 2;
@@ -21,7 +22,7 @@ body {
   }
 }
 
-@media (min-width: 62em) {
+@media (min-width: 1000px) {
   .card-columns {
       -webkit-column-count: 3;
       -moz-column-count: 3;
