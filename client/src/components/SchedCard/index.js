@@ -200,7 +200,6 @@ class SchedCard extends Component {
             </div>
           </Table>
 
-<<<<<<< HEAD
           {/* <Table hover>
 		<div>
         <thead>
@@ -285,7 +284,6 @@ class SchedCard extends Component {
               <Input type="checkbox" id="remind" name="remind" value="false" />
             </CardFooter>
             {/* Look into adding a way to better capure a time input for start and end time
-=======
 	state = {
 
 	};
@@ -398,7 +396,6 @@ class SchedCard extends Component {
 							/>
 						</CardFooter>
 						{/* Look into adding a way to better capure a time input for start and end time
->>>>>>> 70f258408680648cfe5b55c33d7c2b33cb8f42a9
 								Create a way to input a drop down frequency reminder and a number input box or a drop down for how many times to recurre an event
 								Look into how to capture more than one email for sending the event request too
 								Look into how to caputure user information the overrides array 'overrides': [
