@@ -200,7 +200,6 @@ class SchedCard extends Component {
             </div>
           </Table>
 
-<<<<<<< HEAD
           {/* <Table hover>
 		<div>
         <thead>
@@ -285,7 +284,6 @@ class SchedCard extends Component {
               <Input type="checkbox" id="remind" name="remind" value="false" />
             </CardFooter>
             {/* Look into adding a way to better capure a time input for start and end time
-=======
 	state = {
 
 	};
@@ -315,7 +313,7 @@ class SchedCard extends Component {
 				<CardBody>
 					<h5>Do we want this to appear always or have it set to a trigger on off function? Also do we want to display the events found in this box or should it appear elsewhere?</h5>
 					<h6>Enter the information below to create an event on google callender</h6>
-					<Table hover>
+					<Table hover responsive="md">
 						<thead>
 							<tr>
 								<th>#</th>
@@ -389,7 +387,7 @@ class SchedCard extends Component {
 							placeholder="Email address (required)"
 						/>
 						<CardFooter>
-							Check the box below if you want to create a reminder using your default prefereces below.
+							<h6 className="m-3">Check the box below if you want to create a reminder using your default preferences below.</h6>
 						<Input
 								type="checkbox"
 								id="remind"
@@ -398,7 +396,6 @@ class SchedCard extends Component {
 							/>
 						</CardFooter>
 						{/* Look into adding a way to better capure a time input for start and end time
->>>>>>> 70f258408680648cfe5b55c33d7c2b33cb8f42a9
 								Create a way to input a drop down frequency reminder and a number input box or a drop down for how many times to recurre an event
 								Look into how to capture more than one email for sending the event request too
 								Look into how to caputure user information the overrides array 'overrides': [

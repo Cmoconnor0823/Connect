@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, FormBtn, TextArea } from "../Form";
+//import { Input, FormBtn, TextArea } from "../Form";
 //import { List, ListItem } from "../List";
 import { Card, CardBody, CardTitle, } from "reactstrap";
 import "./style.css";

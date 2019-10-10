@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import { Card, CardBody, CardTitle} from "reactstrap";
 import { Input, FormBtn } from "../Form";
-
+import "./style.css";
 class LOGCard extends Component {
   state = {
     profile: [],
@@ -76,7 +76,7 @@ class LOGCard extends Component {
 								/> */}
 
 						<FormBtn
-							disabled={!(this.state.userName && this.state.password)}
+							enabled={!(this.state.userName && this.state.password)}
 							onClick={this.handleFormSubmit}
 						> 
 						{/* Above needs to also handle the project key on submit*/}
