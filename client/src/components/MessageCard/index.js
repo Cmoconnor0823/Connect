@@ -90,7 +90,7 @@ class MessageCard extends Component {
 								/> */}
 
 						<FormBtn
-							enabled={!(this.state.title && this.state.message)}
+							disabled={!(this.state.title && this.state.message)}
 							onClick={this.handleFormSubmit}
 						>
 							Post Message

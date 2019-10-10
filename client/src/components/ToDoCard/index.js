@@ -8,6 +8,8 @@ class ToDoCard extends Component {
 	state = {
 
 	};
+	// state changing is the "toDo" input
+
 
 	//   componentDidMount() {
 	// 	this.loadBooks();
@@ -32,7 +34,7 @@ class ToDoCard extends Component {
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Messages</th>
+								<th>Your To Do LIst</th>
 
 							</tr>
 						</thead>
@@ -63,7 +65,10 @@ class ToDoCard extends Component {
 						name="toDo"
 						placeholder="Add a item to your ToDo list (Optional)"
 					/>
-					<FormBtn> Add to your To Do's</FormBtn>
+					<FormBtn 
+						disabled={!(this.state.toDo)}
+						onClick={this.handleFormSubmit}
+						> Add to your To Do's</FormBtn>
 				</CardBody>
 			</Card>
 		);

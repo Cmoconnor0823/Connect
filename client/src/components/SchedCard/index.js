@@ -133,7 +133,7 @@ class SchedCard extends Component {
 								/> */}
 
 						<FormBtn
-							enabled={!(this.state.userName && this.state.password)}
+							disabled={!(this.state.userName && this.state.password)}
 							onClick={this.handleFormSubmit}
 						>
 							Create Event
