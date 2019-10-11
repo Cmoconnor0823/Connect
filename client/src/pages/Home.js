@@ -5,6 +5,7 @@ import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
 import MessageCard from "../components/MessageCard";
 import WelcomeCard from "../components/WelcomeCard";
+import ProfileCard from "../components/ProfileCard";
 
 
 
@@ -26,6 +27,7 @@ class Home extends Component {
                                 <SchedCard></SchedCard>
                                 <ToDoCard></ToDoCard>
                                 <MessageCard></MessageCard>
+                                <ProfileCard></ProfileCard>
                                 {/* This is a template to make a new card
                                      <Card>
                                      <CardBody>
