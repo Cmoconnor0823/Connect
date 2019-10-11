@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 //import { Input, FormBtn, TextArea } from "../Form";
 //import { List, ListItem } from "../List";
-import { Card, CardBody, CardTitle, } from "reactstrap";
+import { Card, CardBody, CardTitle, CardFooter } from "reactstrap";
 import "./style.css";
 
 class AboutCard extends Component {
@@ -29,22 +29,15 @@ class AboutCard extends Component {
 		return (
 			<Card id="aboutCard">
 				<CardTitle>
-					<h4> This will be the card that Welcomes the user to the site </h4>
+					<h4> This will be the card that Tell the story and About of our app </h4>
 				</CardTitle>
 				<CardBody>
-					{/* or maybe try
-						<List>
-                {this.state.books.map(message => (
-                  <ListItem key={message._id}>
-                    <a href={"/message/" + message._id}>
-                      <strong>
-                        {message.title} by {message.body}
-                      </strong>
-                    </a>
-                  </ListItem> */}
-					
+					<h1> Here is where we should tell what the app is designed to do</h1>
+					<h3>Here is where we tell the app's story</h3>
+					<h6>Here is where we list features to come</h6>
 					
 				</CardBody>
+				<CardFooter></CardFooter>
 			</Card>
 		);
 	}

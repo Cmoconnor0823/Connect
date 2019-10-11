@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, CardDeck} from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 //import ProfileCard from "../components/ProfileCard";
-import WelcomeCard from "../components/WelcomeCard";
+import Jumbotron from "../components/Header";
 import AboutCard from "../components/AboutCard";
 
 
@@ -16,7 +16,7 @@ class About extends Component {
             <Wrapper>
                 <Row>
                     <Col>
-                    <WelcomeCard></WelcomeCard>
+                    <Jumbotron></Jumbotron>
                     </Col>
                 </Row>
                     <Row>

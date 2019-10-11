@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import { Input, FormBtn, TextArea } from "../Form";
+import { Input, TextArea } from "../Form";
 import { Card, CardBody, CardTitle, CardFooter, Table } from "reactstrap";
 import "./style.css";
 
@@ -157,60 +157,61 @@ class SchedCard extends Component {
       <Card id="schedCard">
         <CardTitle>
 
-          <h1>
-              Enter the information below to create an event on google callender
-            </h1>
+          <h4>
+              Enter the information below to create an event on google calendar
+            </h4>
         </CardTitle>
         <CardBody>
-          <h5>Your event summery is {summary}</h5>
+          Your event summary is {summary}
           <form onSubmit={this.handleSubmit}>
 
-            <input
+            <TextArea
               type="text"
-              placeholder="summary of event"
+              placeholder="Enter a Summary or Description of your event"
               name="summary"
               onChange={this.handleInputChange}
               value={this.state.summary}
-            ></input>
-            <input
+            />
+            <Input
               type="text"
               placeholder="start time"
               name="startTime"
               onChange={this.handleInputChange}
               value={this.state.startTime}
-            ></input>
-            <input
+            />
+            <Input
               type="text"
               placeholder="end time"
               name="endTime"
               onChange={this.handleInputChange}
               value={this.state.endTime}
-            ></input>
+            />
              <DatePicker
 			             showTimeSelect
  				            dateFormat="Pp"		
                 selected={this.state.startDate}
                 onChange={this.handleChange}
               /> 
-
+            <div className="m-3">
             <p>
-              <button onClick={this.act}>create Event</button>
+              <button className="btn cssbtn font-weight-bold" onClick={this.act}>create Event</button>
             </p>
+            </div>
           </form>
           {/* //----------------code for form to send to api ------------------- */}
 
           
-            <button onClick={e => this.handleItemClick(e, "sign-in")}>
-              sign-in
+            <button className="btn m-2 cssbtn font-weight-bold" id="#cssBtn" onClick={e => this.handleItemClick(e, "sign-in")}>
+              Sign-In
           </button>
-            <button onClick={e => this.handleItemClick(e, "sign-out")}>
-              sign-out
+            <button className="btn m-2 cssbtn font-weight-bold" onClick={e => this.handleItemClick(e, "sign-out")}>
+              Sign-Out
           </button>
-            <button onClick={e => this.listEvents(e, "sign-out")}>
+            <button className="btn m-2 cssbtn font-weight-bold" onClick={e => this.listEvents(e, "sign-out")}>
               My Schedule!
           </button>
           
-
+          <CardFooter>
             <Table hover>
                 <thead>
                   <tr>
@@ -246,6 +247,7 @@ class SchedCard extends Component {
                   </tr>
                 </tbody>
             </Table>
+            </CardFooter>
           </CardBody>
       </Card>
         );
