@@ -155,9 +155,14 @@ class SchedCard extends Component {
       //----------------code for form to send to api -------------
 
       <Card id="schedCard">
-      
-          <h1> Forms and inputs</h1>
-          <p>summary of event is {summary}</p>
+        <CardTitle>
+
+          <h1>
+              Enter the information below to create an event on google callender
+            </h1>
+        </CardTitle>
+        <CardBody>
+          <h5>Your event summery is {summary}</h5>
           <form onSubmit={this.handleSubmit}>
 
             <input
@@ -194,7 +199,7 @@ class SchedCard extends Component {
           </form>
           {/* //----------------code for form to send to api ------------------- */}
 
-          <CardTitle>
+          
             <button onClick={e => this.handleItemClick(e, "sign-in")}>
               sign-in
           </button>
@@ -204,15 +209,9 @@ class SchedCard extends Component {
             <button onClick={e => this.listEvents(e, "sign-out")}>
               My Schedule!
           </button>
-            <h4> This will be the card that holds our Schedule</h4>
-          </CardTitle>
-          <CardBody>
-            <h6>
-              Enter the information below to create an event on google callender
-            </h6>
+          
 
-            <Table>
-              <div>
+            <Table hover>
                 <thead>
                   <tr>
                     <th>#</th>
@@ -246,7 +245,6 @@ class SchedCard extends Component {
                     ))}
                   </tr>
                 </tbody>
-              </div>
             </Table>
           </CardBody>
       </Card>
