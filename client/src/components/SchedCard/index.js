@@ -169,7 +169,7 @@ class SchedCard extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.summary}
               ></input>
-              <input
+              {/* <input
                 type="text"
                 placeholder="start time"
                 name="startTime"
@@ -182,13 +182,13 @@ class SchedCard extends Component {
                 name="endTime"
                 onChange={this.handleInputChange}
                 value={this.state.endTime}
-              ></input>
-              {/* <DatePicker
+              ></input> */}
+              <DatePicker
 			  showTimeSelect
  				dateFormat="Pp"		
                 selected={this.state.startDate}
                 onChange={this.handleChange}
-              /> */}
+              />
             
             <p>
               <button onClick={this.act}>create Event</button>
