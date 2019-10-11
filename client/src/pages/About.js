@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row, CardColumns } from "reactstrap";
+import { Col, Row, CardColumns, Card, CardTitle, CardBody } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 import ProfileCard from "../components/ProfileCard";
 import WelcomeCard from "../components/WelcomeCard";
@@ -22,14 +22,13 @@ class About extends Component {
                         <Col>
                             <CardColumns>
                                 <ProfileCard></ProfileCard>
-                                {/* This is a template to make a new card
                                      <Card>
                                      <CardBody>
                                         <CardTitle>
                                             <h4>This is an example of a card that is not a called in component</h4>
                                         </CardTitle>
                                         </CardBody>
-                                    </Card> */}
+                                    </Card> 
                             </CardColumns>
                         </Col>
                     </Row>
