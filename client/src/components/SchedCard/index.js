@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import { Input, FormBtn, TextArea } from "../Form";
+import { Input, TextArea } from "../Form";
 import { Card, CardBody, CardTitle, CardFooter, Table } from "reactstrap";
 import "./style.css";
 
@@ -138,77 +138,50 @@ class SchedCard extends Component {
       //----------------code for form to send to api -------------
 
       <Card id="schedCard">
-      
-          <h1> Forms and inputs</h1>
-          <p>summary of event is {summary}</p>
+        <CardTitle>
+
+          <h4>
+              Enter the information below to create an event on google calendar
+            </h4>
+        </CardTitle>
+        <CardBody>
+          Your event summary is {summary}
           <form onSubmit={this.handleSubmit}>
 
-            <input
+            <TextArea
               type="text"
-              placeholder="summary of event"
+              placeholder="Enter a Summary or Description of your event"
               name="summary"
               onChange={this.handleInputChange}
               value={this.state.summary}
-            ></input>
-
-
-            <input
-
-              type="text"
-              placeholder="start time"
-              name="startTime"
-              onChange={this.handleInputChange}
-              value={this.state.startTime}
-            ></input>
-            <input
-              type="text"
-              placeholder="end time"
-              name="endTime"
-              onChange={this.handleInputChange}
-
-              value={this.state.endTime}
-            ></input>
-
-             <DatePicker
-			             showTimeSelect
- 				            dateFormat="Pp"		
-                selected={this.state.startDate}
-                onChange={this.handleChange}
-              /> 
-
+            />
+            <div className="m-3">
                <DatePicker
 			             showTimeSelect
  				            dateFormat="Pp"		
                 selected={this.state.endDate}
                 onChange={this.handleChange2}
               />
-
-
+            </div>
             <p>
-              <button onClick={this.act}>create Event</button>
+              <button className="btn m-2 cssbtn font-weight-bold" onClick={this.act}>Create Event</button>
             </p>
           </form>
           {/* //----------------code for form to send to api ------------------- */}
 
-          <CardTitle>
-            <button onClick={e => this.handleItemClick(e, "sign-in")}>
-              sign-in
+          
+            <button className="btn m-2 cssbtn font-weight-bold" id="#cssBtn" onClick={e => this.handleItemClick(e, "sign-in")}>
+              Sign-In
           </button>
-            <button onClick={e => this.handleItemClick(e, "sign-out")}>
-              sign-out
+            <button className="btn m-2 cssbtn font-weight-bold" onClick={e => this.handleItemClick(e, "sign-out")}>
+              Sign-Out
           </button>
-            <button onClick={e => this.listEvents(e, "sign-out")}>
+            <button className="btn m-2 cssbtn font-weight-bold" onClick={e => this.listEvents(e, "sign-out")}>
               My Schedule!
           </button>
-            <h4> This will be the card that holds our Schedule</h4>
-          </CardTitle>
-          <CardBody>
-            <h6>
-              Enter the information below to create an event on google callender
-            </h6>
-
-            <Table>
-              <div>
+          
+          <CardFooter>
+            <Table hover>
                 <thead>
                   <tr>
                     <th>#</th>
@@ -242,8 +215,8 @@ class SchedCard extends Component {
                     ))}
                   </tr>
                 </tbody>
-              </div>
             </Table>
+            </CardFooter>
           </CardBody>
       </Card>
         );
