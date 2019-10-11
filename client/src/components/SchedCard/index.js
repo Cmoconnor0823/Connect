@@ -29,14 +29,9 @@ class SchedCard extends Component {
       summary: "",
       startTime: "",
       endTime: "",
-      startDate: new Date()
+      startDate: new Date(),
+      endDate: new Date()
     };
-
-    // handleChange = date => {
-    // 	this.setState({
-    // 	  startDate: date
-    // 	});
-    //   };
 
     ApiCalendar.onLoad(() => {
       ApiCalendar.listenSign(this.signUpdate);
@@ -72,32 +67,15 @@ class SchedCard extends Component {
     }
   };
 
-  // 	act = () => {
-  // 		const createEvent: object = {
-  // 		  summary: this.state.summary,
-  // 		  time: this.state.startTime
-
-  // 		};
-
-  //     ApiCalendar.createcreateEvent(createEvent)
-  //       .then(result => {
-  //         console.log(result);
-  //       })
-  //       .catch(error => {
-  //         console.log(error);
-  //       });
-  //   };
-
-  // -------------practice for 'createEvent!'------------
   act = () => {
     const createEvent: object = {
       summary: this.state.summary,
       start: {
-        dateTime: this.state.startTime
+        dateTime: this.state.startDate
       },
-      // end: {
-      //   dateTime: this.state.endTime
-      // }
+      end: {
+        dateTime: this.state.endDate
+      }
     };
 
     ApiCalendar.createEvent(createEvent)
@@ -134,11 +112,16 @@ class SchedCard extends Component {
   };
 
   handleChange = date => {
-
-    // var date = moment(date).format();
-    console.log(date)
     this.setState({
-      startDate: date
+      startDate: date,
+      // endDAte: utcDate2
+    });
+  };
+
+  handleChange2 = date => {
+    this.setState({
+      endDate: date,
+     
     });
   };
 
@@ -167,7 +150,10 @@ class SchedCard extends Component {
               onChange={this.handleInputChange}
               value={this.state.summary}
             ></input>
+
+
             <input
+
               type="text"
               placeholder="start time"
               name="startTime"
@@ -179,14 +165,24 @@ class SchedCard extends Component {
               placeholder="end time"
               name="endTime"
               onChange={this.handleInputChange}
+
               value={this.state.endTime}
             ></input>
+
              <DatePicker
 			             showTimeSelect
  				            dateFormat="Pp"		
                 selected={this.state.startDate}
                 onChange={this.handleChange}
               /> 
+
+               <DatePicker
+			             showTimeSelect
+ 				            dateFormat="Pp"		
+                selected={this.state.endDate}
+                onChange={this.handleChange2}
+              />
+
 
             <p>
               <button onClick={this.act}>create Event</button>
