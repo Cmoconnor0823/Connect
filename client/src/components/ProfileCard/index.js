@@ -3,7 +3,7 @@ import { Card, CardTitle, CardBody, Table } from "reactstrap";
 import { FormBtn, DeleteBtn, TextArea } from "../Form";
 import "./style.css";
 
-class ToDoCard extends Component {
+class ProfileCard extends Component {
 
 	state = {
 
@@ -22,9 +22,9 @@ class ToDoCard extends Component {
 	//   };
 	render() {
 		return (
-			<Card id="toDoCard">
+			<Card id="profileCard">
 				<CardTitle>
-					<h4> This will be the card that holds our to do </h4>
+					<h4> This will be the card that holds List of profiles </h4>
 				</CardTitle>
 				<CardBody>
 
@@ -34,45 +34,34 @@ class ToDoCard extends Component {
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Your To Do LIst</th>
+								<th>Here's everyone on the project!</th>
 
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<th scope="row">1</th>
-								<td>10/7/19</td>
-								<DeleteBtn></DeleteBtn>
+								<td>John</td>
 
 							</tr>
 							<tr>
 								<th scope="row">2</th>
-								<td>10/14/19</td>
-								<DeleteBtn></DeleteBtn>
-
+								<td>Rod</td>
 							</tr>
 							<tr>
 								<th scope="row">3</th>
-								<td>10/16/19</td>
-								<DeleteBtn></DeleteBtn>
-
+								<td>Sean</td>
 							</tr>
 						</tbody>
 					</Table>
-					 <TextArea
-						value={this.state.synopsis}
-						onChange={this.handleInputChange}
-						name="toDo"
-						placeholder="Add a item to your ToDo list (Optional)"
-					/>
 					<FormBtn 
 						disabled={!(this.state.toDo)}
 						onClick={this.handleFormSubmit}
-						> Add to your To Do's</FormBtn>
+						> Click me to display all profiles in the projects</FormBtn>
 				</CardBody>
 			</Card>
 		);
 	}
 }
 
-export default ToDoCard;
+export default ProfileCard;

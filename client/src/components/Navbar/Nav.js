@@ -35,8 +35,11 @@ class NavBar extends React.Component {
 								<NavLink href="/createUser">Create a Profile</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="https://github.com/Cmoconnor0823/Connect">GitHub</NavLink>
+								<NavLink href="/about">About</NavLink>
 							</NavItem>
+							{/* <NavItem>
+								<NavLink href="https://github.com/Cmoconnor0823/Connect">GitHub</NavLink>
+							</NavItem> */}
 						</Nav>
 					</Collapse>
 				</Navbar>

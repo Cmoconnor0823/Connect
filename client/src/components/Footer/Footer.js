@@ -9,26 +9,21 @@ function Footer() {
 				<ul className="navbar-nav mr-auto pages float-left">
 					<li className="nav-item active">
 						<a className="navbar-brand" href="/home">
-							Home
-			</a>
+							Home</a>
 					</li>
 					<li className="nav-item">
 						<a className="navbar-brand" href="/login">
-							Log In
-			</a>
+							Log In</a>
 					</li>
 					<li className="nav-item">
 						<a className="navbar-brand" href="/createuser">
-							Create a Profile
-			</a>
+							Create a Profile</a>
 					</li>
-					{/* <li>
-				<a className="navbar-brand" href="/">
-				Home
-				</a> 
-			</li>*/}
-					<div className="navbar-brand copyright col-lg-3" id="copyright"><h4>© KonnectD 2019</h4></div>
+					<li>
+				<a className="navbar-brand" href="https://github.com/Cmoconnor0823/Connect">GitHub Repository</a> 
+			</li>
 				</ul>
+					<div className="navbar-brand logo navbar-right copyright col-lg-3" id="copyright"><h4>© KonnectD 2019</h4></div>
 			</div>
 		</footer>
 	);

@@ -155,8 +155,6 @@ class SchedCard extends Component {
       //----------------code for form to send to api -------------
 
       <Card id="schedCard">
-
-      
         <div>
           <h1> Forms and inputs</h1>
           <p>summary of event is {summary}</p>
@@ -194,7 +192,7 @@ class SchedCard extends Component {
               <button onClick={this.act}>create Event</button>
             </p>
           </form>
-        </div>
+		  </CardTitle>
         {/* //----------------code for form to send to api ------------------- */}
 
         <CardTitle>

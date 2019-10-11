@@ -43,7 +43,7 @@ class MessageCard extends Component {
                     </a>
                     <DeleteBtn />
                   </ListItem> */}
-					<Table hover>
+					<Table hover responsive="sm">
 						<thead>
 							<tr>
 								<th>#</th>
