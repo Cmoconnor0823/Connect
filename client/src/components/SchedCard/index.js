@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, TextArea } from "../Form";
-import { Card, CardBody, CardTitle, CardFooter, Table } from "reactstrap";
+import { Card, CardBody, CardTitle, CardFooter, Table, Collapse } from "reactstrap";
 import "./style.css";
 
 // import reactMoment from 'react-moment';
@@ -20,6 +20,30 @@ import moment from 'moment'
 // import 'moment-timezone';
 
 class SchedCard extends Component {
+// ----------toggle funtionality------------
+// state = {
+//   on:false,
+// }
+
+
+
+
+// render() {
+//   return (
+//       <div>
+//       {this.state.on && (
+//           <h1>
+//               toggle meXD
+//           </h1>
+//       )}
+//           <button onClick = {this.toggle}>show hide</button>
+//       </div>
+//   )
+// }
+// ----------toggle funtionality------------
+
+
+
   constructor() {
     super();
     this.state = {
@@ -30,17 +54,41 @@ class SchedCard extends Component {
       startTime: "",
       endTime: "",
       startDate: new Date(),
-      endDate: new Date()
+      endDate: new Date(),
+      isToggleOn:false,
+      isToggleFormOn:false
     };
+
+    // ------------toggle funtionality---
+
+    
+     // ------------toggle funtionality---
+
+
+
 
     ApiCalendar.onLoad(() => {
       ApiCalendar.listenSign(this.signUpdate);
     });
   }
-
+  
   componentDidMount() {
     this.listEvents();
   }
+  
+
+  toggle = () => {
+    this.setState({
+        isToggleOn: !this.state.isToggleOn
+    })
+  }
+
+  toggleForm = () => {
+    this.setState({
+      isToggleFormOn:!this.state.isToggleFormOn
+    })
+  }
+
 
   signUpdate = sign => {
     this.setState({ sign });
@@ -135,18 +183,29 @@ class SchedCard extends Component {
     //----------------code for form to send to api -------------------
 
     return (
-      //----------------code for form to send to api -------------
+      //----------------toggle funtionality -------------
+      
+
+      //----------------toggle funtionalit -------------
+
+
+
 
       <Card id="schedCard">
         <CardTitle>
-
-          <h4>
-              Enter the information below to create an event on google calendar
-            </h4>
+          <h6>
+              Enter the information below to create an event on google calendar. Be sure to sign in to your gmail first!
+            </h6>
+            <button className="btn m-2 cssbtn font-weight-bold" id="#cssBtn" onClick={e => this.handleItemClick(e, "sign-in")}>
+              Sign-In
+          </button>
         </CardTitle>
         <CardBody>
-          Your event summary is {summary}
-          <form onSubmit={this.handleSubmit}>
+
+        <button onClick = {this.toggleForm}>show/hide create form</button>
+          <div>
+          {this.state.isToggleFormOn && (
+            <form onSubmit={this.handleSubmit}>
 
             <TextArea
               type="text"
@@ -155,6 +214,24 @@ class SchedCard extends Component {
               onChange={this.handleInputChange}
               value={this.state.summary}
             />
+            <div>
+              <h6>
+                Starting time and date!
+              </h6>            
+              </div>
+            <div className="m-3">
+               <DatePicker
+			          showTimeSelect
+ 				        dateFormat="Pp"		
+                selected={this.state.startDate}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <h6>
+                Ending time and date!
+              </h6>            
+              </div>
             <div className="m-3">
                <DatePicker
 			             showTimeSelect
@@ -167,12 +244,19 @@ class SchedCard extends Component {
               <button className="btn m-2 cssbtn font-weight-bold" onClick={this.act}>Create Event</button>
             </p>
           </form>
+          
+  
+            )}</div>
+        
+         
+          
+          
           {/* //----------------code for form to send to api ------------------- */}
 
           
-            <button className="btn m-2 cssbtn font-weight-bold" id="#cssBtn" onClick={e => this.handleItemClick(e, "sign-in")}>
+            {/* <button className="btn m-2 cssbtn font-weight-bold" id="#cssBtn" onClick={e => this.handleItemClick(e, "sign-in")}>
               Sign-In
-          </button>
+          </button> */}
             <button className="btn m-2 cssbtn font-weight-bold" onClick={e => this.handleItemClick(e, "sign-out")}>
               Sign-Out
           </button>
@@ -181,6 +265,9 @@ class SchedCard extends Component {
           </button>
           
           <CardFooter>
+          <button onClick = {this.toggle}>show/hide schedule</button>
+          <div>
+          {this.state.isToggleOn && (
             <Table hover>
                 <thead>
                   <tr>
@@ -216,9 +303,13 @@ class SchedCard extends Component {
                   </tr>
                 </tbody>
             </Table>
+           
+             )}
+          </div>
             </CardFooter>
           </CardBody>
       </Card>
+      
         );
       }
     }
