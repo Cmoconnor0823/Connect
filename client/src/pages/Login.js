@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../components/Header";
 import { Container, Col, Row } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
-//import Card from "../components/Card";
+import AboutCard from "../components/AboutCard";
 import LOGCard from "../components/LOGCard/index.js"
 // import { Input, FormBtn } from "../components/Form";
 // import Footer from "../components/Footer/Footer";
@@ -21,6 +21,7 @@ class Login extends Component {
 				<Container>
 					<Col>
 					<Row>
+					<AboutCard></AboutCard>
 						<LOGCard routeHome={this.routeHome}>
 						</LOGCard>
 					</Row>
