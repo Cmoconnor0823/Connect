@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Input, TextArea } from "../Form";
-import { Card, CardBody, CardTitle, CardFooter, Table, Collapse } from "reactstrap";
+import { TextArea } from "../Form";
+import { Card, CardBody, CardTitle, CardFooter, Table } from "reactstrap";
+
 import "./style.css";
 
 // import reactMoment from 'react-moment';
@@ -14,7 +15,7 @@ import ApiCalendar from "react-google-calendar-api";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-import moment from 'moment'
+//import moment from 'moment'
 
 // import Moment from 'react-moment';
 // import 'moment-timezone';

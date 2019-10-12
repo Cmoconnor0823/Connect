@@ -1,7 +1,7 @@
 import React from "react";
 import image from "../../assets/img/logonobackground.png";
 
-import { Jumbotron, Container, Col, Row } from "reactstrap";
+import { Jumbotron, Col, Row } from "reactstrap";
 import './style.css';
 
 const Jumbo = (props) => {
@@ -14,7 +14,7 @@ const Jumbo = (props) => {
 				<h3 className="text-center p-5">
 					<img src={image} className="img rounded pull-left" alt="Logo" ></img>
 				
-						Welcome To KonnectD, a Bussiness Management Tool for Scheduling and employee records.</h3>
+						Welcome To KonnectD, a Business Management Tool for Project Management and Records.</h3>
 					
 				</Col>
 			</Row>

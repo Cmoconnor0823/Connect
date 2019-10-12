@@ -123,22 +123,22 @@ class CreatePCard extends Component {
 							name="email"
 							placeholder="Email address (required)"
 						/>
-						<div className="card-footer">
+						{/* <div className="card-footer">
 							<h6 className="m-3">Check the box below if you want to create a new project. This will make you admin of the project.
 							If you already have a project enter your project key below</h6>
-						<Input
+						{/* <Input
 								type="checkbox"
 								id="admin"
 								name="Admin"
 								value={this.state.admin}
-							/>
-							<Input
+							/> */}
+							{/* <Input
 								value={this.state.projectKey}
 								onChange={this.handleInputChange}
 								name="projectKey"
 								placeholder="Project key (required)"
-							/>
-						</div>
+							/> 
+						</div> */}
 						{/* <TextArea
                 					value={this.state.synopsis}
                 					onChange={this.handleInputChange}
