@@ -21,7 +21,7 @@ class Home extends Component {
                     <WelcomeCard></WelcomeCard>
                     </Col>
                 </Row>
-                    <Row>
+                    <Row className="m-3">
                         <Col>
                             <CardColumns>
                                 <SchedCard></SchedCard>
