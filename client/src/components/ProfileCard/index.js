@@ -2,24 +2,26 @@ import React, { Component } from "react";
 import { Card, CardTitle, CardBody, Table } from "reactstrap";
 import { FormBtn, DeleteBtn, TextArea } from "../Form";
 import "./style.css";
+import axios from 'axios';
 
 class ProfileCard extends Component {
 
 	state = {
 
 	};
-	// state changing is the "toDo" input
+	
 
 
-	//   componentDidMount() {
-	// 	this.loadBooks();
-	//   }
+	handleClick = (event) => {
+		console.log("clicked")
+		axios.get("/api/getprofiles")
+		.then((res) => {
+			
+			console.log(res);
+		});
+		}
+			
 
-	//   loadBooks = () => {
-	// 	API.getBooks()
-	// 	  .then(res => this.setState({ books: res.data }))
-	// 	  .catch(err => console.log(err));
-	//   };
 	render() {
 		return (
 			<Card id="profileCard">
@@ -55,9 +57,9 @@ class ProfileCard extends Component {
 						</tbody>
 					</Table>
 					<FormBtn 
-						disabled={!(this.state.toDo)}
-						onClick={this.handleFormSubmit}
-						> Click me to display all profiles in the projects</FormBtn>
+						onClick={this.handleClick}
+						> Click me to display all profiles in the projects
+					</FormBtn>
 				</CardBody>
 			</Card>
 		);
