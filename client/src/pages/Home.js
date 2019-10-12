@@ -25,8 +25,8 @@ class Home extends Component {
                         <Col>
                             <CardColumns>
                                 <SchedCard></SchedCard>
-                                {/* <ToDoCard></ToDoCard>
-                                <MessageCard></MessageCard> */}
+                                <ToDoCard></ToDoCard>
+                                <MessageCard></MessageCard>
                                 <ProfileCard></ProfileCard>
                                 {/* This is a template to make a new card
                                      <Card>
