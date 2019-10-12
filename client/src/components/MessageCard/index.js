@@ -4,26 +4,34 @@ import { Input, FormBtn, TextArea } from "../Form";
 import { Card, CardBody, CardTitle, Table, } from "reactstrap";
 import "./style.css";
 
-class MessageCard extends Component {
+class MessageCard extends React.Component {
 
-	state = {
+	constructor (props) {
+        super(props);
+        this.state = {
+			thisMessage: "",
+			thisTitle: "",
+            chatMessages: []
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.addMessage = this.addMessage.bind(this);
+    }
 
-	};
+	addMessage() {
+        // This is where you would normally do a call to your server endpoint which 
+        // would commit the message to a database and then return ALL messages
+        let today = new Date();
+        let hour = today.getHours();
+        let minutes = today.getMinutes();
+        let time = `${hour}:${minutes}`;
+        this.state.chatMessages.push([time, "Eric", this.state.thisMessage]);
+        this.setState({thisMessage: ""});
+        console.log(this.state.chatMessages);
+    }
 
-
-	// state = {
-	// 	books: []
-	//   };
-
-	//   componentDidMount() {
-	// 	this.loadBooks();
-	//   }
-
-	//   loadBooks = () => {
-	// 	API.getBooks()
-	// 	  .then(res => this.setState({ books: res.data }))
-	// 	  .catch(err => console.log(err));
-	//   };
+    handleInputChange(event) {
+        this.setState({thisMessage: event.target.value});
+    }
 
 	render() {
 		return (
@@ -48,13 +56,12 @@ class MessageCard extends Component {
 							<tr>
 								<th>#</th>
 								<th>Messages</th>
-
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<th scope="row">1</th>
-								<td>10/7/19</td>
+								<td>data={this.state.chatMessages}</td>
 
 							</tr>
 							<tr>
@@ -71,13 +78,14 @@ class MessageCard extends Component {
 					</Table>
 					<form>
 						<Input
-							value={this.state.title}
+							type="text"
+							value={this.state.thisTitle}
 							onChange={this.handleInputChange}
 							name="messageTitle"
 							placeholder="Message Title (required)"
 						/>
 						<TextArea
-							value={this.state.message}
+							value={this.state.thisMessage}
 							onChange={this.handleInputChange}
 							name="message"
 							placeholder="Message (Optional)"
@@ -90,7 +98,7 @@ class MessageCard extends Component {
 								/> */}
 
 						<FormBtn
-							disabled={!(this.state.title && this.state.message)}
+							enabled={!(this.state.title && this.state.chatmessage)}
 							onClick={this.handleFormSubmit}
 						>
 							Post Message
