@@ -11,20 +11,6 @@ class AboutCard extends Component {
 	};
 
 
-	// state = {
-	// 	books: []
-	//   };
-
-	//   componentDidMount() {
-	// 	this.loadBooks();
-	//   }
-
-	//   loadBooks = () => {
-	// 	API.getBooks()
-	// 	  .then(res => this.setState({ books: res.data }))
-	// 	  .catch(err => console.log(err));
-	//   };
-
 	render() {
 		return (
 			<Card id="aboutCard">
@@ -32,12 +18,16 @@ class AboutCard extends Component {
 					<h4> This will be the card that Tell the story and About of our app </h4>
 				</CardTitle>
 				<CardBody>
-					<h1> Here is where we should tell what the app is designed to do</h1>
-					<h3>Here is where we tell the app's story</h3>
-					<h6>Here is where we list features to come</h6>
+					<h2> Konnectd is an application to manage and organize projects of all types and scopes. Complete with messaging, Google Calendar integration, and more!</h2>
+					<br></br>
+					<h3> We are commited to giving back to the open source community! Because of this Konnectd is free for small groups and avaiable for larger groups for a fee.</h3>
+					<br></br>
+					<h6> Konnectd was built to fill a need we saw in our own project managment needs and we wanted to provide a all in one </h6>
 					
 				</CardBody>
-				<CardFooter></CardFooter>
+				<CardFooter>
+					Questions, Comments, Concerns? Contact us @ konnectd123@gmail.com
+				</CardFooter>
 			</Card>
 		);
 	}
