@@ -15,14 +15,14 @@ class AboutCard extends Component {
 		return (
 			<Card id="aboutCard">
 				<CardTitle>
-					<h4> This will be the card that Tell the story and About of our app </h4>
+					<h3 className="storyHead"> Konnectd is a site application to manage and organize projects in house. Complete with User Contact-Info Search, Google Calendar integration, and more! </h3>
 				</CardTitle>
 				<CardBody>
-					<h2> Konnectd is an application to manage and organize projects of all types and scopes. Complete with messaging, Google Calendar integration, and more!</h2>
 					<br></br>
-					<h3> We are commited to giving back to the open source community! Because of this Konnectd is free for small groups and avaiable for larger groups for a fee.</h3>
+					<h3 className="storyHead"> We are commited to giving back to the open source community! Because of this Konnectd is free for small groups and available at several different pricing tiers for larger projects. Contact us @ konnectd123@gmail.com for details.</h3>
 					<br></br>
-					<h6> Konnectd was built to fill a need we saw in our own project managment needs and we wanted to provide a all in one </h6>
+					<h5>Our Story</h5>
+					<h6> Konnectd was built to fill a need we saw in our own project managment needs and we wanted to provide a all in one site to be able to keep your project organized with the tools you need to suceed.</h6>
 					
 				</CardBody>
 				<CardFooter>
