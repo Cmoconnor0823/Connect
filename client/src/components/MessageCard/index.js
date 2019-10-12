@@ -14,7 +14,9 @@ class MessageCard extends React.Component {
 			thisTitle: "",
             chatMessages: []
         }
-        //this.handleChange = this.handleChange.bind(this);
+		//
+		
+		//this.handleChange = this.handleChange.bind(this);
         this.addMessage = this.addMessage.bind(this);
     }
 
