@@ -48,10 +48,11 @@ class ProfileCard extends Component {
 						<tbody>
 						{this.state.users.map(member =>
 							<tr key ={member.id}>
-								<td>{member.firstName} + " " + {member.lastName} </td>
+								<td>{member.firstName}  {member.lastName} </td>
 								<td>{member.email}</td>
 								<td>{member.phoneNumber}</td>
 								<td>{member.position}</td>
+								<td><a>Edit</a>|<a>Delete</a></td>
 							</tr>
 						)}	
 						</tbody>
