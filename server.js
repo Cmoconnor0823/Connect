@@ -26,12 +26,25 @@ app.post("/api/login", function(req, res) {
     // res.render("Home");
   });
 });
+
 // Add new User to Database
   app.post("/api/createUser",function(req,res){
   db.Profile.create(req.body).then(function(newUser){
     res.send(newUser)
-  })
-})
+  });
+});
+// Get all profiles and display them in order
+app.get("/api/getprofiles", function(req,res){
+  db.Profile.findAll({
+    // order: [
+    //   ['lastName', 'ASC']
+    // ]
+  }).then(function(dbProfile) {
+    console.log(dbProfile);
+    res.json(dbProfile);
+  });
+});
+
 
 // Send every other request to the React app
 // Define any API routes before this runs
@@ -49,7 +62,4 @@ db.sequelize.sync({ force: false }).then(function() {
 
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
-
-
-
 
