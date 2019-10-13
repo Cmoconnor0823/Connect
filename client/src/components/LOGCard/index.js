@@ -15,7 +15,6 @@ class LOGCard extends Component {
 	handleInputChange = (event) => {
 		this.setState({
 			[event.target.name]:event.target.value
-
 		})
 	}
 
@@ -43,6 +42,7 @@ class LOGCard extends Component {
 			}
 			});
 		}
+		
 	render() {
 		return (
 			<Card id="logCard">

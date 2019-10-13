@@ -36,9 +36,9 @@ app.post("/api/login", function(req, res) {
 // Get all profiles and display them in order
 app.get("/api/getprofiles", function(req,res){
   db.Profile.findAll({
-    order: [
-      ['lastName', 'ASC']
-    ]
+    // order: [
+    //   ['lastName', 'ASC']
+    // ]
   }).then(function(dbProfile) {
     console.log(dbProfile);
     res.json(dbProfile);
