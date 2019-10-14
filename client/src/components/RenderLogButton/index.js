@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from 'reactstrap';
 import { FormBtn } from "../Form";
+import Navbar from "../Navbar";
+
 export default class LoginControl extends Component {
     constructor(props) {
         super(props);
@@ -11,6 +13,7 @@ export default class LoginControl extends Component {
     handleLogout() {
         this.setState({ loggedIn: false });
         sessionStorage.setItem("loggedin", "")
+        // this.props.routeLog();
     }
     
     render() {
