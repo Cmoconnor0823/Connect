@@ -17,8 +17,6 @@ module.exports = function(sequelize, DataTypes) {
   Project.associate = function(models) {
       Project.hasMany(models.Messages);
   };
-  Project.associate = function(models) {
-    Project.hasMany(models.Profiles, {through:'project-users',as:'projectID'});
-};
+ 
     return Project;
   };

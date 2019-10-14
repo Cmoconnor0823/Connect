@@ -52,16 +52,12 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Profile.associate = function(models) {
-        Profile.belongsToMany(models.Project, {
-          through:"project_users",as:"profile_id"
-        });
+        Profile.belongsToMany(models.Project);
     Profile.associate = function(models) {
         Profile.hasMany(models.Message);
     };
     Profile.associate = function(models) {
-        Profile.hasMany(models.Project_Meta, {
-          through:models.Project_Meta,as:'profile_id'
-        });
+        Profile.hasMany(models.Project_Meta);
     };
 
     
