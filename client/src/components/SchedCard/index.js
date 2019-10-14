@@ -102,21 +102,32 @@ class SchedCard extends Component {
     // console.log(this.state);
     if (ApiCalendar.sign) {
       ApiCalendar.listUpcomingEvents(10).then(result => {
-        var test2 = result.result.items;
-        console.log(test2);
+        // var test2 = result.result.items;
+        // console.log(test2);
 
-        var test1 = result.result.items[0].end.dateTime;
+        // var test1 = result.result.items[0].end.dateTime;
 
-        var dateAndTime = moment(test1).format("MMMM Do YYYY, h:mm:ss a");
-        console.log(dateAndTime);
-        var res1 = dateAndTime.split(",");
-        console.log(res1);
-        console.log(res1[0]);
-        console.log(res1[1]);
+        // var dateAndTime = moment(test1).format("MMMM Do YYYY, h:mm:ss a");
+        // console.log(dateAndTime);
+        // var res1 = dateAndTime.split(",");
+        // console.log(res1);
+        // console.log(res1[0]);
+        // console.log(res1[1]);
 
-        // date = res1[0];
+        // var date = res1[0];
 
-        // time = res1[1];
+        // var time = res1[1];
+
+        // console.log(date);
+        // console.log(time)
+
+        // ---------------------
+        var date2 = moment(result.result.items[0].end.dateTime).format("MMMM Do YYYY, h:mm:ss a").split(",");
+        console.log(date2[0]);
+        console.log(date2[1]);
+
+
+        // ---------------------
 
         // result.items[""0""].start.dateTime
 
@@ -224,6 +235,7 @@ class SchedCard extends Component {
             To view your events in Google Calendar, be sure to sign in to your
             gmail account first! <br></br>
             <button
+              
               className="btn m-2 cssaltbtn font-weight-bold"
               id="#cssBtn"
               onClick={e => this.handleItemClick(e, "sign-in")}
@@ -235,7 +247,7 @@ class SchedCard extends Component {
         <CardBody>
           <h5>Click the button below to create a new event.</h5>
           <button
-            className="btn m-2 cssaltbtn font-weight-bold"
+            className="btn m-2 cssbtn font-weight-bold"
             onClick={this.toggleForm}
           >
             Show/Hide Create Event Form
@@ -282,33 +294,33 @@ class SchedCard extends Component {
             )}
           </div>
           {/* //----------------code for form to send to api ------------------- */}
-          <button
-            className="btn m-2 cssbtn font-weight-bold"
-            onClick={e => this.handleItemClick(e, "sign-out")}
-          >
-            Sign-Out
-          </button>
+          
 
           <button
-            className="btn m-2 cssaltbtn font-weight-bold"
+            className="btn m-2 cssbtn font-weight-bold"
             onClick={this.toggle}
           >
             Show/Hide Goolgle Calendar Events
           </button>
           <button
-            className="btn m-2 cssbtn font-weight-bold"
+           className="btn m-2 cssbtn font-weight-bold"
             onClick={this.listEvents}
           >
             Update My Schedule!
           </button>
+          <button
+            className="btn m-2 cssaltbtn font-weight-bold"
+            onClick={e => this.handleItemClick(e, "sign-out")}>
+            Sign-Out
+          </button>
           <CardFooter>
             <div>
-              {this.state.isToggleOn && <div>here is what you got going!</div>}
-              <Table className="table table-hover">
+              {this.state.isToggleOn && <div>Here is what you got going!
+                <Table className="table table-hover">
                 <thead>
                   <tr>
-                    <th>Event name</th>
-                    <th>time and date</th>
+                    <th>Event Name</th>
+                    <th>Time and Date</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -328,6 +340,9 @@ class SchedCard extends Component {
                   ))}
                 </tbody>
               </Table>
+              
+              </div>}
+             
             </div>
           </CardFooter>
         </CardBody>

@@ -1,6 +1,10 @@
-import React, { Component } from 'react';
-import { NavLink } from 'reactstrap';
-import { FormBtn } from "../Form";
+
+import React, {Component} from 'react';
+import { NavLink, Button } from 'reactstrap';
+//import { FormBtn } from "../Form";
+import "./style.css";
+
+
 export default class LoginControl extends Component {
     constructor(props) {
         super(props);
@@ -14,10 +18,10 @@ export default class LoginControl extends Component {
     }
     
     render() {
-        if (sessionStorage.loggedin === "success") {
-            return (
-                <FormBtn onClick={this.handleLogout}> Log Out </FormBtn>
-            )
+        if(sessionStorage.loggedin === "success"){
+        return (
+            <Button className="logOut" onClick={this.handleLogout}> Log Out </Button>
+        )
         }
         else {
             return (
