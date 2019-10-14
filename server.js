@@ -62,6 +62,25 @@ app.post("/api/createTodo",function(req,res){
   });
 });
 
+
+
+// Get all messages and display them in order
+app.get("/api/messages", function(req,res) {
+  db.Message.findAll({
+    // order:[
+    //   ['createdAt','DESC']
+    // ]
+  }).then(function(dbmessage){
+    res.json(dbmessage);
+  })
+})
+// Add a new Message to the list
+app.post("/api/createMessage",function(req,res){
+  db.Message.create(req.body).then(function(newMessage){
+    res.send(newMessage)
+  });
+});
+
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {

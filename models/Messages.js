@@ -1,14 +1,18 @@
 module.exports = function(sequelize, DataTypes) {
     let Message = sequelize.define("Message", {
       message: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
         len: [1]
       },
-      name:{
-          type:DataTypes.TEXT,
-          allowNull: false,
+      author:{
+          type:DataTypes.STRING,
+          allowNull: true,
           len:[1]
+      },
+      subject:{
+        type:DataTypes.STRING,
+        allowNull: true
       }
     });
   

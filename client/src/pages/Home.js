@@ -3,7 +3,7 @@ import { Col, Row, CardColumns } from "reactstrap";
 import Wrapper from "../components/Wrapper/";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
-import MessageCard from "../components/MessageCard";
+import MessageCards from "../components/Message Board";
 import WelcomeCard from "../components/WelcomeCard";
 import ProfileCard from "../components/ProfileCard";
 import "./style.css";
@@ -27,7 +27,7 @@ class Home extends Component {
                             <CardColumns>
                                 <SchedCard></SchedCard>
                                 <ToDoCard></ToDoCard>
-                                <MessageCard></MessageCard>
+                                <MessageCards></MessageCards>
                                 <ProfileCard></ProfileCard>
                                 {/* This is a template to make a new card
                                      <Card>

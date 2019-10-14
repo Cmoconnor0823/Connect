@@ -19,8 +19,6 @@ class ToDoCard extends Component {
 			axios.get("/api/todos")
 			.then((res) => {
 				// console.log(users)
-				console.log("request sent")
-				console.log(res.data);
 				this.setState({
 					todos:res.data
 				})
@@ -28,15 +26,17 @@ class ToDoCard extends Component {
 			}
 		handleNewTodo = event => {
 			// event.preventDefault();
-			console.log("clicked")
+			// console.log("clicked")
 			axios.post("/api/createTodo",
 			{
-				post: this.state.newTodo
+				post: this.state.newTodo,
+				deadline: this.state.deadline
 			})
 			.then((res)=> {
 				console.log("new Todo created")
 				this.setState({
-					newTodo:""
+					newTodo:"",
+					deadline:""
 				})
 			})
 		}
@@ -60,20 +60,26 @@ class ToDoCard extends Component {
 					<Table hover responsive="sm">
 						<thead>
 							<tr>
-								<th>{this.state.todos.id}</th>
+								<th>#</th>
+								{/* <th>deadline</th> */}
+								<th>Task</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+						
+								{/* {this.state.todos.id} */}
 								{/* <th>Date Due</th> */}
 								{this.state.todos.map(todos =>
 								<tr key ={todos.id}>
 								<td>{todos.id}</td>
-								{/* <td>{todos.deadline}</td> */}
+								<td>{todos.deadline}</td>
 								<td>{todos.post}</td>
 								</tr>
 							
 						)}	
 
-							</tr>
-						</thead>
-						<tbody>
+							
 					
 						</tbody>
 					</Table>
