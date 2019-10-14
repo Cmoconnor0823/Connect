@@ -2,66 +2,69 @@ import React, { Component } from "react";
 import { Card, CardTitle, CardBody, Table } from "reactstrap";
 import { FormBtn} from "../Form";
 import "./style.css";
+import axios from 'axios';
 
 class ProfileCard extends Component {
+	constructor(props) {
+        super(props)
+		this.state = {
+		users:[]
+		};
+	}
 
-	state = {
-
-	};
-	// state changing is the "toDo" input
-
-
-	//   componentDidMount() {
-	// 	this.loadBooks();
-	//   }
-
-	//   loadBooks = () => {
-	// 	API.getBooks()
-	// 	  .then(res => this.setState({ books: res.data }))
-	// 	  .catch(err => console.log(err));
-	//   };
+	componentDidMount() {
+		console.log("clicked")
+		axios.get("/api/getprofiles")
+		// {users:this.state.users}
+		
+		.then((res) => {
+			// console.log(users)
+			console.log(res.data[0].firstName);
+			this.setState({
+				users:res.data
+			})
+		});
+		}
+		
 	render() {
 		return (
 			<Card id="profileCard">
 				<CardTitle>
-					<h4> This will be the card that holds List of profiles </h4>
+					<h4> Project Member's Contact Info </h4>
 				</CardTitle>
 				<CardBody>
-
 					This is the body of the card
 					(it appears like we loose 3 columns if the cards are not big enough to justify 3 rows)
 					<Table hover responsive="sm">
 						<thead>
 							<tr>
-								<th>#</th>
-								<th>Here's everyone on the project!</th>
-
+								<th>Name</th>
+								<th>Email</th>
+								<th>Phone Number</th>
+								<th>Job Position</th>
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>John</td>
-
+						{this.state.users.map(member =>
+							<tr key ={member.id}>
+								<td>{member.firstName}  {member.lastName} </td>
+								<td>{member.email}</td>
+								<td>{member.phoneNumber}</td>
+								<td>{member.position}</td>
+								<td><a>Edit</a>|<a>Delete</a></td>
 							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>Rod</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>Sean</td>
-							</tr>
+						)}	
 						</tbody>
 					</Table>
 					<FormBtn 
-						disabled={!(this.state.toDo)}
-						onClick={this.handleFormSubmit}
-						> Click me to display all profiles in the projects</FormBtn>
+						onClick={this.handleClick}
+						> Click me to display all profiles in the projects
+					</FormBtn>
 				</CardBody>
 			</Card>
 		);
-	}
-}
+	};
+};
 
 export default ProfileCard;

@@ -15,7 +15,6 @@ class LOGCard extends Component {
 	handleInputChange = (event) => {
 		this.setState({
 			[event.target.name]:event.target.value
-
 		})
 	}
 
@@ -24,7 +23,6 @@ class LOGCard extends Component {
 		event.preventDefault();
 		// const { history } = this.props;
 
-	  
 		axios.post("/api/login",
 		{
 			userName:this.state.userName,
@@ -33,7 +31,9 @@ class LOGCard extends Component {
 		.then((res) => {
 			console.log('res is ', typeof res.data)
 			if (res.data !== ""){
-				console.log('success!')
+				console.log(res)
+				// Set the local storage item to {msg:success}
+				localStorage.setItem('msg', 'success');
 				this.props.routeHome();
                 this.setState({ loggedin:true });
 			}
@@ -42,6 +42,7 @@ class LOGCard extends Component {
 			}
 			});
 		}
+		
 	render() {
 		return (
 			<Card id="logCard">
@@ -81,7 +82,7 @@ class LOGCard extends Component {
 						> 
 						{/* Above needs to also handle the project key on submit*/}
 							Log-In
-              					</FormBtn>
+              			</FormBtn>
 					</form>
 
 				</CardBody>
