@@ -4,13 +4,14 @@ import Wrapper from "../components/Wrapper/";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
 import MessageCard from "../components/MessageCard";
-import WelcomeCard from "../components/WelcomeCard";
+// import WelcomeCard from "../components/WelcomeCard";
 import ProfileCard from "../components/ProfileCard";
 
 
 
 class Home extends Component {
     state = {
+        loggedin: true
 
     };
     render() {
@@ -18,17 +19,17 @@ class Home extends Component {
             <Wrapper>
                 <Row>
                     <Col>
-                    <WelcomeCard></WelcomeCard>
+                        {/* <WelcomeCard></WelcomeCard> */}
+                        <ProfileCard></ProfileCard>
                     </Col>
                 </Row>
-                    <Row>
-                        <Col>
-                            <CardColumns>
-                                <SchedCard></SchedCard>
-                                <ToDoCard></ToDoCard>
-                                <MessageCard></MessageCard>
-                                <ProfileCard></ProfileCard>
-                                {/* This is a template to make a new card
+                <Row className="m-3">
+                    <Col>
+                        <CardColumns>
+                            <SchedCard></SchedCard>
+                            <ToDoCard></ToDoCard>
+                            <MessageCard></MessageCard>
+                            {/* This is a template to make a new card
                                      <Card>
                                      <CardBody>
                                         <CardTitle>
@@ -36,9 +37,9 @@ class Home extends Component {
                                         </CardTitle>
                                         </CardBody>
                                     </Card> */}
-                            </CardColumns>
-                        </Col>
-                    </Row>
+                        </CardColumns>
+                    </Col>
+                </Row>
             </Wrapper>
         );
     }

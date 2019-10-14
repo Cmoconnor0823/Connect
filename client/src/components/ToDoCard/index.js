@@ -5,10 +5,30 @@ import "./style.css";
 
 class ToDoCard extends Component {
 
-	state = {
-
-	};
+	constructor(props) {
+		super(props);
+		this.state = {
+		  term: '',
+		  items: []
+		};
+	  }
 	// state changing is the "toDo" input
+	handleInputChange = (event) => {
+		this.setState({term: event.target.value});
+	  }
+
+	  onSubmit = (event) => {
+		event.preventDefault()
+		this.setState({
+		  term: '',
+		  items: [...this.state.items, this.state.term]
+		});
+	  }
+
+		  //https://medium.com/@aghh1504/1-simple-react-todo-list-52186b62976b
+		  //Check the above link to continue?
+
+
 
 
 	//   componentDidMount() {
@@ -27,14 +47,11 @@ class ToDoCard extends Component {
 					<h4> This will be the card that holds our to do </h4>
 				</CardTitle>
 				<CardBody>
-
-					This is the body of the card
-					(it appears like we loose 3 columns if the cards are not big enough to justify 3 rows)
 					<Table hover responsive="sm">
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Your To Do LIst</th>
+								<th>Your To Do List</th>
 
 							</tr>
 						</thead>
@@ -60,14 +77,14 @@ class ToDoCard extends Component {
 						</tbody>
 					</Table>
 					 <TextArea
-						value={this.state.synopsis}
+						value={this.state.term}
 						onChange={this.handleInputChange}
 						name="toDo"
 						placeholder="Add a item to your ToDo list (Optional)"
 					/>
 					<FormBtn 
-						disabled={!(this.state.toDo)}
-						onClick={this.handleFormSubmit}
+						enabled={!(this.state.toDo)}
+						onSubmit={this.handleFormSubmit}
 						> Add to your To Do's</FormBtn>
 				</CardBody>
 			</Card>
