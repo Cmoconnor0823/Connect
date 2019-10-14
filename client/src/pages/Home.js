@@ -4,7 +4,7 @@ import Wrapper from "../components/Wrapper/";
 import ToDoCard from "../components/ToDoCard";
 import SchedCard from "../components/SchedCard";
 import MessageCard from "../components/MessageCard";
-import WelcomeCard from "../components/WelcomeCard";
+// import WelcomeCard from "../components/WelcomeCard";
 import ProfileCard from "../components/ProfileCard";
 
 
@@ -19,7 +19,7 @@ class Home extends Component {
             <Wrapper>
                 <Row>
                     <Col>
-                        <WelcomeCard></WelcomeCard>
+                        {/* <WelcomeCard></WelcomeCard> */}
                         <ProfileCard></ProfileCard>
                     </Col>
                 </Row>
