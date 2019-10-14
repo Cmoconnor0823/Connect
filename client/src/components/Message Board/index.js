@@ -65,7 +65,7 @@ class MessageCards extends Component {
 				</CardTitle>
 				<CardBody>
 				<div class="panel-body">
-					<Table hover bordered responsive="sm" className="table-responsive">
+					<Table hover responsive="sm" className="table-responsive">
 						<thead>
 							<tr>
 								<th>Created on</th>
