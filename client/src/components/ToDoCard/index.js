@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardTitle, CardBody, Table } from "reactstrap";
-import { FormBtn, DeleteBtn, TextArea } from "../Form";
+import { FormBtn, Input, TextArea } from "../Form";
 import "./style.css";
 import axios from 'axios';
 
@@ -10,7 +10,8 @@ class ToDoCard extends Component {
 		super(props);
 		this.state = {
 			todos:[],
-			newTodo:""
+			newTodo:"",
+			deadline:""
 			};
 		}
 	
@@ -49,16 +50,6 @@ class ToDoCard extends Component {
 			});
 		};
 
-
-	//   componentDidMount() {
-	// 	this.loadBooks();
-	//   }
-
-	//   loadBooks = () => {
-	// 	API.getBooks()
-	// 	  .then(res => this.setState({ books: res.data }))
-	// 	  .catch(err => console.log(err));
-	//   };
 	render() {
 		return (
 			<Card id="toDoCard">
@@ -69,16 +60,15 @@ class ToDoCard extends Component {
 					<Table hover responsive="sm">
 						<thead>
 							<tr>
-								<th>#</th>
-								<th>Date Created</th>
+								<th>{this.state.todos.id}</th>
+								{/* <th>Date Due</th> */}
 								{this.state.todos.map(todos =>
-							<tr key ={todos.id}>
+								<tr key ={todos.id}>
 								<td>{todos.id}</td>
-								<td>{todos.createdAt}</td>
+								{/* <td>{todos.deadline}</td> */}
 								<td>{todos.post}</td>
-								
-								{/* <td><a>Edit</a>|<a>Delete</a></td> */}
-							</tr>
+								</tr>
+							
 						)}	
 
 							</tr>
@@ -87,12 +77,18 @@ class ToDoCard extends Component {
 					
 						</tbody>
 					</Table>
-					 <TextArea
+					 <Input
 						value={this.state.newTodo}
 						onChange={this.handleInputChange}
 						name="newTodo"
 						placeholder="Add a item to your ToDo list (Optional)"
 					/>
+					<Input
+							value={this.state.deadline}
+							onChange={this.handleInputChange}
+							name="deadline"
+							placeholder="deadline (optional)"
+						/>
 					<FormBtn 
 						enabled={!(this.state.toDo)}
 						onClick={this.handleNewTodo}

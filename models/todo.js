@@ -6,8 +6,12 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           len: [1]
-        }
+        },
+        deadline: {
+          type: DataTypes.STRING,
+          allowNull: true,
       }
+    }
     });
     return toDo;
   };
