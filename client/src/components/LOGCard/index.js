@@ -33,7 +33,9 @@ class LOGCard extends Component {
 			if (res.data !== ""){
 				console.log(res)
 				// Set the local storage item to {msg:success}
-				localStorage.setItem('msg', 'success');
+				// localStorage.setItem('loggedin', 'success');
+				sessionStorage.setItem("loggedin", "success")
+				console.log(sessionStorage.loggedin)
 				this.props.routeHome();
                 this.setState({ loggedin:true });
 			}
