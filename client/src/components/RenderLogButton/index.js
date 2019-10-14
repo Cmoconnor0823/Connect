@@ -17,10 +17,10 @@ export default class LoginControl extends Component {
     }
     
     render() {
-        if (sessionStorage.loggedin === "success") {
-            return (
-                <FormBtn onClick={this.handleLogout}> Log Out </FormBtn>
-            )
+        if(sessionStorage.loggedin === "success"){
+        return (
+            <Button className="logOut" onClick={this.handleLogout}> Log Out </Button>
+        )
         }
         else {
             return (

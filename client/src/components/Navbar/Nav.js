@@ -1,6 +1,5 @@
 import React from "react";
 import './style.css';
-import { Input, FormBtn } from "../Form";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import PropTypes from 'prop-types';
 import LoginControl from "../RenderLogButton";
