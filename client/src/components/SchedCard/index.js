@@ -21,27 +21,27 @@ import "react-datepicker/dist/react-datepicker.css";
 // import 'moment-timezone';
 
 class SchedCard extends Component {
-// ----------toggle funtionality------------
-// state = {
-//   on:false,
-// }
+  // ----------toggle funtionality------------
+  // state = {
+  //   on:false,
+  // }
 
 
 
 
-// render() {
-//   return (
-//       <div>
-//       {this.state.on && (
-//           <h1>
-//               toggle meXD
-//           </h1>
-//       )}
-//           <button onClick = {this.toggle}>show hide</button>
-//       </div>
-//   )
-// }
-// ----------toggle funtionality------------
+  // render() {
+  //   return (
+  //       <div>
+  //       {this.state.on && (
+  //           <h1>
+  //               toggle meXD
+  //           </h1>
+  //       )}
+  //           <button onClick = {this.toggle}>show hide</button>
+  //       </div>
+  //   )
+  // }
+  // ----------toggle funtionality------------
 
 
 
@@ -56,14 +56,14 @@ class SchedCard extends Component {
       endTime: "",
       startDate: new Date(),
       endDate: new Date(),
-      isToggleOn:false,
-      isToggleFormOn:false
+      isToggleOn: false,
+      isToggleFormOn: false
     };
 
     // ------------toggle funtionality---
 
-    
-     // ------------toggle funtionality---
+
+    // ------------toggle funtionality---
 
 
 
@@ -72,21 +72,21 @@ class SchedCard extends Component {
       ApiCalendar.listenSign(this.signUpdate);
     });
   }
-  
+
   componentDidMount() {
     this.listEvents();
   }
-  
+
 
   toggle = () => {
     this.setState({
-        isToggleOn: !this.state.isToggleOn
+      isToggleOn: !this.state.isToggleOn
     })
   }
 
   toggleForm = () => {
     this.setState({
-      isToggleFormOn:!this.state.isToggleFormOn
+      isToggleFormOn: !this.state.isToggleFormOn
     })
   }
 
@@ -170,7 +170,7 @@ class SchedCard extends Component {
   handleChange2 = date => {
     this.setState({
       endDate: date,
-     
+
     });
   };
 
@@ -185,7 +185,7 @@ class SchedCard extends Component {
 
     return (
       //----------------toggle funtionality -------------
-      
+
 
       //----------------toggle funtionalit -------------
 
@@ -194,125 +194,107 @@ class SchedCard extends Component {
 
       <Card id="schedCard">
         <CardTitle>
-          <h6>
-              Enter the information below to create an event on google calendar. Be sure to sign in to your gmail first!
-            </h6>
-            <button className="btn m-2 cssbtn font-weight-bold" id="#cssBtn" onClick={e => this.handleItemClick(e, "sign-in")}>
-              Sign-In
+          <h4>
+            To view your events in Google Calendar, be sure to sign in to your gmail account first! <br></br>
+          <button className="btn m-2 cssaltbtn font-weight-bold" id="#cssBtn" onClick={e => this.handleItemClick(e, "sign-in")}>
+            Sign-In
           </button>
+            </h4>
         </CardTitle>
         <CardBody>
-
-        <button onClick = {this.toggleForm}>show/hide create form</button>
+        <h5>Click the button below to create a new event.</h5>
+          <button className="btn m-2 cssaltbtn font-weight-bold" onClick={this.toggleForm}>Show/Hide Create Event Form</button>
           <div>
-          {this.state.isToggleFormOn && (
-            <form onSubmit={this.handleSubmit}>
-
-            <TextArea
-              type="text"
-              placeholder="Enter a Summary or Description of your event"
-              name="summary"
-              onChange={this.handleInputChange}
-              value={this.state.summary}
-            />
-            <div>
-              <h6>
-                Starting time and date!
-              </h6>            
-              </div>
-            <div className="m-3">
-               <DatePicker
-			          showTimeSelect
- 				        dateFormat="Pp"		
-                selected={this.state.startDate}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <h6>
-                Ending time and date!
-              </h6>            
-              </div>
-            <div className="m-3">
-               <DatePicker
-			             showTimeSelect
- 				            dateFormat="Pp"		
-                selected={this.state.endDate}
-                onChange={this.handleChange2}
-              />
-            </div>
-            <p>
-              <button className="btn m-2 cssbtn font-weight-bold" onClick={this.act}>Create Event</button>
-            </p>
-          </form>
-          
-  
+            {this.state.isToggleFormOn && (
+              <form onSubmit={this.handleSubmit}>
+                <TextArea
+                  type="text"
+                  placeholder="Enter a Summary or Description of your event"
+                  name="summary"
+                  onChange={this.handleInputChange}
+                  value={this.state.summary}
+                />
+                <div>
+                  <h6>Starting time and date!</h6>
+                </div>
+                <div className="m-3">
+                  <DatePicker
+                    showTimeSelect
+                    dateFormat="Pp"
+                    selected={this.state.startDate}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div>
+                  <h6>Ending time and date!</h6>
+                </div>
+                <div className="m-3">
+                  <DatePicker
+                    showTimeSelect
+                    dateFormat="Pp"
+                    selected={this.state.endDate}
+                    onChange={this.handleChange2}
+                  />
+                </div>
+                  <button className="btn m-2 cssbtn font-weight-bold" onClick={this.act}>Create Event</button>
+              </form>
             )}</div>
-        
-         
-          
-          
           {/* //----------------code for form to send to api ------------------- */}
+          <button className="btn m-2 cssbtn font-weight-bold" onClick={e => this.handleItemClick(e, "sign-out")}>
+            Sign-Out
+          </button>
 
-          
-            {/* <button className="btn m-2 cssbtn font-weight-bold" id="#cssBtn" onClick={e => this.handleItemClick(e, "sign-in")}>
-              Sign-In
-          </button> */}
-            <button className="btn m-2 cssbtn font-weight-bold" onClick={e => this.handleItemClick(e, "sign-out")}>
-              Sign-Out
-          </button>
-            <button className="btn m-2 cssbtn font-weight-bold" onClick={e => this.listEvents(e, "sign-out")}>
-              My Schedule!
-          </button>
-          
+          <button className="btn m-2 cssaltbtn font-weight-bold" onClick={this.toggle}>Show/Hide Goolgle Calendar Events</button>
           <CardFooter>
-          <button onClick = {this.toggle}>show/hide schedule</button>
-          <div>
-          {this.state.isToggleOn && (
-            <Table hover>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Event Name</th>
-                    <th>Event Date</th>
-                  </tr>
-                </thead>
+            <div>
+              {this.state.isToggleOn && (
+                <Table hover>
+          <button className="btn m-2 cssbtn font-weight-bold" onClick={e => this.listEvents(e, "sign-out")}>
+            Update My Schedule!
+          </button>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Event Name</th>
+                      <th>Event Date</th>
+                    </tr>
+                  </thead>
 
-                <tbody>
-                  <tr>
-                    {/* {
+                  <tbody>
+                    <tr>
+                      {/* {
 			        this.state.events.map(stuff =>
 			              (<div> 
 			            <td>{stuff.start.dateTime}</td>
 		              	</div>)
 			                    )
 		                    } */}
-                    <th scope="row">
+                      <th scope="row">
+                        {this.state.events.map(stuff => (
+                          <div>
+                            <th>{stuff.index}</th>
+                          </div>
+                        ))}
+                      </th>
                       {this.state.events.map(stuff => (
                         <div>
-                          <th>{stuff.index}</th>
+                          <td>{stuff.summary}</td>
+                          {/* <td>{stuff.start.dateTime}</td> */}
+                          <td><Moment date={stuff.start.dateTime} /></td>
                         </div>
                       ))}
-                    </th>
-                    {this.state.events.map(stuff => (
-                      <div>
-                        <td>{stuff.summary}</td>
-                        {/* <td>{stuff.start.dateTime}</td> */}
-                        <td><Moment date={stuff.start.dateTime} /></td>
-                      </div>
-                    ))}
-                  </tr>
-                </tbody>
-            </Table>
-           
-             )}
-          </div>
-            </CardFooter>
-          </CardBody>
+                    </tr>
+                  </tbody>
+                </Table>
+
+              )}
+            </div>
+          </CardFooter>
+        </CardBody>
       </Card>
-      
-        );
-      }
-    }
-    
+
+    );
+  }
+}
+
 export default SchedCard;
