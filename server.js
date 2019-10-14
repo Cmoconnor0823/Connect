@@ -45,6 +45,22 @@ app.get("/api/getprofiles", function(req,res){
   });
 });
 
+//Get all Todo and display them in order
+app.get("/api/todos", function(req,res) {
+  db.toDo.findAll({
+    // order:[
+    //   ['createdAt','DESC']
+    // ]
+  }).then(function(dbtodo){
+    res.json(dbtodo);
+  })
+})
+// Add a new Todo to the list
+app.post("/api/createTodo",function(req,res){
+  db.toDo.create(req.body).then(function(newTodo){
+    res.send(newTodo)
+  });
+});
 
 // Send every other request to the React app
 // Define any API routes before this runs
