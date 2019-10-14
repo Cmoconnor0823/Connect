@@ -70,29 +70,21 @@ class ToDoCard extends Component {
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Your To Do List</th>
+								<th>Date Created</th>
+								{this.state.todos.map(todos =>
+							<tr key ={todos.id}>
+								<td>{todos.id}</td>
+								<td>{todos.createdAt}</td>
+								<td>{todos.post}</td>
+								
+								{/* <td><a>Edit</a>|<a>Delete</a></td> */}
+							</tr>
+						)}	
 
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>10/7/19</td>
-								<DeleteBtn></DeleteBtn>
-
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>10/14/19</td>
-								<DeleteBtn></DeleteBtn>
-
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>10/16/19</td>
-								<DeleteBtn></DeleteBtn>
-
-							</tr>
+					
 						</tbody>
 					</Table>
 					 <TextArea
