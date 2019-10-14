@@ -24,7 +24,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={Login} />	
 					<Route exact path="/login" component={Login} />
-					<Route exact path="/home" component={Home}/>
+					<PrivateRoute exact path="/home" component={Home}/>
 					<Route exact path="/createuser" component={CreateUser} />
 					<Route exact path="/about" component={About} />
 				</Switch>
@@ -34,38 +34,25 @@ function App() {
 		</Router>
 	);
 }
-	 function checkAuth() {
-	let authStored = localStorage.getItem('msg');
-	if (authStored == "success"){
+function checkAuth() {
+// let authStored = localStorage.getItem('loggedin');
+// console.log(authStored)
+	if (sessionStorage.loggedin === "success"){
 		return true;
 	}
 	else{
 		return;
 	}
 }
-
-//   function AuthButton() {
-// 	let history = useHistory();
-//   }
-
-// function PrivateRoute({ children, ...rest }) {
-// 	return (
-// 	  <Route
-// 		{...rest}
-// 		render={({ location }) =>
-// 		  checkAuth.isAuthenticated ? (
-// 			children
-// 		  ) : (
-// 			<Redirect
-// 			  to={{
-// 				pathname: "/login",
-// 				state: { from: location }
-// 			  }}
-// 			/>
-// 		  )
-// 		}
-// 	  />
-// 	);
-//   }
+function PrivateRoute ({component: Component, authed, ...rest}) {
+	return (
+	  <Route
+		{...rest}
+		render={(props) => checkAuth() === true
+		  ? <Component {...props} />
+		  : <Redirect to={{pathname: '/login', state: {from: props.location}}} />}
+	  />
+	)
+  }
 
 export default App;

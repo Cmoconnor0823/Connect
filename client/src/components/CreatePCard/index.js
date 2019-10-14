@@ -13,6 +13,7 @@ class CreatePCard extends Component {
 		password: "",
 		firstName: "",
 		lastName: "",
+		position:"",
 		admin: "",
 	};
 	handleNewUser = event => {
@@ -106,10 +107,10 @@ class CreatePCard extends Component {
 							placeholder="Last Name (required)"
 						/>
 						<Input
-							value={this.state.posistion}
+							value={this.state.position}
 							onChange={this.handleInputChange}
-							name="posistion"
-							placeholder="Job Posistion (required)"
+							name="position"
+							placeholder="Job Position (required)"
 						/>
 						<Input
 							value={this.state.phoneNumber}

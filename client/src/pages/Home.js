@@ -11,6 +11,7 @@ import ProfileCard from "../components/ProfileCard";
 
 class Home extends Component {
     state = {
+        loggedin: true
 
     };
     render() {
