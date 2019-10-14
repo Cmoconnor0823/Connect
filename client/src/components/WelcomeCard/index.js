@@ -15,7 +15,7 @@ class MessageCard extends Component {
 		return (
 			<Card id="messCard">
 				<CardTitle>
-					<h4> This will be the card that Welcomes the user to the site </h4>
+					<h4> This will be the card that Welcomes  </h4>
 				</CardTitle>
 				<CardBody>
 					{/* or maybe try
