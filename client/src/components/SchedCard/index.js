@@ -295,39 +295,39 @@ class SchedCard extends Component {
           >
             Show/Hide Goolgle Calendar Events
           </button>
-          <button
-            className="btn m-2 cssbtn font-weight-bold"
-            onClick={this.listEvents}
-          >
-            Update My Schedule!
-          </button>
           <CardFooter>
             <div>
-              {this.state.isToggleOn && <div>here is what you got going!</div>}
+              {this.state.isToggleOn && <div>Here are your Google Calendar Events!
               <Table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th>Event name</th>
-                    <th>time and date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.events.map(stuff => (
+                  <thead>
                     <tr>
-                      <td>{stuff.summary} </td>
-                      {/* <td>{stuff.start.dateTime}</td> */}
+                      <th>Event name</th>
+                      <th>time and date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.events.map(stuff => (
+                      <tr>
+                        <td>{stuff.summary} </td>
+                        {/* <td>{stuff.start.dateTime}</td> */}
 
-                      <td>
-                        <Moment date ={stuff.start.dateTime} />
+                        <td>
+                          <Moment date={stuff.start.dateTime} />
                         </td>
 
-                      {/* <td>{member.bloodGroup}</td>
+                        {/* <td>{member.bloodGroup}</td>
                         <td>{member.phone_number}</td>
-                        <td><a>Edit</a>|<a>Delete</a></td> */}
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
+                      <td><a>Edit</a>|<a>Delete</a></td> */}
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+                <button
+                  className="btn m-2 cssbtn font-weight-bold"
+                  onClick={this.listEvents}>
+                  Update My Schedule!
+                  </button>
+              </div>}
             </div>
           </CardFooter>
         </CardBody>
