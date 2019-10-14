@@ -19,17 +19,17 @@ class Home extends Component {
             <Wrapper>
                 <Row>
                     <Col>
-                    <WelcomeCard></WelcomeCard>
+                        <WelcomeCard></WelcomeCard>
+                        <ProfileCard></ProfileCard>
                     </Col>
                 </Row>
-                    <Row className="m-3">
-                        <Col>
-                            <CardColumns>
-                                <SchedCard></SchedCard>
-                                <ToDoCard></ToDoCard>
-                                <MessageCard></MessageCard>
-                                <ProfileCard></ProfileCard>
-                                {/* This is a template to make a new card
+                <Row className="m-3">
+                    <Col>
+                        <CardColumns>
+                            <SchedCard></SchedCard>
+                            <ToDoCard></ToDoCard>
+                            <MessageCard></MessageCard>
+                            {/* This is a template to make a new card
                                      <Card>
                                      <CardBody>
                                         <CardTitle>
@@ -37,9 +37,9 @@ class Home extends Component {
                                         </CardTitle>
                                         </CardBody>
                                     </Card> */}
-                            </CardColumns>
-                        </Col>
-                    </Row>
+                        </CardColumns>
+                    </Col>
+                </Row>
             </Wrapper>
         );
     }
