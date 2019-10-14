@@ -319,8 +319,8 @@ class SchedCard extends Component {
                 <Table className="table table-hover">
                 <thead>
                   <tr>
-                    <th>Event name</th>
-                    <th>time and date</th>
+                    <th>Event Name</th>
+                    <th>Time and Date</th>
                   </tr>
                 </thead>
                 <tbody>
