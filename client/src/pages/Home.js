@@ -6,7 +6,7 @@ import SchedCard from "../components/SchedCard";
 import MessageCard from "../components/MessageCard";
 import WelcomeCard from "../components/WelcomeCard";
 import ProfileCard from "../components/ProfileCard";
-
+import "./style.css";
 
 
 class Home extends Component {
