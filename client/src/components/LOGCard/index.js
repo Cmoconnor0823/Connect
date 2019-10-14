@@ -66,7 +66,7 @@ class LOGCard extends Component {
 							name="password"
 							placeholder="Password (required)"
 						/>
-						<Input
+						{/* <Input
 								value={this.state.projectKey}
 								onChange={this.handleInputChange}
 								name="projectKey"

@@ -4,7 +4,7 @@ import "./style.css";
 
 function Footer() {
 	return (
-		<footer className="footer navbar-expand-lg">
+		<footer className="footer navbar-expand-md">
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul className="navbar-nav mr-auto pages float-left">
 					<li className="nav-item active">
@@ -19,6 +19,10 @@ function Footer() {
 						<a className="navbar-brand" href="/createuser">
 							Create a Profile</a>
 					</li>
+					{/* <li className="nav-item">
+						<a className="navbar-brand" href="/about">
+							About</a>
+					</li> */}
 					<li>
 				<a className="navbar-brand" href="https://github.com/Cmoconnor0823/Connect">GitHub Repository</a> 
 			</li>

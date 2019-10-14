@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardTitle, CardBody, Table } from "reactstrap";
-import { FormBtn, DeleteBtn, TextArea } from "../Form";
+import { FormBtn} from "../Form";
 import "./style.css";
 import axios from 'axios';
 
