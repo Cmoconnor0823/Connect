@@ -126,7 +126,6 @@ class SchedCard extends Component {
         console.log(date2[0]);
         console.log(date2[1]);
 
-
         // ---------------------
 
         // result.items[""0""].start.dateTime
@@ -303,19 +302,13 @@ class SchedCard extends Component {
             Show/Hide Goolgle Calendar Events
           </button>
           <button
-           className="btn m-2 cssbtn font-weight-bold"
-            onClick={this.listEvents}
-          >
-            Update My Schedule!
-          </button>
-          <button
             className="btn m-2 cssaltbtn font-weight-bold"
             onClick={e => this.handleItemClick(e, "sign-out")}>
             Sign-Out
           </button>
           <CardFooter>
             <div>
-              {this.state.isToggleOn && <div>Here is what you got going!
+              {this.state.isToggleOn && <div>Here are your Google Calendar Events!
                 <Table className="table table-hover">
                 <thead>
                   <tr>
@@ -327,22 +320,25 @@ class SchedCard extends Component {
                   {this.state.events.map(stuff => (
                     <tr>
                       <td>{stuff.summary} </td>
-                      {/* <td>{stuff.start.dateTime}</td> */}
+                      <td>{stuff.start.dateTime}</td>
 
-                      <td>
+                      {/* <td>
                         <Moment date ={stuff.start.dateTime} />
-                        </td>
+                        </td> */}
 
-                      {/* <td>{member.bloodGroup}</td>
+                        {/* <td>{member.bloodGroup}</td>
                         <td>{member.phone_number}</td>
                         <td><a>Edit</a>|<a>Delete</a></td> */}
                     </tr>
                   ))}
                 </tbody>
               </Table>
-              
+                <button
+                  className="btn m-2 cssbtn font-weight-bold"
+                  onClick={this.listEvents}>
+                  Update My Schedule!
+                  </button>
               </div>}
-             
             </div>
           </CardFooter>
         </CardBody>

@@ -2,6 +2,7 @@ import React from "react";
 import './style.css';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import PropTypes from 'prop-types';
+import LoginControl from "../RenderLogButton";
 
 class NavBar extends React.Component {
 	constructor(props) {
@@ -12,7 +13,7 @@ class NavBar extends React.Component {
 			collapsed: true
 		};
 	}
-
+	
 	toggleNavbar() {
 		this.setState({
 			collapsed: !this.state.collapsed
@@ -29,14 +30,14 @@ class NavBar extends React.Component {
 								<NavLink href="/home">Home</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="/login">Log In</NavLink>
+							<LoginControl/>
 							</NavItem>
 							<NavItem>
 								<NavLink href="/createUser">Create a Profile</NavLink>
 							</NavItem>
-							<NavItem>
+							{/* <NavItem>
 								<NavLink href="/about">About</NavLink>
-							</NavItem>
+							</NavItem> */}
 							{/* <NavItem>
 								<NavLink href="https://github.com/Cmoconnor0823/Connect">GitHub</NavLink>
 							</NavItem> */}
