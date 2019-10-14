@@ -28,6 +28,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 // import Moment from 'react-moment';
 // import 'moment-timezone';
+import moment from "moment";
 
 class SchedCard extends Component {
   constructor() {
@@ -45,9 +46,8 @@ class SchedCard extends Component {
       isToggleFormOn: false,
       isModalVisible: true,
       isModalOpen: false,
-      isSignInModVisible:true,
-      isSignInModOpen:false,
-
+      isSignInModVisible: true,
+      isSignInModOpen: false
     };
 
     ApiCalendar.onLoad(() => {
@@ -59,17 +59,17 @@ class SchedCard extends Component {
     this.listEvents();
   }
 
-  toggleModalAlert= () => {
+  toggleModalAlert = () => {
     this.setState({
       isModalVisible: !this.state.isModalVisible
-    })
-  }
+    });
+  };
 
-toggleModal = () =>{
-  this.setState({
-    isModalOpen: !this.state.isModalOpen
-  })
-} 
+  toggleModal = () => {
+    this.setState({
+      isModalOpen: !this.state.isModalOpen
+    });
+  };
 
   toggle = () => {
     this.setState({
@@ -92,18 +92,35 @@ toggleModal = () =>{
       ApiCalendar.handleAuthClick();
       console.log("tell user they are signed in!");
     } else if (name === "sign-out") {
-      console.log("tell user they have signed out!")
+      console.log("tell user they have signed out!");
       ApiCalendar.handleSignoutClick();
       this.setState({ clicked: true });
     }
   };
 
   listEvents = (event, name) => {
-    console.log("HEEEINEIN");
-    console.log(this.state);
+    // console.log(this.state);
     if (ApiCalendar.sign) {
       ApiCalendar.listUpcomingEvents(10).then(result => {
-        // console.log(result.items);
+        var test2 = result.result.items;
+        console.log(test2);
+
+        var test1 = result.result.items[0].end.dateTime;
+
+        var dateAndTime = moment(test1).format("MMMM Do YYYY, h:mm:ss a");
+        console.log(dateAndTime);
+        var res1 = dateAndTime.split(",");
+        console.log(res1);
+        console.log(res1[0]);
+        console.log(res1[1]);
+
+        // date = res1[0];
+
+        // time = res1[1];
+
+        // result.items[""0""].start.dateTime
+
+        // result.items[""0""].htmlLink
         this.setState({ events: result.result.items });
       });
     }
@@ -129,17 +146,17 @@ toggleModal = () =>{
         console.log(error);
       });
 
-      // toggleModal = () =>{
-      //   this.setState({
-      //     isModalOpen: !this.state.isModalOpen
-      //   })
-      // } 
+    // toggleModal = () =>{
+    //   this.setState({
+    //     isModalOpen: !this.state.isModalOpen
+    //   })
+    // }
   };
 
   componentDidUpdate() {
     if (ApiCalendar.sign !== this.state.sign) {
       this.setState({ sign: ApiCalendar.sign }, () => {
-        console.log(this.state);
+        // console.log(this.state);
         if (ApiCalendar.sign) {
           this.listEvents();
         }
@@ -175,25 +192,33 @@ toggleModal = () =>{
 
     return (
       <Card id="schedCard">
-       {/*------------------- code for modal below this------------- */}
-       <Modal isOpen = {this.state.isModalOpen} >
-          <ModalHeader toggle = {this.toggleModal.bind(this)} >Hey there! </ModalHeader>
+        {/*------------------- code for modal below this------------- */}
+        <Modal isOpen={this.state.isModalOpen}>
+          <ModalHeader toggle={this.toggleModal.bind(this)}>
+            Hey there!{" "}
+          </ModalHeader>
           <ModalBody>Your event has been created!</ModalBody>
           <ModalFooter>
-          <Button color = "secondary" onClick = {this.toggleModal}>yay!</Button>
+            <Button color="secondary" onClick={this.toggleModal}>
+              yay!
+            </Button>
           </ModalFooter>
         </Modal>
         {/*------------------- code for modal above this------------- */}
 
-          {/*------------------- code for sign in modal below this------------- */}
-         <Modal isOpen = {this.state.isModalOpen} >
-          <ModalHeader toggle = {this.toggleModal.bind(this)} >Hey there! </ModalHeader>
+        {/*------------------- code for sign in modal below this------------- */}
+        <Modal isOpen={this.state.isModalOpen}>
+          <ModalHeader toggle={this.toggleModal.bind(this)}>
+            Hey there!{" "}
+          </ModalHeader>
           <ModalBody>Your event has been created!</ModalBody>
           <ModalFooter>
-          <Button color = "secondary" onClick = {this.toggleModal}>yay!</Button>
+            <Button color="secondary" onClick={this.toggleModal}>
+              yay!
+            </Button>
           </ModalFooter>
         </Modal>
-          {/*------------------- code for sign in modal above this------------- */}
+        {/*------------------- code for sign in modal above this------------- */}
         <CardTitle>
           <h4>
             To view your events in Google Calendar, be sure to sign in to your
@@ -270,53 +295,39 @@ toggleModal = () =>{
           >
             Show/Hide Goolgle Calendar Events
           </button>
+          <button
+            className="btn m-2 cssbtn font-weight-bold"
+            onClick={this.listEvents}
+          >
+            Update My Schedule!
+          </button>
           <CardFooter>
             <div>
-              {this.state.isToggleOn && (
-                <Table hover>
-                  <button
-                    className="btn m-2 cssbtn font-weight-bold"
-                    onClick={e => this.listEvents(e, "sign-out")}
-                  >
-                    Update My Schedule!
-                  </button>
-                  <thead>
+              {this.state.isToggleOn && <div>here is what you got going!</div>}
+              <Table className="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Event name</th>
+                    <th>time and date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.events.map(stuff => (
                     <tr>
-                      <th>#</th>
-                      <th>Event Name</th>
-                      <th>Event Date</th>
-                    </tr>
-                  </thead>
+                      <td>{stuff.summary} </td>
+                      {/* <td>{stuff.start.dateTime}</td> */}
 
-                  <tbody>
-                    <tr>
-                      {/* {
-			        this.state.events.map(stuff =>
-			              (<div> 
-			            <td>{stuff.start.dateTime}</td>
-		              	</div>)
-			                    )
-		                    } */}
-                      <th scope="row">
-                        {this.state.events.map(stuff => (
-                          <div>
-                            <th>{stuff.index}</th>
-                          </div>
-                        ))}
-                      </th>
-                      {this.state.events.map(stuff => (
-                        <div>
-                          <td>{stuff.summary}</td>
-                          {/* <td>{stuff.start.dateTime}</td> */}
-                          <td>
-                            <Moment date={stuff.start.dateTime} />
-                          </td>
-                        </div>
-                      ))}
+                      <td>
+                        <Moment date ={stuff.start.dateTime} />
+                        </td>
+
+                      {/* <td>{member.bloodGroup}</td>
+                        <td>{member.phone_number}</td>
+                        <td><a>Edit</a>|<a>Delete</a></td> */}
                     </tr>
-                  </tbody>
-                </Table>
-              )}
+                  ))}
+                </tbody>
+              </Table>
             </div>
           </CardFooter>
         </CardBody>
