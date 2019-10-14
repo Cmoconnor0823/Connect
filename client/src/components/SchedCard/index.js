@@ -126,6 +126,7 @@ class SchedCard extends Component {
         console.log(date2[0]);
         console.log(date2[1]);
 
+
         // ---------------------
 
         // result.items[""0""].start.dateTime
@@ -326,11 +327,11 @@ class SchedCard extends Component {
                   {this.state.events.map(stuff => (
                     <tr>
                       <td>{stuff.summary} </td>
-                      <td>{stuff.start.dateTime}</td>
+                      {/* <td>{stuff.start.dateTime}</td> */}
 
-                      {/* <td>
+                      <td>
                         <Moment date ={stuff.start.dateTime} />
-                        </td> */}
+                        </td>
 
                       {/* <td>{member.bloodGroup}</td>
                         <td>{member.phone_number}</td>
