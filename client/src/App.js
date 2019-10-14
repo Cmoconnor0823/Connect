@@ -3,14 +3,14 @@ import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
-	Link,
-	Redirect,
-	useHistory,
-	useLocation
+	// Link,
+	// Redirect,
+	// useHistory,
+	// useLocation
   } from "react-router-dom";
 import CreateUser from "./pages/CreateUser";
 import Home from "./pages/Home";
-import About from "./pages/About";
+//import About from "./pages/About";
 import Login from "./pages/Login";
 import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -26,9 +26,9 @@ function App() {
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/home" component={Home}/>
 					<Route exact path="/createuser" component={CreateUser} />
-					<Route exact path="/about" component={About} />
 				</Switch>
 				{/* <Route exact path="/login" component={Login} /> */}
+					{/* <Route exact path="/about" component={About} /> */}
 			</Wrapper>
 			<Footer />
 		</Router>

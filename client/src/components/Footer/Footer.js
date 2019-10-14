@@ -19,10 +19,10 @@ function Footer() {
 						<a className="navbar-brand" href="/createuser">
 							Create a Profile</a>
 					</li>
-					<li className="nav-item">
+					{/* <li className="nav-item">
 						<a className="navbar-brand" href="/about">
 							About</a>
-					</li>
+					</li> */}
 					<li>
 				<a className="navbar-brand" href="https://github.com/Cmoconnor0823/Connect">GitHub Repository</a> 
 			</li>
