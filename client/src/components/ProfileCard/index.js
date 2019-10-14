@@ -41,7 +41,7 @@ class ProfileCard extends Component {
 								<th>Email</th>
 								<th>Phone Number</th>
 								<th>Job Position</th>
-								<th>Action</th>
+								{/* <th>Action</th> */}
 							</tr>
 						</thead>
 						<tbody>
