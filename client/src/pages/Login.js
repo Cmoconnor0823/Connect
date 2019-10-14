@@ -18,14 +18,21 @@ class Login extends Component {
 			<div>
 				<Header></Header>
 				<Wrapper>
-				<Container>
-					<Col>
-					<Row>
-					<AboutCard></AboutCard>
-						<LOGCard routeHome={this.routeHome}>
-						</LOGCard>
-					</Row>
-					</Col>	
+					<Container>
+						<Row>
+							<Col lg="12">
+								<AboutCard></AboutCard>
+
+							</Col>
+						</Row>
+						<Row>
+							<Col lg="12">
+
+								<LOGCard routeHome={this.routeHome}>
+								</LOGCard>
+							</Col>
+						</Row>
+
 					</Container>
 				</Wrapper>
 			</div>
