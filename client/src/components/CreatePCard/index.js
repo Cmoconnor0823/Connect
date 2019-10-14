@@ -15,6 +15,11 @@ class CreatePCard extends Component {
 		lastName: "",
 		admin: "",
 	};
+	//do we need to add a second state for the password retype?
+	// also does it need a post request or a if "retype-password" is = to password then poast
+	// if else append an error "password doesn't match" to the page
+
+
 	handleNewUser = event => {
 		event.preventDefault();
 		// const { history } = this.props;
@@ -53,22 +58,6 @@ class CreatePCard extends Component {
 
 	};
 
-
-	// When the form is submitted, use the API.saveProfile?? method to save the proile data
-	// Then reload profiles from the database
-	// handleFormSubmit = event => {
-	// 	event.preventDefault();
-	// 	if (this.state.userName && this.state.password) {
-	// 		API.saveProfile({
-	// 			userName: this.state.userName,
-	// 			password: this.state.password,
-	// 			realName: this.state.realName,
-	// 			position: this.state.position
-	// 		})
-	// 			.then(res => this.loadProfile())
-	// 			.catch(err => console.log(err));
-	// 	}
-	// };
 	render() {
 		return (
 			<Card id="cardLg">
@@ -92,6 +81,12 @@ class CreatePCard extends Component {
 							onChange={this.handleInputChange}
 							name="password"
 							placeholder="Password (required)"
+						/>
+						<Input
+							value={this.state.password}
+							onChange={this.handleInputChange}
+							name="retypePassword"
+							placeholder="Retype Your Password (required)"
 						/>
 						<Input
 							value={this.state.firstName}
@@ -123,31 +118,6 @@ class CreatePCard extends Component {
 							name="email"
 							placeholder="Email address (required)"
 						/>
-						{/* <div className="card-footer">
-							<h6 className="m-3">Check the box below if you want to create a new project. This will make you admin of the project.
-							If you already have a project enter your project key below</h6>
-						{/* <Input
-								type="checkbox"
-								id="admin"
-								name="Admin"
-								value={this.state.admin}
-							/> */}
-							{/* <Input
-								value={this.state.projectKey}
-								onChange={this.handleInputChange}
-								name="projectKey"
-								placeholder="Project key (required)"
-							/> 
-						</div> */}
-						{/* <TextArea
-                					value={this.state.synopsis}
-                					onChange={this.handleInputChange}
-                					name="synopsis"
-                					placeholder="Synopsis (Optional)"
-								/> */}
-
-
-
 							{/* The below button needs to check for any altered state in the form not just the userName and Password */}
 						<FormBtn
 							disabled={!(this.state.userName && this.state.password)}
