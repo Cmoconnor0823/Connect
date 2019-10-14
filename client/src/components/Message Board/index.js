@@ -34,7 +34,9 @@ class MessageCards  extends Component {
 			console.log("clicked")
 			axios.post("/api/createMessage",
             {
-				message: this.state.newMessage
+                message: this.state.newMessage,
+                author: this.state.author,
+                subject: this.state.subject
 			})
 			.then((res)=> {
 				console.log("new Message created")
@@ -63,31 +65,41 @@ class MessageCards  extends Component {
 				</CardTitle>
 				<CardBody>
 					<Table hover responsive="sm">
-						<thead></thead>
+						<thead>
+                            <tr>
+                                <th>Created on</th>
+                                <th>Author</th>
+                                <th>subject</th>
+                                <th>Message</th>
+                            </tr>
+                        </thead>
 
-							<tr>
-								<th>{this.state.messages.id}</th>
+						
+						
+						<tbody>
+                        
+								{/* <tr>{this.state.messages.id} */}
 								{/* <th>Date Due</th> */}
 								{this.state.messages.map(messages =>
 								<tr key ={messages.id}>
-								<td>{messages.id}</td>
+								<td>{messages.createdAt}</td>
+                                <td>{messages.author}</td>
+                                <td>{messages.subject}</td>
 								{/* <td>{messages.deadline}</td> */}
-								<td>{messages.post}</td>
+								<td>{messages.message}</td>
 								</tr>
 							
 						)}	
 
-							</tr>
-						
-						<tbody>
+							
 					
 						</tbody>
 					</Table>
                     <Input
-							value={this.state.author}
-							onChange={this.handleInputChange}
-							name="author"
-							placeholder="author(optional)"
+                        value={this.state.author}
+                        onChange={this.handleInputChange}
+                        name="author"
+                        placeholder="author(optional)"
 						/>
                     <Input
                         value={this.state.subject}

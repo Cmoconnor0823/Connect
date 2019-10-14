@@ -13,13 +13,12 @@ class ProfileCard extends Component {
 	}
 
 	componentDidMount() {
-		console.log("clicked")
+	
 		axios.get("/api/getprofiles")
 		// {users:this.state.users}
 		
 		.then((res) => {
-			// console.log(users)
-			console.log(res.data[0].firstName);
+		
 			this.setState({
 				users:res.data
 			})
@@ -52,7 +51,7 @@ class ProfileCard extends Component {
 								<td>{member.email}</td>
 								<td>{member.phoneNumber}</td>
 								<td>{member.position}</td>
-								<td><a>Edit</a>|<a>Delete</a></td>
+								{/* <td><a>Edit</a>|<a>Delete</a></td> */}
 							</tr>
 						)}	
 						</tbody>
