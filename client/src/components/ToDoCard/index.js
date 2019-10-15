@@ -57,7 +57,7 @@ class ToDoCard extends Component {
 					<h4> This will be the card that holds our to do </h4>
 				</CardTitle>
 				<CardBody>
-					<Table hover responsive="sm">
+				<Table hover  responsive="sm" className="table-responsive">
 						<thead>
 							<tr>
 								<th>#</th>
@@ -78,8 +78,6 @@ class ToDoCard extends Component {
 								</tr>
 							
 						)}	
-
-							
 					
 						</tbody>
 					</Table>

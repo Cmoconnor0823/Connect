@@ -34,14 +34,14 @@ class ProfileCard extends Component {
 				<CardBody>
 					This is the body of the card
 					(it appears like we loose 3 columns if the cards are not big enough to justify 3 rows)
-					<Table hover responsive="sm">
+					<Table hover responsive="sm" >
 						<thead>
 							<tr>
 								<th>Name</th>
 								<th>Email</th>
 								<th>Phone Number</th>
 								<th>Job Position</th>
-								<th>Action</th>
+								{/* <th>Action</th> */}
 							</tr>
 						</thead>
 						<tbody>
