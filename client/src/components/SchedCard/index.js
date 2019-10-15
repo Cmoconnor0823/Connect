@@ -122,9 +122,9 @@ class SchedCard extends Component {
         // console.log(time)
 
         // ---------------------
-        var date2 = moment(result.result.items[0].end.dateTime).format("MMMM Do YYYY, h:mm:ss a").split(",");
-        console.log(date2[0]);
-        console.log(date2[1]);
+        // var date2 = moment(result.result.items[0].end.dateTime).format("MMMM Do YYYY, h:mm:ss a").split(",");
+        // console.log(date2[0]);
+        // console.log(date2[1]);
 
 
         // ---------------------
@@ -300,7 +300,7 @@ class SchedCard extends Component {
             className="btn m-2 cssbtn font-weight-bold"
             onClick={this.toggle}
           >
-            Show/Hide Goolgle Calendar Events
+            Show/Hide Google Calendar Events
           </button>
           <button
            className="btn m-2 cssbtn font-weight-bold"
@@ -320,7 +320,7 @@ class SchedCard extends Component {
                 <thead>
                   <tr>
                     <th>Event Name</th>
-                    <th>Time and Date</th>
+                    <th>Date and Time</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -329,8 +329,12 @@ class SchedCard extends Component {
                       <td>{stuff.summary} </td>
                       {/* <td>{stuff.start.dateTime}</td> */}
 
-                      <td>
+                      {/* <td>
                         <Moment date ={stuff.start.dateTime} />
+                        </td> */}
+
+                        <td>
+                        {moment(stuff.start.dateTime).format("MMMM Do YYYY, h:mm:ss a").split(",")} 
                         </td>
 
                       {/* <td>{member.bloodGroup}</td>
