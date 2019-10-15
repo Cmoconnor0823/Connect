@@ -65,53 +65,50 @@ class MessageCards  extends Component {
 				</CardTitle>
 				<CardBody>
 					<Table hover responsive="sm">
-						<thead>
+						{/* <thead>
                             <tr>
                                 <th>Created on</th>
                                 <th>Author</th>
                                 <th>subject</th>
                                 <th>Message</th>
                             </tr>
-                        </thead>
+                        </thead> */}
 
 						
-						
-						<tbody>
+						{this.state.messages.map(messages =>
+
+						<Card>
+						<tbody key ={messages.id}>
                         
 								{/* <tr>{this.state.messages.id} */}
 								{/* <th>Date Due</th> */}
-								{this.state.messages.map(messages =>
-								<tr key ={messages.id}>
-								<td>{messages.createdAt}</td>
-                                <td>{messages.author}</td>
-                                <td>{messages.subject}</td>
+								<tr><th>Created on</th><td>{messages.createdAt}</td></tr>
+                                <tr><th>Author</th><td>{messages.author}</td></tr>
+                                <tr><th>Subject</th><td>{messages.subject}</td></tr>
 								{/* <td>{messages.deadline}</td> */}
-								<td>{messages.message}</td>
-								</tr>
-							
+								<tr><th>Message</th><td>{messages.message}</td></tr>
+						</tbody>
+						</Card>
 						)}	
 
-							
-					
-						</tbody>
 					</Table>
                     <Input
                         value={this.state.author}
                         onChange={this.handleInputChange}
                         name="author"
-                        placeholder="author(optional)"
+                        placeholder="Author (Optional)"
 						/>
                     <Input
                         value={this.state.subject}
                         onChange={this.handleInputChange}
                         name="subject"
-                        placeholder="subject (optional)"
+                        placeholder="Subject (Optional)"
                     />
 					 <Input
 						value={this.state.newMessage}
 						onChange={this.handleInputChange}
 						name="newMessage"
-						placeholder="Write a message to your team(Optional)"
+						placeholder="Write a message to your team (Optional)"
 					/>
 					
 					<FormBtn 

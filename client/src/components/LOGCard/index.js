@@ -50,21 +50,21 @@ class LOGCard extends Component {
 			<Card id="logCard">
 				<CardBody>
 					<CardTitle size="md-6">
-						<h1> This will be the Log In page</h1>
+						<h1>Log In</h1>
 					</CardTitle>
 					<form>
 						<Input
 							value={this.state.userName}
 							onChange={this.handleInputChange}
 							name="userName"
-							placeholder="User Name (required)"
+							placeholder="User Name (Required)"
 						/>
 						<Input
 							value={this.state.password}
 							onChange={this.handleInputChange}
 							type="password"
 							name="password"
-							placeholder="Password (required)"
+							placeholder="Password (Required)"
 						/>
 						{/* <Input
 								value={this.state.projectKey}

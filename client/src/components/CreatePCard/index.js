@@ -75,50 +75,50 @@ class CreatePCard extends Component {
 							value={this.state.userName}
 							onChange={this.handleInputChange}
 							name="userName"
-							placeholder="User Name (required)"
+							placeholder="User Name (Required)"
 						/>
 						<Input
 							value={this.state.password}
 							onChange={this.handleInputChange}
 							name="password"
 							type ="password"
-							placeholder="Password (required)"
+							placeholder="Password (Required)"
 						/>
-						<Input
-							value={this.state.password}
+						{/* <Input
+							value={this.state.retypepassword}
 							onChange={this.handleInputChange}
 							name="retypePassword"
 							placeholder="Retype Your Password (required)"
-						/>
+						/> */}
 						<Input
 							value={this.state.firstName}
 							onChange={this.handleInputChange}
 							name="firstName"
-							placeholder="First Name (required)"
+							placeholder="First Name (Required)"
 						/>
 						<Input
 							value={this.state.lastName}
 							onChange={this.handleInputChange}
 							name="lastName"
-							placeholder="Last Name (required)"
+							placeholder="Last Name (Required)"
 						/>
 						<Input
 							value={this.state.position}
 							onChange={this.handleInputChange}
 							name="position"
-							placeholder="Job Position (required)"
+							placeholder="Job Position (Required)"
 						/>
 						<Input
 							value={this.state.phoneNumber}
 							onChange={this.handleInputChange}
 							name="phoneNumber"
-							placeholder="Phone Number (required)"
+							placeholder="Phone Number (Required)"
 						/>
 						<Input
 							value={this.state.email}
 							onChange={this.handleInputChange}
 							name="email"
-							placeholder="Email address (required)"
+							placeholder="Email address (Required)"
 						/>
 							{/* The below button needs to check for any altered state in the form not just the userName and Password */}
 						<FormBtn

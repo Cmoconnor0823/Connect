@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'reactstrap';
-import { FormBtn } from "../Form";
+import { Button } from "reactstrap";
 import Navbar from "../Navbar";
 
 export default class LoginControl extends Component {
@@ -19,7 +19,8 @@ export default class LoginControl extends Component {
     render() {
         if(sessionStorage.loggedin === "success"){
         return (
-            <Button className="logOut" onClick={this.handleLogout}> Log Out </Button>
+            <NavLink onClick={this.handleLogout} href="/login">Log out</NavLink>
+            // <Button className="logOut" onClick={this.handleLogout}> Log Out </Button>
         )
         }
         else {

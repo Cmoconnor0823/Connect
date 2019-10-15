@@ -32,8 +32,6 @@ class ProfileCard extends Component {
 					<h4> Project Member's Contact Info </h4>
 				</CardTitle>
 				<CardBody>
-					This is the body of the card
-					(it appears like we loose 3 columns if the cards are not big enough to justify 3 rows)
 					<Table hover responsive="sm">
 						<thead>
 							<tr>
@@ -41,7 +39,7 @@ class ProfileCard extends Component {
 								<th>Email</th>
 								<th>Phone Number</th>
 								<th>Job Position</th>
-								<th>Action</th>
+								{/* <th>Action</th> */}
 							</tr>
 						</thead>
 						<tbody>
@@ -56,10 +54,10 @@ class ProfileCard extends Component {
 						)}	
 						</tbody>
 					</Table>
-					<FormBtn 
+					{/* <FormBtn 
 						onClick={this.handleClick}
 						> Click me to display all profiles in the projects
-					</FormBtn>
+					</FormBtn> */}
 				</CardBody>
 			</Card>
 		);
