@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Bobvilla1",
+    "password": "rootroot",
     "database": "Konnectd_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -16,9 +16,9 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "o4edktbu3s5a4rqr",
-    "password": "txomsmt0duya7bk8",
-    "database": "database_production",
+    "username": "v4q71ylspsr1l47o",
+    "password": "j9dd2gybfx6qnbdr",
+    "database": "z2oatuwqfua7bqmr",
     "host": "t89yihg12rw77y6f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "use_env_variable":"JAWSDB_URL",
     "dialect": "mysql",
