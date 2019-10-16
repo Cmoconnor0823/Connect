@@ -88,7 +88,7 @@ class MessageCards extends Component {
 							)}
 						</tbody> */}
 							{this.state.messages.map(messages =>
-								<Card>
+								
 									<tbody key={messages.id}>
 
 										{/* <tr>{this.state.messages.id} */}
@@ -99,7 +99,7 @@ class MessageCards extends Component {
 										{/* <td>{messages.deadline}</td> */}
 										<tr><th>Message</th><td>{messages.message}</td></tr>
 									</tbody>
-								</Card>
+							
 							)}
 
 						</Table>
