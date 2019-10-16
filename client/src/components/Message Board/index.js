@@ -64,7 +64,6 @@ class MessageCards extends Component {
 					<h4> Message Board </h4>
 				</CardTitle>
 				<CardBody>
-<<<<<<< HEAD
 					<Table hover responsive="sm">
 						{/* <thead>
                             <tr>
@@ -113,69 +112,6 @@ class MessageCards extends Component {
 					/>
 					
 					<FormBtn 
-=======
-				<div class="panel-body">
-					<Table hover responsive="sm" className="table-responsive">
-						<thead>
-							<tr>
-								<th>Created on</th>
-								<th>Author</th>
-								<th>Subject</th>
-								<th>Message</th>
-							</tr>
-						</thead>
-
-
-
-						<tbody>
-
-							{/* <tr>{this.state.messages.id} */}
-							{/* <th>Date Due</th> */}
-							{this.state.messages.map(messages =>
-								<tr key={messages.id}>
-									<td>{messages.createdAt}</td>
-									<td>{messages.author}</td>
-									<td>{messages.subject}</td>
-									{/* <td>{messages.deadline}</td> */}
-									<td>{messages.message}</td>
-								</tr>
-
-							)}
-
-
-
-						</tbody>
-					</Table>
-					</div>
-				
-					<Input
-						value={this.state.author}
-						onChange={this.handleInputChange}
-						name="author"
-						placeholder="Author (Optional)"
-					/>
-					<Input
-						value={this.state.subject}
-						onChange={this.handleInputChange}
-						name="subject"
-						placeholder="Subject (Optional)"
-					/>
-					<TextArea
-						type="text"
-						placeholder="Write a message to your team (Optional)"
-						name="newMessage"
-						onChange={this.handleInputChange}
-						value={this.state.newMessage}
-					/>
-					{/* <Input
-						value={this.state.newMessage}
-						onChange={this.handleInputChange}
-						name="newMessage"
-						placeholder="Write a message to your team(Optional)"
-					/> */}
-
-					<FormBtn
->>>>>>> f8b18a2e3424f287858cc51c03cbccaa143a5868
 						enabled={!(this.state.message)}
 						onClick={this.handleNewMessage}
 					> Add a new Message</FormBtn>

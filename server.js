@@ -44,6 +44,32 @@ app.get("/api/getprofiles", function(req,res){
     res.json(dbProfile);
   });
 });
+// Update/edit profile database
+app.put("/api/edit/:id", function(req, res) {
+  var condition = { where :{id: req.params.id} };
+    var values = { 
+      name:req.body.name,
+      email:req.body.email,
+      phoneNumber:req.body.phoneNumber,
+    }
+  db.Profile.update(values, condition)
+    .then(function(updated) {
+      res.json(updated);
+      // db.Profile.update(res.body).then(function(dbedit) {
+      //   res.send(dbedit)
+      // })
+      // res.send(dbEdit)
+  });
+});
+
+// delete a profile by id
+app.delete("/api/delete/:id", function(req, res) {
+  db.Profile.destroy({ where: { id: req.body.id } })
+  .then(function(dbProfile) {
+    res.send(dbProfile);
+  });
+});
+;
 
 //Get all Todo and display them in order
 app.get("/api/todos", function(req,res) {

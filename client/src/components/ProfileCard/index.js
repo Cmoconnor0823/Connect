@@ -1,16 +1,70 @@
 import React, { Component } from "react";
-import { Card, CardTitle, CardBody, Table } from "reactstrap";
-import { FormBtn} from "../Form";
+import { Card, CardTitle, CardBody, Table, Button, Form } from "reactstrap";
+import { Input} from "../Form";
 import "./style.css";
+import Modal from 'react-modal';
 import axios from 'axios';
 
 class ProfileCard extends Component {
 	constructor(props) {
         super(props)
 		this.state = {
-		users:[]
-		};
+		users:[],
+		modalIsOpen: false,
+		name:'',
+		email:'',
+		phoneNumber:'',
+		msg:'',
+		id:0
+		}
+		this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+        this.logChange = this.logChange.bind(this); // We capture the value and change state as user changes the value here.
+        this.handleEdit = this.handleEdit.bind(this); // Function where we submit data
 	}
+	openModal(member) {
+        this.setState({
+            modalIsOpen: true,
+            name: member.name,
+            email: member.email,
+			id: member.id,
+			phoneNumber: member.phoneNumber
+        });
+	}
+	closeModal(){
+		this.setState({
+			modalIsOpen: false
+		})
+	}
+	logChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value //setting value edited by the admin in state.
+        });
+	}
+	handleEdit(event) {
+		event.preventDefault();
+		axios.put("/api/edit/:id", 
+		{
+			name: this.state.name,
+			email: this.state.email,
+			phoneNumber: this.state.phoneNumber,
+			id: this.state.id
+		})
+		.then((res) => {
+			console.log("profile edited")
+			console.log(res.data)
+		})
+		
+	}
+	handleDelete(member) {
+		axios.delete("/api/delete/:id",{
+			id:member.id
+		})
+	.then((res) => {
+		console.log("deleted")
+	})
+	}
+	
 
 	componentDidMount() {
 	
@@ -32,16 +86,14 @@ class ProfileCard extends Component {
 					<h4> Project Member's Contact Info </h4>
 				</CardTitle>
 				<CardBody>
-					This is the body of the card
-					(it appears like we loose 3 columns if the cards are not big enough to justify 3 rows)
-					<Table hover responsive="sm" >
+					<Table onChange = {this.logChange} hover responsive="sm" >
 						<thead>
 							<tr>
 								<th>Name</th>
 								<th>Email</th>
 								<th>Phone Number</th>
 								<th>Job Position</th>
-								{/* <th>Action</th> */}
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -51,9 +103,28 @@ class ProfileCard extends Component {
 								<td>{member.email}</td>
 								<td>{member.phoneNumber}</td>
 								<td>{member.position}</td>
-								{/* <td><a>Edit</a>|<a>Delete</a></td> */}
+								<td><a onClick={() => this.openModal(member)}>Edit</a>|<a onClick={() => this.handleDelete(member)}>Delete</a></td>
 							</tr>
 						)}	
+						{/* /* Modal to open editor */ }
+						<Modal
+                            isOpen={this.state.modalIsOpen}
+                            onRequestClose={this.closeModal}
+                            contentLabel="Example Modal" >
+                        <Form>
+                            <label>Name</label>
+                            <Input onChange={this.logChange} className="form-control" value={this.state.name} placeholder='John' name='name' />
+                            <label>Email</label>
+                            <Input onChange={this.logChange} className="form-control" value={this.state.email} placeholder='email@email.com' name='email'/>
+							<label>Email</label>
+                            <Input onChange={this.logChange} className="form-control" value={this.state.phoneNumber} placeholder='867-5309' name='phoneNumber'/>
+                            <div className="submit-section">
+                            <Button onClick = {this.handleEdit}   className="btn btn-uth-submit">Submit</Button>
+							<Button onClick = {this.closeModal} className="btn btn-uth-cancelModal">cancel</Button>
+                            </div>
+                        </Form>
+                        </Modal>
+
 						</tbody>
 					</Table>
 					{/* <FormBtn 
