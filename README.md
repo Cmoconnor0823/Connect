@@ -1,6 +1,6 @@
 # KonnectD
 
-<h5>This app is a Full Stack page made with React. KonnectD a site application to manage and organize projects in house. Complete with Project Contact-Info, Google Calendar integration, Messaging and More!.
+<h5>This app is a Full Stack page made with React. KonnectD a site application to manage and organize projects in house. Complete with Project Contact-Info, Google Calendar integration, Messaging and More!
 </h5>
 
 ## Starting the app locally
