@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardTitle, CardBody, Table,  } from "reactstrap";
+import { Card, CardTitle, CardBody, Table, } from "reactstrap";
 import { FormBtn, Input, TextArea } from "../Form";
 import "./style.css";
 import axios from 'axios';
@@ -13,13 +13,13 @@ class MessageCards extends Component {
 			subject: "",
 			newMessage: "",
 			messages: [],
-			isBoardToggleOn:false
-			
+			isBoardToggleOn: false
+
 
 
 		};
 	}
-	
+
 
 	boardToggle = () => {
 		this.setState({
@@ -27,7 +27,7 @@ class MessageCards extends Component {
 		});
 	};
 
-	
+
 
 	componentDidMount() {
 		axios.get("/api/messages")
@@ -73,16 +73,11 @@ class MessageCards extends Component {
 			<Card className="messCard">
 				<CardTitle>
 					<h4> Message Board </h4>
-					<button
-            className="btn m-2 cssbtn font-weight-bold"
-            onClick={this.boardToggle}
-          >Show/Hide Message Form</button>
+				
 				</CardTitle>
-				{this.state.isBoardToggleOn &&
-				<div>
 				<CardBody>
-						<Table hover responsive="sm" className="table-responsive">
-							{/* 
+					<Table hover responsive="sm" className="table-responsive">
+						{/* 
 						{/*This is a horizontal table that runs off the page
 							<tr>
 								<th>Created on</th>
@@ -104,57 +99,62 @@ class MessageCards extends Component {
 								</tr>
 							)}
 						</tbody> */}
-							{this.state.messages.map(messages =>
-								<Card>
-									<tbody key={messages.id}>
+						{this.state.messages.map(messages =>
 
-										{/* <tr>{this.state.messages.id} */}
-										{/* <th>Date Due</th> */}
-										<tr><th>Created on</th><td>{messages.createdAt}</td></tr>
-										<tr><th>Author</th><td>{messages.author}</td></tr>
-										<tr><th>Subject</th><td>{messages.subject}</td></tr>
-										{/* <td>{messages.deadline}</td> */}
-										<tr><th>Message</th><td>{messages.message}</td></tr>
-									</tbody>
-								</Card>
-							)}
+							<tbody key={messages.id}>
 
-						</Table>
+								{/* <tr>{this.state.messages.id} */}
+								{/* <th>Date Due</th> */}
+								<tr><th>Created on</th><td>{messages.createdAt}</td></tr>
+								<tr><th>Author</th><td>{messages.author}</td></tr>
+								<tr><th>Subject</th><td>{messages.subject}</td></tr>
+								{/* <td>{messages.deadline}</td> */}
+								<tr><th>Message</th><td>{messages.message}</td></tr>
+							</tbody>
 
-					<Input
-						value={this.state.author}
-						onChange={this.handleInputChange}
-						name="author"
-						placeholder="Author (Optional)"
-					/>
-					<Input
-						value={this.state.subject}
-						onChange={this.handleInputChange}
-						name="subject"
-						placeholder="Subject (Optional)"
-					/>
-					<TextArea
-						type="text"
-						placeholder="Write a message to your team (Optional)"
-						name="newMessage"
-						onChange={this.handleInputChange}
-						value={this.state.newMessage}
-					/>
-					{/* <Input
+						)}
+
+					</Table>
+					<button
+						className="btn m-2 cssbtn font-weight-bold"
+						onClick={this.boardToggle}
+					>Show/Hide Message Form</button>
+					{this.state.isBoardToggleOn &&
+						<div>
+							<Input
+								value={this.state.author}
+								onChange={this.handleInputChange}
+								name="author"
+								placeholder="Author (Optional)"
+							/>
+							<Input
+								value={this.state.subject}
+								onChange={this.handleInputChange}
+								name="subject"
+								placeholder="Subject (Optional)"
+							/>
+							<TextArea
+								type="text"
+								placeholder="Write a message to your team (Optional)"
+								name="newMessage"
+								onChange={this.handleInputChange}
+								value={this.state.newMessage}
+							/>
+							{/* <Input
 						value={this.state.newMessage}
 						onChange={this.handleInputChange}
 						name="newMessage"
 						placeholder="Write a message to your team(Optional)"
 					/> */}
 
-					<FormBtn
-						enabled={!(this.state.message)}
-						onClick={this.handleNewMessage}
-					> Add a new Message</FormBtn>
+							<FormBtn
+								enabled={!(this.state.message)}
+								onClick={this.handleNewMessage}
+							> Add a new Message</FormBtn>
+						</div>}
 				</CardBody>
-				</div>}
 
-				
+
 			</Card>
 		);
 	}

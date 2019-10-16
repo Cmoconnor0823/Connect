@@ -61,7 +61,7 @@ class ToDoCard extends Component {
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Deadline</th>
+								{/* <th>Deadline</th> */}
 								<th>Task</th>
 								
 							</tr>
@@ -73,7 +73,7 @@ class ToDoCard extends Component {
 								{this.state.todos.map(todos =>
 								<tr key ={todos.id}>
 								<td>{todos.id}</td>
-								<td>{todos.deadline}</td>
+								{/* <td>{todos.deadline}</td> */}
 								<td>{todos.post}</td>
 								</tr>
 							
@@ -87,12 +87,12 @@ class ToDoCard extends Component {
 						name="newTodo"
 						placeholder="Add a item to your ToDo list (Optional)"
 					/>
-					<Input
+					{/* <Input
 							value={this.state.deadline}
 							onChange={this.handleInputChange}
 							name="deadline"
 							placeholder="Deadline (optional)"
-						/>
+						/> */}
 					<FormBtn 
 						enabled={!(this.state.toDo)}
 						onClick={this.handleNewTodo}
