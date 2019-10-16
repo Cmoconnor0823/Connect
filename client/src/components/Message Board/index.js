@@ -59,12 +59,11 @@ class MessageCards extends Component {
 
 	render() {
 		return (
-			<Card id="messCard">
+			<Card className="messCard">
 				<CardTitle>
 					<h4> Message Board </h4>
 				</CardTitle>
 				<CardBody>
-					<div className="panel-body">
 						<Table hover responsive="sm" className="table-responsive">
 							{/* 
 						{/*This is a horizontal table that runs off the page
@@ -89,7 +88,6 @@ class MessageCards extends Component {
 							)}
 						</tbody> */}
 							{this.state.messages.map(messages =>
-
 								<Card>
 									<tbody key={messages.id}>
 
@@ -105,7 +103,6 @@ class MessageCards extends Component {
 							)}
 
 						</Table>
-					</div>
 
 					<Input
 						value={this.state.author}

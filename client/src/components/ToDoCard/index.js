@@ -61,7 +61,7 @@ class ToDoCard extends Component {
 						<thead>
 							<tr>
 								<th>#</th>
-								{/* <th>deadline</th> */}
+								<th>Deadline</th>
 								<th>Task</th>
 								
 							</tr>
@@ -91,7 +91,7 @@ class ToDoCard extends Component {
 							value={this.state.deadline}
 							onChange={this.handleInputChange}
 							name="deadline"
-							placeholder="deadline (optional)"
+							placeholder="Deadline (optional)"
 						/>
 					<FormBtn 
 						enabled={!(this.state.toDo)}
