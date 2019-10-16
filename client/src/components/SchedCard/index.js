@@ -199,7 +199,7 @@ class SchedCard extends Component {
   };
 
   render() {
-    const { summary } = this.state;
+    // const { summary } = this.state;
 
     return (
       <Card id="schedCard">
