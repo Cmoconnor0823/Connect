@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardTitle, CardBody, Table } from "reactstrap";
+import { Card, CardTitle, CardBody, Table,  } from "reactstrap";
 import { FormBtn, Input, TextArea } from "../Form";
 import "./style.css";
 import axios from 'axios';
@@ -13,10 +13,21 @@ class MessageCards extends Component {
 			subject: "",
 			newMessage: "",
 			messages: [],
+			isBoardToggleOn:false
+			
 
 
 		};
 	}
+	
+
+	boardToggle = () => {
+		this.setState({
+			isBoardToggleOn: !this.state.isBoardToggleOn
+		});
+	};
+
+	
 
 	componentDidMount() {
 		axios.get("/api/messages")
@@ -62,7 +73,13 @@ class MessageCards extends Component {
 			<Card className="messCard">
 				<CardTitle>
 					<h4> Message Board </h4>
+					<button
+            className="btn m-2 cssbtn font-weight-bold"
+            onClick={this.boardToggle}
+          >Show/Hide Message Form</button>
 				</CardTitle>
+				{this.state.isBoardToggleOn &&
+				<div>
 				<CardBody>
 						<Table hover responsive="sm" className="table-responsive">
 							{/* 
@@ -135,6 +152,9 @@ class MessageCards extends Component {
 						onClick={this.handleNewMessage}
 					> Add a new Message</FormBtn>
 				</CardBody>
+				</div>}
+
+				
 			</Card>
 		);
 	}
