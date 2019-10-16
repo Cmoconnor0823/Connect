@@ -15,7 +15,7 @@ class ProfileCard extends Component {
 		email:'',
 		phoneNumber:'',
 		msg:'',
-		id:''
+		id:0
 		}
 		this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -54,13 +54,11 @@ class ProfileCard extends Component {
 			console.log("profile edited")
 			console.log(res.data)
 		})
+		
 	}
 	// handleDelete(member) {
-	// 	this.setState({
-	// 		id: member.id
-	// 	})
-	// 	axios.delete("/delete/",{
-	// 		id:this.state.id
+	// 	axios.delete("/api/delete/:id",{
+	// 		id:member.id
 	// 	})
 	// .then((res) => {
 	// 	console.log("deleted")
@@ -87,7 +85,7 @@ class ProfileCard extends Component {
 			console.log(err)
 		});
 	}
-	
+
 	
 
 	componentDidMount() {
@@ -101,7 +99,7 @@ class ProfileCard extends Component {
 				users:res.data
 			})
 		});
-	}
+		}
 		
 	render() {
 		return (
@@ -127,7 +125,10 @@ class ProfileCard extends Component {
 								<td>{member.email}</td>
 								<td>{member.phoneNumber}</td>
 								<td>{member.position}</td>
-								<td><a onClick={() => this.openModal(member)}>Edit</a>|<a onClick={() => this.handleDelete(member)}>Delete</a></td>
+								<td>
+									{/* <a onClick={() => this.openModal(member)}>Edit</a> */}
+									<a onClick={() => this.handleDelete(member)}>Delete</a>
+								</td>
 							</tr>
 						)}	
 						{/* /* Modal to open editor */ }
@@ -148,7 +149,6 @@ class ProfileCard extends Component {
                             </div>
                         </Form>
                         </Modal>
-
 						</tbody>
 					</Table>
 					{/* <FormBtn 
@@ -160,5 +160,4 @@ class ProfileCard extends Component {
 		);
 	};
 };
-
 export default ProfileCard;
