@@ -32,9 +32,7 @@ class ProfileCard extends Component {
 					<h4> Project Member's Contact Info </h4>
 				</CardTitle>
 				<CardBody>
-					This is the body of the card
-					(it appears like we loose 3 columns if the cards are not big enough to justify 3 rows)
-					<Table hover responsive="sm" >
+					<Table hover responsive="sm">
 						<thead>
 							<tr>
 								<th>Name</th>
