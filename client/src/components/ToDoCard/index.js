@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardTitle, CardBody, Table } from "reactstrap";
-import { FormBtn, Input, TextArea } from "../Form";
+import { FormBtn, Input } from "../Form";
 import "./style.css";
 import axios from 'axios';
 
@@ -57,7 +57,7 @@ class ToDoCard extends Component {
 					<h4> This will be the card that holds our to do </h4>
 				</CardTitle>
 				<CardBody>
-				<Table hover  responsive="sm" className="table-responsive">
+				<Table hover responsive="sm" className="table-responsive">
 						<thead>
 							<tr>
 								<th>#</th>

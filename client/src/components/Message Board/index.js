@@ -64,9 +64,9 @@ class MessageCards extends Component {
 					<h4> Message Board </h4>
 				</CardTitle>
 				<CardBody>
-				<div class="panel-body">
-					<Table hover responsive="sm" className="table-responsive">
-						{/* 
+					<div className="panel-body">
+						<Table hover responsive="sm" className="table-responsive">
+							{/* 
 						{/*This is a horizontal table that runs off the page
 							<tr>
 								<th>Created on</th>
@@ -88,25 +88,25 @@ class MessageCards extends Component {
 								</tr>
 							)}
 						</tbody> */}
-						{this.state.messages.map(messages =>
+							{this.state.messages.map(messages =>
 
-<Card>
-<tbody key ={messages.id}>
+								<Card>
+									<tbody key={messages.id}>
 
-		{/* <tr>{this.state.messages.id} */}
-		{/* <th>Date Due</th> */}
-		<tr><th>Created on</th><td>{messages.createdAt}</td></tr>
-		<tr><th>Author</th><td>{messages.author}</td></tr>
-		<tr><th>Subject</th><td>{messages.subject}</td></tr>
-		{/* <td>{messages.deadline}</td> */}
-		<tr><th>Message</th><td>{messages.message}</td></tr>
-</tbody>
-</Card>
-)}	
+										{/* <tr>{this.state.messages.id} */}
+										{/* <th>Date Due</th> */}
+										<tr><th>Created on</th><td>{messages.createdAt}</td></tr>
+										<tr><th>Author</th><td>{messages.author}</td></tr>
+										<tr><th>Subject</th><td>{messages.subject}</td></tr>
+										{/* <td>{messages.deadline}</td> */}
+										<tr><th>Message</th><td>{messages.message}</td></tr>
+									</tbody>
+								</Card>
+							)}
 
-					</Table>
+						</Table>
 					</div>
-				
+
 					<Input
 						value={this.state.author}
 						onChange={this.handleInputChange}
