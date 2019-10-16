@@ -15,7 +15,7 @@ class ProfileCard extends Component {
 		email:'',
 		phoneNumber:'',
 		msg:'',
-		id:0
+		id:''
 		}
 		this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -54,16 +54,40 @@ class ProfileCard extends Component {
 			console.log("profile edited")
 			console.log(res.data)
 		})
-		
 	}
+	// handleDelete(member) {
+	// 	this.setState({
+	// 		id: member.id
+	// 	})
+	// 	axios.delete("/delete/",{
+	// 		id:this.state.id
+	// 	})
+	// .then((res) => {
+	// 	console.log("deleted")
+	// })
+	// }
 	handleDelete(member) {
-		axios.delete("/api/delete/:id",{
-			id:member.id
-		})
-	.then((res) => {
-		console.log("deleted")
-	})
+		var data = {
+			id: member.id
+		}
+		fetch("/delete/", {
+			method: 'post',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify(data)
+		}).then(function(response) {
+			if (response.status >= 400) {
+			  throw new Error("Bad response from server");
+			}
+			return response.json();
+		}).then(function(data) {
+			if(data === "success"){
+			   this.setState({msg: "User has been deleted."});  
+			}
+		}).catch(function(err) {
+			console.log(err)
+		});
 	}
+	
 	
 
 	componentDidMount() {
@@ -77,7 +101,7 @@ class ProfileCard extends Component {
 				users:res.data
 			})
 		});
-		}
+	}
 		
 	render() {
 		return (

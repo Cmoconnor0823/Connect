@@ -63,8 +63,8 @@ app.put("/api/edit/:id", function(req, res) {
 });
 
 // delete a profile by id
-app.delete("/api/delete/:id", function(req, res) {
-  db.Profile.destroy({ where: { id: req.body.id } })
+app.post("/delete/", function(req, res) {
+  db.Profile.destroy({ where: { id: req.body.id} })
   .then(function(dbProfile) {
     res.send(dbProfile);
   });
