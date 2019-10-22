@@ -1,7 +1,6 @@
 import React from "react";
 import image from "../../assets/img/logonobackground.png";
-
-import { Jumbotron, Col, Row, Container } from "reactstrap";
+import { Jumbotron, Col, Row } from "reactstrap";
 import './style.css';
 
 const Jumbo = (props) => {

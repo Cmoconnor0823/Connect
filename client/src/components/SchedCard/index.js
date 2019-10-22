@@ -13,21 +13,10 @@ import {
   Button
 } from "reactstrap";
 import "./style.css";
-
-// import reactMoment from 'react-moment';
-// import 'moment-timezone';
-
-import Moment from "react-moment";
 import "moment-timezone";
-
 import ApiCalendar from "react-google-calendar-api";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
-//import moment from 'moment'
-
-// import Moment from 'react-moment';
-// import 'moment-timezone';
 import moment from "moment";
 
 class SchedCard extends Component {
@@ -199,7 +188,7 @@ class SchedCard extends Component {
   };
 
   render() {
-    const { summary } = this.state;
+    // const { summary } = this.state;
 
     return (
       <Card id="schedCard">

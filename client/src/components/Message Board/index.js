@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardTitle, CardBody, Table } from "reactstrap";
+import { Card, CardTitle, CardBody, Table, } from "reactstrap";
 import { FormBtn, Input, TextArea } from "../Form";
 import "./style.css";
 import axios from 'axios';
@@ -13,10 +13,21 @@ class MessageCards extends Component {
 			subject: "",
 			newMessage: "",
 			messages: [],
+			isBoardToggleOn: false
+
 
 
 		};
 	}
+
+
+	boardToggle = () => {
+		this.setState({
+			isBoardToggleOn: !this.state.isBoardToggleOn
+		});
+	};
+
+
 
 	componentDidMount() {
 		axios.get("/api/messages")
@@ -59,63 +70,69 @@ class MessageCards extends Component {
 
 	render() {
 		return (
-			<Card id="messCard">
+			<Card className="messCard">
 				<CardTitle>
 					<h4> Message Board </h4>
+				
 				</CardTitle>
 				<CardBody>
-					<Table hover responsive="sm">
-						{/* <thead>
-                            <tr>
-                                <th>Created on</th>
-                                <th>Author</th>
-                                <th>subject</th>
-                                <th>Message</th>
-                            </tr>
-                        </thead> */}
-
-						
+					<Table hover responsive="sm" className="table-responsive">
 						{this.state.messages.map(messages =>
 
-						<Card>
-						<tbody key ={messages.id}>
-                        
+							<tbody key={messages.id}>
+
 								{/* <tr>{this.state.messages.id} */}
 								{/* <th>Date Due</th> */}
 								<tr><th>Created on</th><td>{messages.createdAt}</td></tr>
-                                <tr><th>Author</th><td>{messages.author}</td></tr>
-                                <tr><th>Subject</th><td>{messages.subject}</td></tr>
+								<tr><th>Author</th><td>{messages.author}</td></tr>
+								<tr><th>Subject</th><td>{messages.subject}</td></tr>
 								{/* <td>{messages.deadline}</td> */}
 								<tr><th>Message</th><td>{messages.message}</td></tr>
-						</tbody>
-						</Card>
-						)}	
+							</tbody>
+
+						)}
 
 					</Table>
-                    <Input
-                        value={this.state.author}
-                        onChange={this.handleInputChange}
-                        name="author"
-                        placeholder="Author (Optional)"
-						/>
-                    <Input
-                        value={this.state.subject}
-                        onChange={this.handleInputChange}
-                        name="subject"
-                        placeholder="Subject (Optional)"
-                    />
-					 <Input
+					<button
+						className="btn m-2 cssbtn font-weight-bold"
+						onClick={this.boardToggle}
+					>Show/Hide Message Form</button>
+					{this.state.isBoardToggleOn &&
+						<div>
+							<Input
+								value={this.state.author}
+								onChange={this.handleInputChange}
+								name="author"
+								placeholder="Author (Optional)"
+							/>
+							<Input
+								value={this.state.subject}
+								onChange={this.handleInputChange}
+								name="subject"
+								placeholder="Subject (Optional)"
+							/>
+							<TextArea
+								type="text"
+								placeholder="Write a message to your team (Optional)"
+								name="newMessage"
+								onChange={this.handleInputChange}
+								value={this.state.newMessage}
+							/>
+							{/* <Input
 						value={this.state.newMessage}
 						onChange={this.handleInputChange}
 						name="newMessage"
-						placeholder="Write a message to your team (Optional)"
-					/>
-					
-					<FormBtn 
-						enabled={!(this.state.message)}
-						onClick={this.handleNewMessage}
-					> Add a new Message</FormBtn>
+						placeholder="Write a message to your team(Optional)"
+					/> */}
+
+							<FormBtn
+								enabled={!(this.state.message)}
+								onClick={this.handleNewMessage}
+							> Add a new Message</FormBtn>
+						</div>}
 				</CardBody>
+
+
 			</Card>
 		);
 	}
