@@ -54,7 +54,7 @@ class ToDoCard extends Component {
 		return (
 			<Card id="toDoCard">
 				<CardTitle>
-					<h4> This will be the card that holds our to do </h4>
+					<h4> To Do List </h4>
 				</CardTitle>
 				<CardBody>
 				<Table hover responsive="sm" className="table-responsive">
@@ -85,7 +85,7 @@ class ToDoCard extends Component {
 						value={this.state.newTodo}
 						onChange={this.handleInputChange}
 						name="newTodo"
-						placeholder="Add a item to your ToDo list (Optional)"
+						placeholder="Add a item to your To Do list (Optional)"
 					/>
 					{/* <Input
 							value={this.state.deadline}

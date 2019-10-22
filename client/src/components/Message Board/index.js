@@ -77,28 +77,6 @@ class MessageCards extends Component {
 				</CardTitle>
 				<CardBody>
 					<Table hover responsive="sm" className="table-responsive">
-						{/* 
-						{/*This is a horizontal table that runs off the page
-							<tr>
-								<th>Created on</th>
-								<th>Author</th>
-								<th>Subject</th>
-								<th>Message</th>
-							</tr>
-						</thead> 
-						 <tbody>
-							{/* <tr>{this.state.messages.id}
-							{/* <th>Date Due</th> 
-							{this.state.messages.map(messages =>
-								<tr key={messages.id}>
-									<td>{messages.createdAt}</td>
-									<td>{messages.author}</td>
-									<td>{messages.subject}</td>
-									{/* <td>{messages.deadline}</td> 
-									<td>{messages.message}</td>
-								</tr>
-							)}
-						</tbody> */}
 						{this.state.messages.map(messages =>
 
 							<tbody key={messages.id}>

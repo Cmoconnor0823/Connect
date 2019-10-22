@@ -16,6 +16,8 @@ const Jumbo = (props) => {
 				
 						Welcome To KonnectD, a Business Management Tool for Project Management and Records.</h3>
 					
+							<h3>Welcome to KonnectD, a Business Management Tool for Project Management and Records
+					</h3>
 				</Col>
 			</Row>
 		</Jumbotron>
