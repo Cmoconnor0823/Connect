@@ -10,7 +10,7 @@
     "googleapis": "^39.2.0",
     "moment": "^2.24.0",
     "mysql2": "^1.7.0",
-    "node-sass": "4.12.0",
+    "node-sass": "4.13.1",
     "nouislider": "14.0.2",
     "react": "^16.10.1",
     "react-bootstrap-switch": "15.5.3",
