@@ -52,5 +52,8 @@
   },
   "optionalDependencies": {
     "typescript": "3.5.3"
+  },
+  "overrides": {
+    "node-forge": "1.4.3"
   }
 }
